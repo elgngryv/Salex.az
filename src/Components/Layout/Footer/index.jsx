@@ -7,7 +7,7 @@ import { FaFacebook } from "react-icons/fa";
 const Footer = () => {
   return (
     <div
-      className="bg-[#3D246A] p-4 mt-[100px] openSans  w-full pt-[94px] bottom-0 left-0"
+      className="bg-[#3D246A]  p-4 mt-[100px] openSans  w-full pt-[94px] bottom-0 left-0"
       style={{ zIndex: 1000 }}>
       <div className=" ">
         <img src={FooterLogo} alt="Footer Logo" />

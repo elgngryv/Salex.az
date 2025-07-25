@@ -56,10 +56,12 @@ const SalexHero = () => {
     cssEase: "linear",
     arrows: false,
     pauseOnHover: false,
+    swipe: true,
+    draggable: true,
   };
 
   return (
-    <div className="px-4 mt-[74px] -mx-2">
+    <div className="px-4 mt-[74px] overflow-hidden">
       <Slider {...settings}>
         {slides.map((item, index) => (
           <div key={index} className="px-2">

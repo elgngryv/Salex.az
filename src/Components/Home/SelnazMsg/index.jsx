@@ -31,35 +31,39 @@ const SelnazMsg = () => {
           </div>
         </div>
 
-        {/* Şəkil - sağ küncdə (z-20 ilə ön planda) */}
-        <img
-          src={SelnazHome}
-          alt="Selnaz"
-          style={{ bottom: "-108px", right: "-64px" }}
-          className="absolute z-20"
-        />
+        <div className="fixed z-50" style={{ bottom: "0px", right: "0px" }}>
+          <div className="relative" style={{ width: "150px", height: "180px" }}>
+            {/* Şəkil - sağ küncdə (z-20 ilə ön planda) */}
+            <img
+              src={SelnazHome}
+              alt="Selnaz"
+              style={{ bottom: "-108px", right: "-64px", position: "absolute" }}
+              className="absolute z-20"
+            />
 
-        {/* Button - şəkilin altında (z-10 ilə) */}
-        <button
-          className="absolute z-10"
-          style={{
-            bottom: "-126px",
-            right: "-32px",
-            backgroundColor: "#5B2E91",
-            width: "60px",
-            height: "60px",
-            borderRadius: "9999px",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-          }}>
-          <img
-            src={Vector}
-            alt="Vector"
-            style={{ width: "24px", height: "24px" }}
-          />
-        </button>
+            {/* Button - şəkilin altında (z-10 ilə) */}
+            <button
+              className="absolute z-30"
+              style={{
+                bottom: "-126px",
+                right: "-32px",
+                backgroundColor: "#5B2E91",
+                width: "60px",
+                height: "60px",
+                borderRadius: "9999px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              }}>
+              <img
+                src={Vector}
+                alt="Vector"
+                style={{ width: "24px", height: "24px" }}
+              />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
