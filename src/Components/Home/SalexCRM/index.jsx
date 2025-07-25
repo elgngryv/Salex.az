@@ -24,7 +24,7 @@ const SalexCRM = () => {
           <div className="border rounded-[24px] border-white">
             <img src={CRM} alt="" />
           </div>
-          <div className="mt-[24px]">
+          <div className="mt-[24px] flex flex-col gap-[8px]">
             <div className="flex gap-[4px] ">
               <img src={Done} alt="" />
               <h2 className="font-normal text-base openSans">
@@ -34,19 +34,19 @@ const SalexCRM = () => {
             <div className="flex gap-[4px] ">
               <img src={Done} alt="" />
               <h2 className="font-normal text-base openSans">
-                Müştəriyə fərdi təklif göndər
+                Satınalma ehtimalını 3x artır
               </h2>
             </div>
             <div className="flex gap-[4px] ">
               <img src={Done} alt="" />
               <h2 className="font-normal text-base openSans">
-                Müştəriyə fərdi təklif göndər
+                Aktiv müştəri bazasını genişləndir
               </h2>
             </div>
             <div className="flex gap-[4px] ">
               <img src={Done} alt="" />
               <h2 className="font-normal text-base openSans">
-                Müştəriyə fərdi təklif göndər
+                Satış sonrası əlaqəni gücləndir
               </h2>
             </div>
           </div>
