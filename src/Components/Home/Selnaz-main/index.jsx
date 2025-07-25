@@ -1,10 +1,10 @@
-import Sagsel1 from "../../../assets/images/sağsel1.svg";
-import Sagsel2 from "../../../assets/images/sağsel2.svg";
+import Sagsel1 from "../../../assets/images/sagsel1.svg";
+import Sagsel2 from "../../../assets/images/sagsel2.svg";
 import Solsel1 from "../../../assets/images/solsel1.svg";
 import Solsel2 from "../../../assets/images/solsel2.svg";
 import OrtaSel from "../../../assets/images/ortasel.svg";
-import Sag1 from "../../../assets/images/sağ1.svg";
-import Sag2 from "../../../assets/images/sağ2.svg";
+import Sag1 from "../../../assets/images/sag1.svg";
+import Sag2 from "../../../assets/images/sag2.svg";
 import Sol1 from "../../../assets/images/sol1.svg";
 import Sol2 from "../../../assets/images/sol2.svg";
 
