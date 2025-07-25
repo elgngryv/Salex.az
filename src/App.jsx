@@ -8,7 +8,7 @@ import { X } from "lucide-react";
 
 function App() {
   return (
-    <div style={{ overflowX: "visible" }}>
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

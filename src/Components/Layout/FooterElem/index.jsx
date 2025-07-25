@@ -10,20 +10,20 @@ const FooterElem = () => {
                    shadow-[0_4px_30px_rgba(0,0,0,0.1)] bg-gradient-to-r 
                    from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] 
                    backdrop-saturate-150 rounded-[20px] relative mt-[-60px]"
-        style={{ overflow: "visible" }} // Tailwind üzərində yoxdursa əlavə et inline stil kimi
-      >
+        style={{ overflow: "visible" }}>
         {/* Şəkil */}
         <div
           className="absolute -top-28 right-0"
           style={{ zIndex: 30 }} // Şəklin üst qatda görünməsi üçün
         >
-          <img src={Selnaz} alt="Selnaz" className="w-[120px] h-auto" />
+          <img src={Selnaz} alt="Selnaz" className="w-[96.62px] h-auto" />
         </div>
 
         <div className="flex items-center flex-col text-center">
           <div className="font-montserrat">
             <h2 className="font-semibold text-xl">
-              Sən də <span className="font-bold text-[#5B2E91]">Selnaz</span> ilə canlı <br />
+              Sən də <span className="font-bold text-[#5B2E91]">Selnaz</span>{" "}
+              ilə canlı <br />
               satışın rəqəmsal <br />
               gücünü hiss etməyə <br />
               hazırsan?

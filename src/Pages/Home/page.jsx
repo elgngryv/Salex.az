@@ -6,6 +6,8 @@ import SalexSection from "../../Components/Home/Salex-section";
 import SelnazMain from "../../Components/Home/Selnaz-main";
 import Integrations from "../../Components/Home/Integrations";
 import FooterElem from "../../Components/Layout/FooterElem";
+import SalexCRM from "../../Components/Home/SalexCRM";
+import SalexAnalytics from "../../Components/Home/SalexAnalytics";
 
 const Home = () => {
   return (
@@ -15,6 +17,8 @@ const Home = () => {
       <SalexHero />
       <SalexSection />
       <SelnazMain />
+      <SalexCRM />
+      <SalexAnalytics />
       <Integrations />
     </div>
   );

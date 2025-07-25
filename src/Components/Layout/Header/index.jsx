@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <div
-      className={`sticky z-50 p-4 openSans transition-all duration-300 ${
+      className={`sticky z-50 p-4 openSans mb-[24px] transition-all duration-300 ${
         isAtTop ? "top-4" : "top-0"
       }`}>
       <div
