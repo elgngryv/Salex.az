@@ -3,11 +3,20 @@ import Selnaz from "../../../assets/images/selnazHome.svg";
 
 const FooterElem = () => {
   return (
-    <div className="absolute top-[-231px] left-0 w-full flex justify-center z-20 px-4">
-      <div className="w-full max-w-2xl p-10 text-[#3D246A] border border-white/30 shadow-[0_4px_30px_rgba(0,0,0,0.1)] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150 rounded-[20px] relative mt-[-60px]">
-        
+    <div className="absolute top-[-231px] left-0 w-full flex justify-center z-20 px-4 overflow-visible">
+      {/* Valideynə overflow-visible əlavə et ki, şəkil kənara çıxa bilsin */}
+      <div
+        className="w-full max-w-2xl p-10 text-[#3D246A] border border-white/30 
+                   shadow-[0_4px_30px_rgba(0,0,0,0.1)] bg-gradient-to-r 
+                   from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] 
+                   backdrop-saturate-150 rounded-[20px] relative mt-[-60px]"
+        style={{ overflow: "visible" }} // Tailwind üzərində yoxdursa əlavə et inline stil kimi
+      >
         {/* Şəkil */}
-        <div className="absolute -top-28 -right-12">
+        <div
+          className="absolute -top-28 right-0"
+          style={{ zIndex: 30 }} // Şəklin üst qatda görünməsi üçün
+        >
           <img src={Selnaz} alt="Selnaz" className="w-[120px] h-auto" />
         </div>
 
