@@ -5,6 +5,8 @@ import Header from "./Components/Layout/Header";
 import Footer from "./Components/Layout/Footer";
 import FooterElem from "./Components/Layout/FooterElem";
 import { X } from "lucide-react";
+import SuggestionsPage from "./Pages/SuggestionsPage/page";
+import ContactPage from "./Pages/ContactPage/page";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/SuggestionsPage" element={<SuggestionsPage />} />
+        <Route path="/ContactPage" element={<ContactPage />} />
       </Routes>
       <div className="relative">
         <Footer />

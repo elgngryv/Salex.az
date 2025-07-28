@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GoChevronDown } from "react-icons/go";
 import Headerlogo from "../../../assets/images/logo.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -33,7 +34,10 @@ const Header = () => {
           className={`transition-opacity duration-500 ${
             collapsed ? "opacity-0 pointer-events-none" : "opacity-100"
           }`}>
-          <img src={Headerlogo} alt="Headerlogo" />
+          <Link to="/">
+            {" "}
+            <img src={Headerlogo} alt="Headerlogo" />
+          </Link>
         </div>
 
         {/* Sağ tərəf */}
@@ -43,13 +47,19 @@ const Header = () => {
           </button>
 
           {collapsed && (
-            <div className="absolute top-full left-0 w-full mt-4 font-normal text-[18px] px-6 py-[18px] text-[#3D246A]  ">
+            <div className="absolute top-full flex flex-col left-0 w-full mt-4 font-normal text-[18px] px-6 py-[18px] text-[#3D246A]  ">
               <h2 className="mb-2 font-semibold">Haqqımızda</h2>
-              <p className="mb-1 cursor-pointer hover:underline">
-                Həll Yolları
-              </p>
-              <p className="mb-1 cursor-pointer hover:underline">Təkliflər</p>
-              <p className="cursor-pointer hover:underline">Əlaqə</p>
+            
+              <Link
+                to="/SuggestionsPage"
+                className="mb-1 cursor-pointer hover:underline">
+                Təkliflər
+              </Link>
+              <Link
+                to="/ContactPage"
+                className="cursor-pointer hover:underline">
+                Əlaqə
+              </Link>
             </div>
           )}
 
