@@ -49,7 +49,7 @@ const SalexHero = () => {
     dots: false,
     infinite: true,
     speed: 5000,
-    slidesToShow: 1,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 0,
@@ -58,14 +58,28 @@ const SalexHero = () => {
     pauseOnHover: false,
     swipe: true,
     draggable: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   return (
     <div className="px-4 mt-[74px] overflow-hidden">
       <Slider {...settings}>
         {slides.map((item, index) => (
-          <div key={index} className="px-2">
-            <div className="border border-white/30 shadow-[0_4px_30px_rgba(0,0,0,0.1)] rounded-[20px] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150 p-[24px] flex flex-col items-center justify-center min-h-[400px]">
+          <div key={index} className="px-2 w-[390px]  md:w-[434px] " >
+            <div className="border border-white/30  rounded-[20px] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150 p-[24px] flex flex-col items-center justify-center min-h-[400px]">
               <div className="flex w-[310px] mb-3 text-[#3D246A]">
                 <h2 className="font-semibold openSans text-xl">
                   {item.hasBreak ? (

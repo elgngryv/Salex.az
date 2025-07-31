@@ -8,12 +8,14 @@ import Integrations from "../../Components/Home/Integrations";
 import FooterElem from "../../Components/Layout/FooterElem";
 import SalexCRM from "../../Components/Home/SalexCRM";
 import SalexAnalytics from "../../Components/Home/SalexAnalytics";
+import HomeSvg from "../../Components/Home/HomeSvg";
 
 const Home = () => {
   return (
     <div>
       <SelnazMsg />
       <SalexBanner />
+      <HomeSvg/>
       <SalexHero />
       <SalexSection />
       <SelnazMain />

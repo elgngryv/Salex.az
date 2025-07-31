@@ -1,26 +1,51 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const SalexBanner = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
-    <div className="p-4">
-      <div className="flex items-start justify-start w-[256px]">
-        <h2 className="text-[#3D246A]  text-[22px] font-bold  montserrat">
-          <span className="text-[#5B2E91] text-[26px]">SaleX</span> – Rəqəmsal
-          Satışın Yeni Gücü{" "}
-        </h2>
-      </div>
-      <div className="flex items-start mt-3 justify-start w-[256px]">
-        <h2 className="font-normal text-base text-[#3D246A] openSans">
-          SaleX, süni intellekt əsaslı satış meneceri{" "}
-          <span className="font-semibold">Selnaz</span> vasitəsilə veb saytınıza
-          daxil olan istifadəçiləri real müştəriyə çevirir.
-        </h2>
+    <div className="p-4 md:p-[54px]">
+      <div className="md:flex md:flex-col md:gap-[24px] md:mb-[24px]">
+        <div
+          className="flex items-start  justify-start  md:w-[775px] w-[256px]"
+          data-aos="fade-up"
+          data-aos-delay="500">
+          <h2 className="text-[#3D246A] md:text-[40px] text-[22px] font-bold  montserrat">
+            <span className="text-[#5B2E91]  text-[26px] md:text-[46px]">
+              SaleX
+            </span>{" "}
+            – Rəqəmsal Satışın Yeni Gücü
+          </h2>
+        </div>
+        <div
+          className="flex items-start mt-3 md:w-[681px]  justify-start w-[256px]"
+          data-aos="fade-up"
+          data-aos-delay="600">
+          <h2 className="font-normal md:text-[22px] text-base md:leading-[140%] text-[#3D246A] openSans">
+            SaleX, süni intellekt əsaslı rəqmsal satış meneceri{" "}
+            <span className="font-semibold md:text-[22px]">Selnaz</span>{" "}
+            vasitəsilə web
+            <br className="hidden md:inline" /> {""}
+            sayta və rəqəmsal platformalara daxil olan istifadəçiləri real
+            <br className="hidden md:inline" />
+            müştəriyə çevirir.
+          </h2>
+        </div>
       </div>
       <div className="montserrat flex gap-2.5 items-center mt-4">
-        <h2 className="font-semibold text-lg text-[#3D246A]">
+        <h2
+          className="font-semibold text-lg md:text-[22px] text-[#3D246A]"
+          data-aos="fade-up"
+          data-aos-delay="700">
           Satışlarını Artırmağa
         </h2>
-        <button className="bg-[#3D246A] py-3 px-[24px] rounded-[24px]  text-white text-base font-semibold">
+        <button
+          className="bg-[#3D246A] py-3 px-[24px] rounded-[24px]  text-white text-base font-semibold"
+          data-aos="fade-up"
+          data-aos-delay="800">
           Başla
         </button>
       </div>
