@@ -33,7 +33,7 @@ const AboutMain = () => {
     });
   }, []);
   return (
-    <div className="">
+    <div className=" md:mb-[400px]">
       <div className="relative w-full min-h-[700px] mb-[200px] md:min-h-[910px]  overflow-hidden">
         {/* Container for the four top images */}
         <div className="absolute top-0 left-0 right-0 h-[400px] px-4">

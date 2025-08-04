@@ -87,51 +87,60 @@ const Solutions = () => {
             </h2>
           </div>
           <div className="openSans flex flex-col gap-2.5">
-            <div className=" px-[32px] py-[24px] flex flex-col gap-2.5 border  border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-              <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
-                Yönləndirmə yoxdur
-              </h2>
-              <p className="font-normal text-base leading-[150%] text-[#3D246A]">
-                Canlı satış meneceri olmadığından <br /> müştəri nə alacağını
-                bilmir
-              </p>
-            </div>
-            <div className=" px-[32px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-              <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
-                Ehtiyac analizi aparılmır
-              </h2>
-              <p className="font-normal text-base leading-[150%] text-[#3D246A]">
-                Sistem müştərinin nə istədiyini anlamır
-              </p>
-            </div>
-            <div className=" px-[32px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-              <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
-                Parçalanmış platformalar
-              </h2>
-              <p className="font-normal text-base leading-[150%] text-[#3D246A]">
-                Sayt, sosial şəbəkələr və WhatsApp
-                <br />
-                arasında məlumatlar itir
-              </p>
-            </div>
-            <div className=" px-[32px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-              <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
-                Emosional bağ qurulmur
-              </h2>
-              <p className="font-normal text-base leading-[150%] text-[#3D246A]">
-                Standart cavablar müştərinin marağını
-                <br />
-                çəkmir, çevrilmə azalır
-              </p>
-            </div>
-            <div className=" px-[32px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-              <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
-                Zamanında geri dönüş yoxdur
-              </h2>
-              <p className="font-normal text-base leading-[150%] text-[#3D246A]">
-                Bayram, kampaniya və ad günləri
-                <br /> unudulur, müştəri münasibəti zəifləyir
-              </p>
+            <div className="flex flex-col gap-2.5 md:flex-row md:flex-wrap md:gap-5">
+              {/* Kart 1 */}
+              <div className="px-[32px] md:w-[422px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
+                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                  Yönləndirmə yoxdur
+                </h2>
+                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                  Canlı satış meneceri olmadığından <br /> müştəri nə alacağını
+                  bilmir
+                </p>
+              </div>
+
+              {/* Kart 2 */}
+              <div className="px-[32px] md:w-[513px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
+                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                  Zamanında geri dönüş yoxdur
+                </h2>
+                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                  Bayram, kampaniya və ad günləri <br /> unudulur, müştəri
+                  münasibəti zəifləyir
+                </p>
+              </div>
+
+              {/* Kart 3 */}
+              <div className="px-[32px] md:w-[427px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
+                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                  Parçalanmış platformalar
+                </h2>
+                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                  Sayt, sosial şəbəkələr və WhatsApp <br /> arasında məlumatlar
+                  itir
+                </p>
+              </div>
+
+              {/* Kart 4 */}
+              <div className="px-[32px] md:w-[463px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
+                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                  Emosional bağ qurulmur
+                </h2>
+                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                  Standart cavablar müştərinin marağını <br /> çəkmir, çevrilmə
+                  azalır
+                </p>
+              </div>
+
+              {/* Kart 5 */}
+              <div className="px-[32px] md:w-[387px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
+                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                  Ehtiyac analizi aparılmır
+                </h2>
+                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                  Sistem müştərinin nə istədiyini anlamır
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import AboutImg from "../../assets/images/aboutImage.svg";
+import AboutImgHuge from "../../assets/images/aboutHuge.svg";
 
 const AboutSel = () => {
   return (
-    <div className=" mt-[130px] px-4 text-[#3D246A]  md:flex md:flex-col md:items-center md:text-center md:justify-center md:w-full openSans">
+    <div className=" mt-[130px] md:mt-[363px] px-4 text-[#3D246A]  md:flex md:flex-col md:items-center md:text-center md:justify-center md:w-full openSans">
       <div className="w-full md:py-[24px] md:px-4 md:w-[606px]   border border-white/30 shadow-[0_4px_30px_rgba(0,0,0,0.1)] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150  rounded-[20px]">
         <div className="flex flex-col items-center text-center">
           <div className="py-[20px] md:py-0 md:mb-[18px]">
@@ -25,8 +26,13 @@ const AboutSel = () => {
       </div>
       <div>
         <img
-          className="absolute bottom-[-370px] right-[80px]"
+          className="absolute bottom-[-370px] right-[80px] block md:hidden"
           src={AboutImg}
+          alt=""
+        />
+        <img
+          className="absolute top-[1068px] right-[490px] hidden md:block"
+          src={AboutImgHuge}
           alt=""
         />
       </div>

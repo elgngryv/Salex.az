@@ -78,19 +78,18 @@ const About = () => {
             className="flex items-start  justify-start  md:w-[775px] w-[256px]"
             data-aos="fade-up"
             data-aos-delay="500">
-            <h2 className="text-[#3D246A] md:text-[40px] text-[22px] font-bold  montserrat">
-              <span className="text-[#5B2E91]  text-[26px] md:text-[46px]">
+            <h2 className="text-[#3D246A] text-[22px] md:text-[40px] font-bold montserrat flex flex-col md:flex-row md:items-center md:justify-center md:gap-2 text-center">
+              <span className="text-[#5B2E91] text-[26px] md:text-[46px]">
                 Biznesə
-              </span>{" "}
-              <br />
-              Yeni Baxış
+              </span>
+              <span className="md:ml-2">Yeni Baxış</span>
             </h2>
           </div>
           <div
             className="flex items-start mt-3  justify-start "
             data-aos="fade-up"
             data-aos-delay="600">
-            <h2 className="font-normal openSans md:text-[22px] w-[358px] text-base md:leading-[140%] text-[#3D246A] openSans">
+            <h2 className="font-normal md:w-[1013px] md:h-[155px] openSans md:text-[22px] w-[358px] text-base md:leading-[140%] text-[#3D246A] openSans">
               Selnaz — süni intellekt əsaslı rəqəmsal satış meneceridir. Müştəri
               mesajlarını toplayır, sualları cavablandırır, ehtiyacları təhlil
               edir və onları satış fürsətlərinə çevirir. Real vaxtda çalışan
