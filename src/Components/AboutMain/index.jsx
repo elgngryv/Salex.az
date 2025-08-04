@@ -1,28 +1,29 @@
-import Sagsel1 from "../../../assets/images/sagsel1.svg";
-import Sagsel2 from "../../../assets/images/sagsel2.svg";
-import Solsel1 from "../../../assets/images/solsel1.svg";
-import Solsel2 from "../../../assets/images/solsel2.svg";
-import OrtaSel from "../../../assets/images/ortasel.svg";
-import Sag1 from "../../../assets/images/sag1.svg";
-import Sag2 from "../../../assets/images/sag2.svg";
-import Sol1 from "../../../assets/images/sol1.svg";
-import Sol2 from "../../../assets/images/sol2.svg";
-import OrtaHuge from "../../../assets/images/ortaHuge.svg";
-import Sagsel1Huge from "../../../assets/images/Sagselhuge1.svg";
-import Sagsel2Huge from "../../../assets/images/Sagselhuge2.svg";
-import SolselHuge1 from "../../../assets/images/Solselhuge1.svg";
-import SolselHuge2 from "../../../assets/images/Solselhuge2.svg";
-import OrtaselHuge from "../../../assets/images/ortaSelUst.svg";
-import Sagline1 from "../../../assets/images/sagline1.svg";
-import Sagline2 from "../../../assets/images/sagline2.svg";
-import Ortaline from "../../../assets/images/ortaline.svg";
-import Solline1 from "../../../assets/images/solline1.svg";
-import Solline2 from "../../../assets/images/solline2.svg";
+import React from "react";
+import Sagsel1 from "../../assets/images/sagsel1.svg";
+import Sagsel2 from "../../assets/images/sagsel2.svg";
+import Solsel1 from "../../assets/images/solsel1.svg";
+import Solsel2 from "../../assets/images/solsel2.svg";
+import OrtaSel from "../../assets/images/ortasel.svg";
+import Sag1 from "../../assets/images/sag1.svg";
+import Sag2 from "../../assets/images/sag2.svg";
+import Sol1 from "../../assets/images/sol1.svg";
+import Sol2 from "../../assets/images/sol2.svg";
+import OrtaHuge from "../../assets/images/ortaHuge.svg";
+import Sagsel1Huge from "../../assets/images/Sagselhuge1.svg";
+import Sagsel2Huge from "../../assets/images/Sagselhuge2.svg";
+import SolselHuge1 from "../../assets/images/Solselhuge1.svg";
+import SolselHuge2 from "../../assets/images/Solselhuge2.svg";
+import OrtaselHuge from "../../assets/images/ortaSelUst.svg";
+import Sagline1 from "../../assets/images/sagline1.svg";
+import Sagline2 from "../../assets/images/sagline2.svg";
+import Ortaline from "../../assets/images/ortaline.svg";
+import Solline1 from "../../assets/images/solline1.svg";
+import Solline2 from "../../assets/images/solline2.svg";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-const SelnazMain = () => {
+const AboutMain = () => {
   useEffect(() => {
     AOS.init({
       duration: 100,
@@ -33,7 +34,7 @@ const SelnazMain = () => {
   }, []);
   return (
     <div className="">
-      <div className="relative w-full min-h-[700px] md:min-h-[910px]  overflow-hidden">
+      <div className="relative w-full min-h-[700px] mb-[200px] md:min-h-[910px]  overflow-hidden">
         {/* Container for the four top images */}
         <div className="absolute top-0 left-0 right-0 h-[400px] px-4">
           {/* Solsel1 */}
@@ -208,4 +209,4 @@ const SelnazMain = () => {
   );
 };
 
-export default SelnazMain;
+export default AboutMain;

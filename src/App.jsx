@@ -7,6 +7,8 @@ import FooterElem from "./Components/Layout/FooterElem";
 import { X } from "lucide-react";
 import SuggestionsPage from "./Pages/SuggestionsPage/page";
 import ContactPage from "./Pages/ContactPage/page";
+import AboutPage from "./Pages/AboutPage/page";
+import SolutionsPage from "./Pages/SolutionsPage/page";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/SuggestionsPage" element={<SuggestionsPage />} />
         <Route path="/ContactPage" element={<ContactPage />} />
+        <Route path="/AboutPage" element={<AboutPage />} />
+        <Route path="/SolutionsPage" element={<SolutionsPage />} />
       </Routes>
       <div className="relative">
         <Footer />
