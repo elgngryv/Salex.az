@@ -56,15 +56,14 @@ const Contact = () => {
 
               {/* Desktop üçün böyük şəkil */}
               <img
-              style={{
-                pointerEvents: "none" // <-- Əlavə et
-              }}
+                style={{
+                  pointerEvents: "none", // <-- Əlavə et
+                }}
                 src={SelnazHuge}
                 alt="Selnaz Huge"
                 className="absolute bottom-[-164px] w-[700px] h-[300px]   hidden md:block right-[-85px] z-20"
                 data-aos="fade-right"
                 data-aos-delay="100"
-                
               />
 
               <div className="relative">
