@@ -3,7 +3,6 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { GoChevronDown } from "react-icons/go";
 import Headerlogo from "../../../assets/images/logo.svg";
 import { Link } from "react-router-dom";
-import Sun from "../../../assets/Icons/Sun.svg";
 
 const Header = () => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -95,9 +94,7 @@ const Header = () => {
             </div>
 
             {/* Desktop görünüş */}
-            <button className="border-[4px] hidden lg:block rounded-full p-2 border-[#5B2E91]">
-              <img src={Sun} alt="Dark Mode" />
-            </button>
+           
             <div className="hidden lg:flex items-center gap-1 cursor-pointer text-[#3D246A] font-semibold select-none">
               <span>AZ</span>
               <GoChevronDown size={20} />

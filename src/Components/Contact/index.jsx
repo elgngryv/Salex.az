@@ -1,13 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SelnazHome from "../../assets/images/SelnazContact.svg";
 import SelnazHuge from "../../assets/images/ELageHuge.svg";
 import Vector from "../../assets/images/Vector.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import RobotChat from "../../Widgets/RobotChat";
 const Contact = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
+  const toggleChat = () => {
+    setIsChatOpen((prev) => !prev);
+  };
   return (
     <div className="mb-[400px] md:mb-[650px] md:px-[52px]">
       {/* Mesaj qutusu */}
@@ -50,17 +56,22 @@ const Contact = () => {
 
               {/* Desktop üçün böyük şəkil */}
               <img
+              style={{
+                pointerEvents: "none" // <-- Əlavə et
+              }}
                 src={SelnazHuge}
                 alt="Selnaz Huge"
-                className="absolute bottom-[-164px] w-[700px] h-[300px] hidden md:block right-[-85px] z-20"
+                className="absolute bottom-[-164px] w-[700px] h-[300px]   hidden md:block right-[-85px] z-20"
                 data-aos="fade-right"
                 data-aos-delay="100"
+                
               />
 
               <div className="relative">
                 {/* Button */}
                 <button
-                  className="absolute z-10 md:w-[110px] md:h-[110px] flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-296px] right-[-40px] md:bottom-[-320px] md:right-[-78px]"
+                  onClick={toggleChat}
+                  className="absolute z-10 cursor-pointer md:w-[110px] md:h-[110px] flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-296px] right-[-40px] md:bottom-[-320px] md:right-[-78px]"
                   style={{ backgroundColor: "#5B2E91" }}
                   data-aos="fade-left"
                   data-aos-delay="250">
@@ -70,6 +81,24 @@ const Contact = () => {
                     className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
                   />
                 </button>
+                {/* RobotChat Pəncərəsi */}
+                {isChatOpen && (
+                  <div
+                    className="fixed z-50 md:bottom-[-300px] md:right-[60px] right-[30px] "
+                    style={{
+                      bottom: "-500px",
+                      width: "320px",
+                      height: "420px",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                      borderRadius: "16px",
+                      backgroundColor: "white",
+                      overflow: "hidden",
+                      display: "flex",
+                      flexDirection: "column",
+                    }}>
+                    <RobotChat />
+                  </div>
+                )}
               </div>
             </div>
           </div>

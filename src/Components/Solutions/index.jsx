@@ -1,15 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import SelnazHome from "../../assets/images/solutionssel.svg";
 import Vector from "../../assets/images/Vector.svg";
 import SelnazHomeHuge from "../../assets/images/HellyollarıHuge.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import RobotChat from "../../Widgets/RobotChat";
 
 const Solutions = () => {
+  const [isChatOpen, setIsChatOpen] = useState(false);
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
-
+  const toggleChat = () => {
+    setIsChatOpen((prev) => !prev);
+  };
   return (
     <div>
       <div className="w-full flex items-center justify-center relative">
@@ -60,6 +64,7 @@ const Solutions = () => {
 
               {/* Button */}
               <button
+                onClick={toggleChat}
                 className="absolute md:w-[110px] md:h-[110px] z-30 flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-122px] right-[-40px] md:bottom-[-220px] md:right-[-64px]"
                 style={{ backgroundColor: "#5B2E91" }}
                 data-aos="fade-left"
@@ -70,6 +75,24 @@ const Solutions = () => {
                   className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
                 />
               </button>
+              {/* RobotChat Pəncərəsi */}
+              {isChatOpen && (
+                <div
+                  className="fixed z-50 md:bottom-[-300px] md:right-[60px] right-[30px] "
+                  style={{
+                    bottom: "-500px",
+                    width: "320px",
+                    height: "420px",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                    borderRadius: "16px",
+                    backgroundColor: "white",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}>
+                  <RobotChat />
+                </div>
+              )}
             </div>
           </div>
         </div>
