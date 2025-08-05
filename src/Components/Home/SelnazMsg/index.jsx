@@ -4,6 +4,7 @@ import Vector from "../../../assets/images/Vector.svg";
 import SelnazHomeHuge from "../../../assets/images/selnazHomeHuge.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import RobotChat from "../../../Widgets/RobotChat";
 
 const SelnazMsg = () => {
   useEffect(() => {
@@ -12,6 +13,8 @@ const SelnazMsg = () => {
 
   return (
     <div className="w-full flex items-center justify-center relative">
+
+      
       <div
         className="w-[290px] md:w-[477px] openSans mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10"
         data-aos="zoom-out-down"

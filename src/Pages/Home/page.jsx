@@ -12,10 +12,10 @@ import HomeSvg from "../../Components/Home/HomeSvg";
 
 const Home = () => {
   return (
-    <div>
+    <div style={{ minHeight: "100vh", position: "relative", overflowX:"hidden" }}>
       <SelnazMsg />
       <SalexBanner />
-      <HomeSvg/>
+      <HomeSvg />
       <SalexHero />
       <SalexSection />
       <SelnazMain />
