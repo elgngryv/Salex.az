@@ -19,6 +19,8 @@
     "react-router-dom": "^7.7.0",
     "react-slick": "^0.30.3",
     "router-dom": "^3.0.3",
+    "shadcn": "^2.10.0",
+    "shadcn-ui": "^0.9.5",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

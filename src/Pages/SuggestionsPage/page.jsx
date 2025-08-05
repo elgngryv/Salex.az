@@ -6,11 +6,13 @@ import SelnazPro from "../../Components/Suggestions/SelnazPro";
 
 const SuggestionsPage = () => {
   return (
-    <div className="mb-[400px]">
+    <div className="mb-[400px] md:mb-[600px]">
       <Suggestions />
-      <SelnazStart />
-      <SelnazSmart/>
-      <SelnazPro/>
+      <div className="flex">
+        <SelnazStart />
+        <SelnazSmart />
+        <SelnazPro />
+      </div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import SelnazHome from "../../assets/images/solutionssel.svg";
 import Vector from "../../assets/images/Vector.svg";
-import SelnazHomeHuge from "../../assets/images/selnazHomeHuge.png";
+import SelnazHomeHuge from "../../assets/images/HellyollarıHuge.svg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -53,7 +53,7 @@ const Solutions = () => {
               <img
                 src={SelnazHomeHuge}
                 alt="Selnaz Huge"
-                className="absolute bottom-[-164px] hidden md:block right-[-85px] z-20"
+                className="absolute bottom-[-138px] hidden md:block right-[-75px] z-20"
                 data-aos="fade-right"
                 data-aos-delay="100"
               />

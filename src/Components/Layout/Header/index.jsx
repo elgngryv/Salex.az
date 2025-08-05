@@ -18,6 +18,7 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -26,6 +27,7 @@ const Header = () => {
     }
   }, [darkMode]);
 
+  
   return (
     <div
       className={`sticky z-50 p-4 md:px-[52px] openSans mb-[24px] transition-all duration-300 ${

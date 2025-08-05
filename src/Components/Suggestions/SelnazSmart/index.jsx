@@ -4,7 +4,7 @@ import Done from "../../../assets/images/material-symbols_done-rounded.svg";
 const SelnazSmart = () => {
   return (
     <div className="px-4  mt-3">
-      <div className="border p-[32px] border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
+      <div className="border p-[32px] md:w-[389px] border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
         <div>
           <h2 className="font-bold text-[#3D246A] text-2xl montserrat">
             Selnaz Smart

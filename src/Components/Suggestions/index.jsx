@@ -1,62 +1,80 @@
-import React from "react";
-import SelnazHome from "../../assets/images/SelnazSuggestions.svg";
+import React, { useEffect } from "react";
+
+import SugSel from "../../assets/images/Sugsel.svg";
+import SugselHuge from "../../assets/images/SugselHUge.svg";
 import Vector from "../../assets/images/Vector.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Suggestions = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
   return (
     <div>
       <div className="w-full flex items-center justify-center relative">
-        {/* Mesaj qutusu */}
-        <div className="w-[290px] openSans mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] relative z-10">
-          <div className="flex flex-col items-start gap-[14px]">
-            <div className="flex items-center w-fit h-fit text-[#3D246A] px-[8px] py-[6px] gap-[10px] rounded-[8px]">
-              <span className="text-[14px] font-normal italic leading-[140%]">
+        <div
+          className="w-[290px] md:w-[477px] openSans mt-[10px] border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10"
+          data-aos="zoom-out-down"
+          data-aos-delay="500">
+          <div className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]">
+            {/* Salam mesajı */}
+            <div
+              className="flex items-center openSans  w-fit h-fit  px-[8px] py-[6px] gap-[10px] rounded-[8px]"
+              data-aos="fade-up"
+              data-aos-delay="300">
+              <span className="text-[14px] text-[#3D246A] md:text-xl font-normal md:font-thin  leading-[140%]">
                 Ehtiyacına uyğun planı seç — gizli ödənişlər yoxdur, yalnız
                 ağıllı funksiyalar və şəffaf qiymətlər
               </span>
             </div>
           </div>
 
+          {/* Şəkillər və button */}
           <div className="fixed z-50" style={{ bottom: "0px", right: "0px" }}>
             <div
               className="relative"
               style={{ width: "150px", height: "180px" }}>
+              {/* Mobil üçün */}
               <img
-                src={SelnazHome}
+                src={SugSel}
                 alt="Selnaz"
                 style={{
-                  bottom: "-164px",
+                  bottom: "-150px",
                   right: "-64px",
                   position: "absolute",
                 }}
-                className="absolute z-20"
+                className="absolute z-20 block md:hidden"
+                data-aos="fade-right"
+                data-aos-delay="100"
               />
 
+              {/* Desktop üçün böyük şəkil */}
+              <img
+                src={SugselHuge}
+                alt="Selnaz Huge"
+                className="absolute bottom-[-164px] w-[200px] h-[299px] hidden md:block right-[-85px] z-20"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              />
+
+              {/* Button */}
               <button
-                className="absolute z-30"
-                style={{
-                  bottom: "-140px",
-                  right: "-36px",
-                  backgroundColor: "#5B2E91",
-                  width: "60px",
-                  height: "60px",
-                  borderRadius: "9999px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-                }}>
+                className="absolute md:w-[110px] md:h-[110px] z-30 flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-122px] right-[-40px] md:bottom-[-170px] md:right-[-68px]"
+                style={{ backgroundColor: "#5B2E91" }}
+                data-aos="fade-left"
+                data-aos-delay="250">
                 <img
                   src={Vector}
                   alt="Vector"
-                  style={{ width: "24px", height: "24px" }}
+                  className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
                 />
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 ">
         <div className="flex items-start mt-[50px] justify-start w-[256px]">
           <h2 className="text-[#3D246A]  text-[26px] font-bold  montserrat">
             Ağıllı Həllər
