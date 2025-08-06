@@ -39,6 +39,31 @@ const RobotChat = ({ reverse = false, token }) => {
     };
   }, []);
 
+  useEffect(() => {
+    const localToken = localStorage.getItem("token");
+
+    if (!localToken) {
+      // Token yoxdursa backenddən istə
+      axios
+        .get("https://api.selnaz.com:9098/selnaz") // MİSAL endpoint
+        .then((res) => {
+          const token = res.data.token;
+          localStorage.setItem("token", token);
+          window.location.reload(); // Tokenlə səhifəni təzələ
+        })
+        .catch((err) => {
+          console.error("Token alınmadı:", err);
+        });
+    } else {
+      fetchMessages();
+      connect();
+    }
+
+    return () => {
+      disconnect();
+    };
+  }, []);
+
   const parseJwt = (token) => {
     try {
       return JSON.parse(atob(token.split(".")[1]));
@@ -56,6 +81,26 @@ const RobotChat = ({ reverse = false, token }) => {
       console.log("Token tapılmadı!");
       return;
     }
+    const getToken = () => {
+      let token = localStorage.getItem("guest_token");
+
+      if (!token) {
+        token = uuidv4();
+        localStorage.setItem("guest_token", token);
+      }
+
+      return token;
+    };
+
+    axios.get("https://api.selnaz.com:9098/selnaz", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    // istifadə:
+    const token = getToken();
+    console.log("Istifadəçi tokeni:", token);
 
     try {
       const res = await axios.get(`${API_URL}/message`, {
