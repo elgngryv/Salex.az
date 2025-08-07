@@ -65,8 +65,8 @@ const SelnazMsg = () => {
             <img
               src={SelnazHome}
               alt="Selnaz"
-              className="absolute z-20 block md:hidden"
-              style={{ bottom: "-108px", right: "-64px" }}
+              className="absolute z-20 block md:hidden cursor-auto"
+              style={{ bottom: "-108px", right: "-64px" ,pointerEvents: "none"  }}
               data-aos="fade-right"
               data-aos-delay="100"
             />
@@ -90,6 +90,7 @@ const SelnazMsg = () => {
                 src={Vector}
                 alt="Vector"
                 className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
+                style={{ pointerEvents: "none" }}
               />
             </button>
 

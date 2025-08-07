@@ -46,6 +46,7 @@ const About = () => {
                   bottom: "-108px",
                   right: "-64px",
                   position: "absolute",
+                  pointerEvents: "none",
                 }}
                 className="absolute z-20 block md:hidden"
                 data-aos="fade-right"
@@ -72,26 +73,27 @@ const About = () => {
                   src={Vector}
                   alt="Vector"
                   className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
+                  style={{ pointerEvents: "none" }}
                 />
               </button>
-               {/* RobotChat Pəncərəsi */}
-            {isChatOpen && (
-              <div
-                className="fixed z-50 md:bottom-[-300px] md:right-[60px] right-[30px] "
-                style={{
-                  bottom: "-500px",
-                  width: "320px",
-                  height: "420px",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-                  borderRadius: "16px",
-                  backgroundColor: "white",
-                  overflow: "hidden",
-                  display: "flex",
-                  flexDirection: "column",
-                }}>
-                <RobotChat />
-              </div>
-            )}
+              {/* RobotChat Pəncərəsi */}
+              {isChatOpen && (
+                <div
+                  className="fixed z-50 md:bottom-[-300px] md:right-[60px] right-[30px] "
+                  style={{
+                    bottom: "-500px",
+                    width: "320px",
+                    height: "420px",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                    borderRadius: "16px",
+                    backgroundColor: "white",
+                    overflow: "hidden",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}>
+                  <RobotChat />
+                </div>
+              )}
             </div>
           </div>
         </div>

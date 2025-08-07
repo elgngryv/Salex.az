@@ -48,6 +48,7 @@ const Contact = () => {
                   bottom: "-150px",
                   right: "-64px",
                   position: "absolute",
+                  pointerEvents: "none",
                 }}
                 className="absolute z-20 block md:hidden"
                 data-aos="fade-right"
@@ -78,6 +79,7 @@ const Contact = () => {
                     src={Vector}
                     alt="Vector"
                     className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
+                    style={{ pointerEvents: "none" }}
                   />
                 </button>
                 {/* RobotChat Pəncərəsi */}
