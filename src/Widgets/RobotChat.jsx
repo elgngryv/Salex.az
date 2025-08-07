@@ -39,24 +39,21 @@ const RobotChat = ({ reverse = false, token }) => {
     };
   }, []);
 
+  // useEffect 2-ni belə saxla:
   useEffect(() => {
     const localToken = localStorage.getItem("token");
 
     if (!localToken) {
-      // Token yoxdursa backenddən istə
       axios
-        .get("https://api.selnaz.com:9098/selnaz") // MİSAL endpoint
+        .get("https://api.selnaz.com:9098/selnaz")
         .then((res) => {
           const token = res.data.token;
           localStorage.setItem("token", token);
-          window.location.reload(); // Tokenlə səhifəni təzələ
+          window.location.reload();
         })
         .catch((err) => {
           console.error("Token alınmadı:", err);
         });
-    } else {
-      fetchMessages();
-      connect();
     }
 
     return () => {
@@ -192,13 +189,12 @@ const RobotChat = ({ reverse = false, token }) => {
     client.current?.deactivate();
     setConnected(false);
   };
-
   const sendMessage = () => {
     if (!messageContent.trim()) return;
 
     const localToken = localStorage.getItem("token");
     if (client.current && connected && localToken && receiverId) {
-      const userMessage = {
+      const newMessage = {
         id: uuidv4(),
         message: messageContent,
         timestamp: new Date().toISOString(),
@@ -206,7 +202,10 @@ const RobotChat = ({ reverse = false, token }) => {
         status: "user",
       };
 
-      setMessages((prev) => [...prev, userMessage]);
+      setMessages((prev) => [...prev, newMessage]); // <- BURANI ƏLAVƏ ET
+      setLoading(true);
+      setMessageContent("");
+      setIsTyping(false);
 
       client.current.publish({
         destination: "/chat/send",
@@ -216,10 +215,6 @@ const RobotChat = ({ reverse = false, token }) => {
           receiverId: receiverId,
         }),
       });
-
-      setLoading(true);
-      setMessageContent("");
-      setIsTyping(false);
     } else {
       console.log("Göndərmək mümkün olmadı.");
     }
