@@ -26,24 +26,10 @@ const SelnazMain = () => {
         {/* Container for the four top images */}
         <div className="absolute top-0 left-0 right-0 h-[400px] px-4">
           {/* Solsel1 */}
-          <div className="absolute left-[17px]  top-[50px] md:hidden">
-            <img src={Solsel1} alt="Smiling character looking left" />
-          </div>
-
-          {/* Solsel2 */}
-          <div className="absolute left-[120px] top-[20px] md:hidden">
-            <img src={Solsel2} alt="Thinking character looking up-left" />
-          </div>
 
           {/* Sağsel2 */}
-          <div className="absolute right-[120px] top-[20px] md:hidden">
-            <img src={Sagsel2} alt="Surprised character looking forward" />
-          </div>
 
           {/* Sağsel1 */}
-          <div className="absolute right-[17px] top-[50px] md:hidden">
-            <img src={Sagsel1} alt="Smiling character looking right" />
-          </div>
         </div>
 
         <div className="absolute bottom-[336px] left-1/2 -translate-x-1/2 z-10 hidden md:block">
@@ -85,7 +71,12 @@ const SelnazMain = () => {
 
         {/* Sol1 (leftmost dashed line) */}
         <div className="absolute bottom-[408px] left-[calc(94%-200px)] z-0 md:hidden">
-          <img src={Sol1} alt="test1" />
+          <div className="relative right-[17px] top-[50px] md:hidden">
+            <div className="absolute right-[-43px] top-[-50px]">
+              <img src={Sagsel1} alt="Smiling character looking right" />
+            </div>
+            <img src={Sol1} alt="test1" />
+          </div>
         </div>
         <div className="absolute bottom-[380px] left-[calc(64%-200px)] hidden z-0 md:block">
           <div className="relative  h-full w-full hidden  md:block">
@@ -100,8 +91,14 @@ const SelnazMain = () => {
           </div>
         </div>
         {/* Sol2 (inner left dashed line) */}
-        <div className="absolute bottom-[435px] left-[calc(56%-100px)] z-0 md:hidden">
-          <img src={Sol2} alt="test2" />
+        <div className="absolute bottom-[475px] right-[290px] z-0 md:hidden">
+          <div className="relative right-[-180px] top-[20px] md:hidden">
+            <div className=" absolute left-[27px]  w-[80px] h-[80px] top-[-44px]">
+              <img src={Sagsel2} alt="Surprised character looking forward" />
+            </div>
+
+            <img className="w-[100px] h-[159px]" src={Sol2} alt="test2" />
+          </div>
         </div>
         <div className="absolute bottom-[395px] left-[calc(59%-100px)] hidden z-0 md:block">
           <div className="relative  h-full w-full hidden  md:block">
@@ -116,8 +113,13 @@ const SelnazMain = () => {
           </div>
         </div>
         {/* Sag2 (inner right dashed line) */}
-        <div className="absolute bottom-[500px] right-[calc(74%-100px)] z-0 md:hidden">
-          <img src={Sag2} alt="Dashed line connecting characters" />
+        <div className="absolute bottom-[500px] right-[calc(72%-100px)] z-0 md:hidden">
+          <div className="relative left-[10px] top-[20px] md:hidden">
+            <div className="absolute left-[-3px]  top-[-80px]">
+              <img src={Solsel2} alt="Thinking character looking up-left" />
+            </div>
+            <img src={Sag2} alt="Dashed line connecting characters" />
+          </div>
         </div>
         <div className="absolute bottom-[397px] right-[calc(59%-100px)] hidden z-0 md:block">
           <div className="relative  h-full w-full hidden  md:block">
@@ -126,15 +128,20 @@ const SelnazMain = () => {
                 className="w-full h-full"
                 src={SolselHuge2}
                 alt="Thinking character looking up-left"
-           
               />
             </div>
             <img src={Solline1} alt="Solline1" />
           </div>
         </div>
         {/* Sag1 (rightmost dashed line) */}
-        <div className="absolute bottom-[420px] right-[calc(100%-200px)] z-0 md:hidden">
-          <img src={Sag1} alt="test" />
+        <div className="absolute bottom-[420px] right-[calc(110%-200px)] z-0 md:hidden">
+          <div className="relative left-[17px]  top-[50px] md:hidden">
+            <div className=" absolute left-[-43px]  top-[-60px] ">
+              <img src={Solsel1} alt="Smiling character looking left" />
+            </div>
+
+            <img src={Sag1} alt="test" />
+          </div>
         </div>
         <div className="absolute bottom-[380px] right-[calc(64%-200px)] hidden z-0 md:block">
           <div className="relative  h-full w-full hidden  md:block">
