@@ -18,19 +18,8 @@ import Sagline2 from "../../../assets/images/sagline2.svg";
 import Ortaline from "../../../assets/images/ortaline.svg";
 import Solline1 from "../../../assets/images/solline1.svg";
 import Solline2 from "../../../assets/images/solline2.svg";
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const SelnazMain = () => {
-  useEffect(() => {
-    AOS.init({
-      duration: 100,
-      delay: 0,
-      once: true,
-      easing: "ease-out-cubic",
-    });
-  }, []);
   return (
     <div className="">
       <div className="relative w-full min-h-[700px] md:min-h-[910px]  overflow-hidden">
@@ -61,9 +50,6 @@ const SelnazMain = () => {
           <img
             src={OrtaHuge}
             alt="Main happy character with hands up (desktop)"
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-center"
-            data-aos-delay="0"
           />
         </div>
 
@@ -108,18 +94,9 @@ const SelnazMain = () => {
                 className="w-full h-full"
                 src={Sagsel1Huge}
                 alt="Smiling character looking right"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-center"
-                data-aos-delay="0"
               />
             </div>
-            <img
-              src={Sagline2}
-              alt="sagline2"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
+            <img src={Sagline2} alt="sagline2" />
           </div>
         </div>
         {/* Sol2 (inner left dashed line) */}
@@ -133,18 +110,9 @@ const SelnazMain = () => {
                 className="w-full h-full"
                 src={Sagsel2Huge}
                 alt="Surprised character looking forward"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-center"
-                data-aos-delay="0"
               />
             </div>
-            <img
-              src={Sagline1}
-              alt="sagline1"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
+            <img src={Sagline1} alt="sagline1" />
           </div>
         </div>
         {/* Sag2 (inner right dashed line) */}
@@ -158,18 +126,10 @@ const SelnazMain = () => {
                 className="w-full h-full"
                 src={SolselHuge2}
                 alt="Thinking character looking up-left"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-center"
-                data-aos-delay="0"
+           
               />
             </div>
-            <img
-              src={Solline1}
-              alt="Solline1"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
+            <img src={Solline1} alt="Solline1" />
           </div>
         </div>
         {/* Sag1 (rightmost dashed line) */}
@@ -183,18 +143,9 @@ const SelnazMain = () => {
                 className="w-full h-full"
                 src={SolselHuge1}
                 alt="Smiling character looking left"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-center"
-                data-aos-delay="0"
               />
             </div>
-            <img
-              src={Solline2}
-              alt="testSolline2"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
+            <img src={Solline2} alt="testSolline2" />
           </div>
         </div>
         <div className="absolute bottom-[526px]  right-[calc(64%-200px)] hidden z-0 md:block">
@@ -204,17 +155,12 @@ const SelnazMain = () => {
                 className="w-full h-full"
                 src={OrtaselHuge}
                 alt="Smiling character looking right"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-center"
-                data-aos-delay="0"
               />
             </div>
             <img
               src={Ortaline}
               alt="testorta"
-              data-aos="fade-up"
               data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
             />
           </div>
         </div>
