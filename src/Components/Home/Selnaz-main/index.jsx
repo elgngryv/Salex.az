@@ -40,67 +40,23 @@ const SelnazMain = () => {
           <div className="absolute left-[17px]  top-[50px] md:hidden">
             <img src={Solsel1} alt="Smiling character looking left" />
           </div>
-          <div className="absolute left-[128px] hidden top-[255px] md:block">
-            <img
-              src={SolselHuge1}
-              alt="Smiling character looking left"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
-          </div>
 
           {/* Solsel2 */}
           <div className="absolute left-[120px] top-[20px] md:hidden">
             <img src={Solsel2} alt="Thinking character looking up-left" />
           </div>
-          <div className="absolute left-[310px] hidden top-[140px] md:block">
-            <img
-              src={SolselHuge2}
-              alt="Thinking character looking up-left"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
-          </div>
+
           {/* Sağsel2 */}
           <div className="absolute right-[120px] top-[20px] md:hidden">
             <img src={Sagsel2} alt="Surprised character looking forward" />
           </div>
-          <div className="absolute right-[333px] hidden top-[130px] md:block">
-            <img
-              src={Sagsel2Huge}
-              alt="Surprised character looking forward"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
-          </div>
+
           {/* Sağsel1 */}
           <div className="absolute right-[17px] top-[50px] md:hidden">
             <img src={Sagsel1} alt="Smiling character looking right" />
           </div>
-          <div className="absolute right-[126px] hidden top-[255px] md:block">
-            <img
-              src={Sagsel1Huge}
-              alt="Smiling character looking right"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
-          </div>
-          <div className="absolute right-[668px] top-[8px] hidden md:block">
-            <img
-              src={OrtaselHuge}
-              alt="Smiling character looking right"
-              data-aos="fade-up"
-              data-aos-anchor-placement="top-center"
-              data-aos-delay="0"
-            />
-          </div>
         </div>
 
-        {/* 🌐 Desktop görünüş — yalnız md və yuxarısı */}
         <div className="absolute bottom-[336px] left-1/2 -translate-x-1/2 z-10 hidden md:block">
           <img
             src={OrtaHuge}
@@ -111,7 +67,6 @@ const SelnazMain = () => {
           />
         </div>
 
-        {/* 📱 Mobil görünüş — yalnız sm və aşağısı */}
         <div className="absolute bottom-[336px] left-1/2 -translate-x-1/2 z-10 block md:hidden">
           <img
             src={OrtaSel}
@@ -147,61 +102,121 @@ const SelnazMain = () => {
           <img src={Sol1} alt="test1" />
         </div>
         <div className="absolute bottom-[380px] left-[calc(64%-200px)] hidden z-0 md:block">
-          <img
-            src={Sagline2}
-            alt="sagline2"
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-center"
-            data-aos-delay="0"
-          />
+          <div className="relative  h-full w-full hidden  md:block">
+            <div className=" absolute w-[112px] top-[-110px] right-[-60px] hidden md:block">
+              <img
+                className="w-full h-full"
+                src={Sagsel1Huge}
+                alt="Smiling character looking right"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-center"
+                data-aos-delay="0"
+              />
+            </div>
+            <img
+              src={Sagline2}
+              alt="sagline2"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-center"
+              data-aos-delay="0"
+            />
+          </div>
         </div>
         {/* Sol2 (inner left dashed line) */}
         <div className="absolute bottom-[435px] left-[calc(56%-100px)] z-0 md:hidden">
           <img src={Sol2} alt="test2" />
         </div>
         <div className="absolute bottom-[395px] left-[calc(59%-100px)] hidden z-0 md:block">
-          <img
-            src={Sagline1}
-            alt="sagline1"
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-center"
-            data-aos-delay="0"
-          />
+          <div className="relative  h-full w-full hidden  md:block">
+            <div className="absolute w-[112px] top-[-110px] right-[-60px] hidden md:block">
+              <img
+                className="w-full h-full"
+                src={Sagsel2Huge}
+                alt="Surprised character looking forward"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-center"
+                data-aos-delay="0"
+              />
+            </div>
+            <img
+              src={Sagline1}
+              alt="sagline1"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-center"
+              data-aos-delay="0"
+            />
+          </div>
         </div>
         {/* Sag2 (inner right dashed line) */}
         <div className="absolute bottom-[500px] right-[calc(74%-100px)] z-0 md:hidden">
           <img src={Sag2} alt="Dashed line connecting characters" />
         </div>
         <div className="absolute bottom-[397px] right-[calc(59%-100px)] hidden z-0 md:block">
-          <img
-            src={Solline1}
-            alt="Solline1"
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-center"
-            data-aos-delay="0"
-          />
+          <div className="relative  h-full w-full hidden  md:block">
+            <div className="absolute w-[112px] top-[-110px] right-[260px] hidden md:block">
+              <img
+                className="w-full h-full"
+                src={SolselHuge2}
+                alt="Thinking character looking up-left"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-center"
+                data-aos-delay="0"
+              />
+            </div>
+            <img
+              src={Solline1}
+              alt="Solline1"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-center"
+              data-aos-delay="0"
+            />
+          </div>
         </div>
         {/* Sag1 (rightmost dashed line) */}
         <div className="absolute bottom-[420px] right-[calc(100%-200px)] z-0 md:hidden">
           <img src={Sag1} alt="test" />
         </div>
         <div className="absolute bottom-[380px] right-[calc(64%-200px)] hidden z-0 md:block">
-          <img
-            src={Solline2}
-            alt="testSolline2"
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-center"
-            data-aos-delay="0"
-          />
+          <div className="relative  h-full w-full hidden  md:block">
+            <div className=" absolute w-[112px] top-[-110px] right-[443px] hidden md:block">
+              <img
+                className="w-full h-full"
+                src={SolselHuge1}
+                alt="Smiling character looking left"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-center"
+                data-aos-delay="0"
+              />
+            </div>
+            <img
+              src={Solline2}
+              alt="testSolline2"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-center"
+              data-aos-delay="0"
+            />
+          </div>
         </div>
-        <div className="absolute bottom-[526px] right-[calc(64%-200px)] hidden z-0 md:block">
-          <img
-            src={Ortaline}
-            alt="testorta"
-            data-aos="fade-up"
-            data-aos-anchor-placement="top-center"
-            data-aos-delay="0"
-          />
+        <div className="absolute bottom-[526px]  right-[calc(64%-200px)] hidden z-0 md:block">
+          <div className="relative h-full w-full">
+            <div className="absolute w-[112px] top-[-110px] right-[-57px] hidden md:block">
+              <img
+                className="w-full h-full"
+                src={OrtaselHuge}
+                alt="Smiling character looking right"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-center"
+                data-aos-delay="0"
+              />
+            </div>
+            <img
+              src={Ortaline}
+              alt="testorta"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-center"
+              data-aos-delay="0"
+            />
+          </div>
         </div>
       </div>
     </div>
