@@ -5,7 +5,7 @@ import SalexHero from "../../Components/Home/Salex-hero";
 import SalexSection from "../../Components/Home/Salex-section";
 import SelnazMain from "../../Components/Home/Selnaz-main";
 import Integrations from "../../Components/Home/Integrations";
-import FooterElem from "../../Components/Layout/FooterElem";
+// import FooterElem from "../../Components/Layout/FooterElem";
 import SalexCRM from "../../Components/Home/SalexCRM";
 import SalexAnalytics from "../../Components/Home/SalexAnalytics";
 import HomeSvg from "../../Components/Home/HomeSvg";

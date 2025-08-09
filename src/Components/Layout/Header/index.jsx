@@ -17,7 +17,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add("dark");
@@ -26,7 +25,6 @@ const Header = () => {
     }
   }, [darkMode]);
 
-  
   return (
     <div
       className={`sticky z-50 p-4 md:px-[52px] openSans mb-[24px] transition-all duration-300 ${
@@ -75,7 +73,7 @@ const Header = () => {
             <div className="flex items-center gap-4 lg:hidden">
               {/* Daxil ol düyməsi */}
               <button className="bg-[#3D246A] font-semibold text-base montserrat text-white px-6 py-3 rounded-[24px] whitespace-nowrap">
-                Daxil ol
+            Qeydiyyat
               </button>
 
               {/* AZ + Dropdown ox + Hamburger */}
@@ -94,13 +92,20 @@ const Header = () => {
             </div>
 
             {/* Desktop görünüş */}
-           
+
             <div className="hidden lg:flex items-center gap-1 cursor-pointer text-[#3D246A] font-semibold select-none">
               <span>AZ</span>
               <GoChevronDown size={20} />
             </div>
-            <button className="hidden lg:block bg-[#3D246A] font-semibold text-base montserrat text-white px-[24px] py-3 rounded-[24px]">
-              Daxil ol
+            <button
+              onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/1EusUYjYDL-9nf-LYiI2g_TlpM5ZyZEGwSfRaJXwejq8/edit",
+                  "_blank"
+                )
+              }
+              className="hidden lg:block bg-[#3D246A] font-semibold text-base montserrat text-white px-[24px] py-3 rounded-[24px]">
+              Qeydiyyat
             </button>
           </div>
         </div>

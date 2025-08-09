@@ -3,8 +3,7 @@ import "./App.css";
 import Home from "./Pages/Home/page";
 import Header from "./Components/Layout/Header";
 import Footer from "./Components/Layout/Footer";
-import FooterElem from "./Components/Layout/FooterElem";
-import { X } from "lucide-react";
+// import FooterElem from "./Components/Layout/FooterElem";
 import SuggestionsPage from "./Pages/SuggestionsPage/page";
 import ContactPage from "./Pages/ContactPage/page";
 import AboutPage from "./Pages/AboutPage/page";
@@ -16,14 +15,10 @@ const AppContent = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || null);
 
   useEffect(() => {
-    if (token) {
-      return;
-    }
+    if (token) return;
 
     axios
-      .post(`https://api.selnaz.com:9098/selnaz/user`, {
-        // əgər body göndərmək lazımdırsa, bura əlavə et
-      })
+      .post(`https://api.selnaz.com:9098/selnaz/user`)
       .then((res) => {
         if (res.data) {
           localStorage.setItem("token", res.data);
@@ -43,9 +38,13 @@ const AppContent = () => {
   }
 
   return (
-    <>
-      <div>
-        <Header />
+    // Burada əsas konteyner flex və min-h-screen ilə səhifəni tam hündürlüyə çəkirik
+    <div className="flex flex-col min-h-screen">
+      {/* Header yuxarıda */}
+      <Header />
+
+      {/* Main hissə flex-grow ilə böyüyür */}
+      <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/SuggestionsPage" element={<SuggestionsPage />} />
@@ -53,12 +52,12 @@ const AppContent = () => {
           <Route path="/AboutPage" element={<AboutPage />} />
           <Route path="/SolutionsPage" element={<SolutionsPage />} />
         </Routes>
-        <div className="relative">
-          <Footer />
-          <FooterElem />
-        </div>
-      </div>
-    </>
+      </main>
+
+      {/* Footer aşağıda yapışıq */}
+      <Footer />
+      {/* <FooterElem /> */}
+    </div>
   );
 };
 
@@ -69,4 +68,5 @@ const App = () => {
     </BrowserRouter>
   );
 };
+
 export default App;
