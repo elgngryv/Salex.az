@@ -16,5 +16,19 @@ body {
   outline: 1px solid red; 
 } */
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; /* yalnız bir əsas scroll */
+}
 
+/* Dark mode styles */
+.dark body {
+  background: linear-gradient(135deg, #000000, #380b88, #3d246a);
 
+  transition: background 0.5s ease, color 0.5s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}

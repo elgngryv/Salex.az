@@ -49,16 +49,15 @@ const SelnazMain = () => {
         <div className="absolute bottom-[210px] md:left-[610px] left-1/2 transform -translate-x-1/2 z-20 px-4 w-full max-w-md">
           <div className="w-full md:w-[610px] text-[#3D246A] border border-white/30 shadow-[0_4px_30px_rgba(0.1)] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150 rounded-[20px] flex justify-center items-center">
             <div className="flex justify-center items-center text-center py-[24px] px-3">
-              <h2
-                className="font-light md:w-[578px] text-base leading-relaxed text-center"
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-center"
-                data-aos-delay="0">
-                Sizinlə <span className="font-semibold">24/7</span> işləyən,
-                yorulmayan, təzyiq altında belə səhv etməyən satış
+              <h2 className="font-light md:w-[578px] text-base leading-relaxed text-center dark:text-[#E1DCE6]">
+                Sizinlə{" "}
+                <span className="font-semibold dark:text-[#E1DCE6]">24/7</span>{" "}
+                işləyən, yorulmayan, təzyiq altında belə səhv etməyən satış
                 menecerinizdir. Ən əsası,{" "}
-                <span className="font-semibold">şirkətinizin satış ruhunu</span>{" "}
-                <span className="font-semibold">
+                <span className="font-semibold dark:text-[#E1DCE6]">
+                  şirkətinizin satış ruhunu
+                </span>{" "}
+                <span className="font-semibold dark:text-[#E1DCE6]">
                   rəqəmsal dünyaya
                   <br />
                   daşıyır
@@ -164,11 +163,7 @@ const SelnazMain = () => {
                 alt="Smiling character looking right"
               />
             </div>
-            <img
-              src={Ortaline}
-              alt="testorta"
-              data-aos-anchor-placement="top-center"
-            />
+            <img src={Ortaline} alt="testorta" />
           </div>
         </div>
       </div>

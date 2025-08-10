@@ -29,7 +29,7 @@ const Suggestions = () => {
               className="flex items-center openSans  w-fit h-fit  px-[8px] py-[6px] gap-[10px] rounded-[8px]"
               data-aos="fade-up"
               data-aos-delay="300">
-              <span className="text-[14px] text-[#3D246A] md:text-xl font-normal md:font-thin  leading-[140%]">
+              <span className="text-[14px] dark:text-[#E1DCE6] text-[#3D246A] md:text-xl font-normal md:font-thin  leading-[140%]">
                 Ehtiyacına uyğun planı seç — gizli ödənişlər yoxdur, yalnız
                 ağıllı funksiyalar və şəffaf qiymətlər
               </span>
@@ -103,9 +103,9 @@ const Suggestions = () => {
       </div>
       <div className="p-4 ">
         <div className="flex items-start mt-[50px] justify-start w-[256px]">
-          <h2 className="text-[#3D246A]  text-[26px] font-bold  montserrat">
+          <h2 className="text-[#3D246A] dark:text-[#E1DCE6]  text-[26px] font-bold  montserrat">
             Ağıllı Həllər
-            <br />
+            <br className="dark:text-[#E1DCE6]" />
             Şəffaf Qiymətlər
           </h2>
         </div>

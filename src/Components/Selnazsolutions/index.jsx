@@ -16,15 +16,15 @@ import Photo6H from "../../assets/images/1h.svg";
 
 const Selnazsolutions = () => {
   return (
-    <div className="px-4 md:px-4 openSans md:mb-[600px] flex flex-col gap-[54px]">
+    <div className="px-4 md:px-4 openSans  flex flex-col gap-[54px]">
       <div className="md:flex md:flex-row-reverse md:items-center md:text-start md:gap-[100px] md:justify-center">
         <div className="mb-4 flex flex-col gap-2.5">
-          <h2 className="text-[#3D246A] font-bold text-lg ">
+          <h2 className="text-[#3D246A] font-bold text-lg dark:text-[#E1DCE6]">
             Canlı qarşılayır, tanıyır,
-            <br />
+            <br className="dark:text-[#E1DCE6]" />
             yönləndirir
           </h2>
-          <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+          <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
             Sayta daxil olan müştərini real satış meneceri kimi salamlayır və
             qarşılıqlı ünsiyyət qurur
           </p>
@@ -48,12 +48,12 @@ const Selnazsolutions = () => {
       </div>
       <div className="md:flex  md:items-center md:text-start md:gap-[100px] md:justify-center">
         <div className="mb-4 flex flex-col gap-2.5">
-          <h2 className="text-[#3D246A] font-bold text-lg ">
+          <h2 className="text-[#3D246A] font-bold text-lg dark:text-[#E1DCE6] ">
             Emosional ehtiyacı anlayır
-            <br />
+            <br className="dark:text-[#E1DCE6]" />
             və uyğun cavab verir
           </h2>
-          <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+          <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
             Müştərinin yazı tərzindən emosional vəziyyətini analiz edərək
             empatik cavablar təqdim edir
           </p>
@@ -79,15 +79,15 @@ const Selnazsolutions = () => {
       </div>
       <div className="md:flex md:flex-row-reverse md:items-center md:text-start md:gap-[100px] md:justify-center">
         <div className="mb-4 flex flex-col gap-2.5">
-          <h2 className="text-[#3D246A] font-bold text-lg ">
+          <h2 className="text-[#3D246A] font-bold text-lg dark:text-[#E1DCE6] ">
             Real vaxtda davranış analizi
-            <br />
+            <br className="dark:text-[#E1DCE6]" />
             aparır
           </h2>
-          <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+          <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
             Hərəkət, klik və gözləmə müddətini analiz edərək müştərinin
             maraqlandığı məhsulu
-            <br />
+            <br className="dark:text-[#E1DCE6]" />
             müəyyənləşdirir
           </p>
         </div>
@@ -110,13 +110,13 @@ const Selnazsolutions = () => {
       </div>
       <div className="md:flex md:items-center md:text-start md:gap-[100px] md:justify-center">
         <div className="mb-4 flex flex-col gap-2.5">
-          <h2 className="text-[#3D246A] font-bold text-lg ">
+          <h2 className="text-[#3D246A] font-bold text-lg  dark:text-[#E1DCE6]">
             Bütün mesajları birləşdirir
           </h2>
-          <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+          <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
             Hərəkət, klik və gözləmə müddətini analiz edərək müştərinin
             maraqlandığı məhsulu
-            <br />
+            <br className="dark:text-[#E1DCE6]" />
             müəyyənləşdirir
           </p>
         </div>
@@ -139,13 +139,13 @@ const Selnazsolutions = () => {
       </div>
       <div className="md:flex md:flex-row-reverse md:items-center md:text-start md:gap-[100px] md:justify-center">
         <div className="mb-4 flex flex-col gap-2.5">
-          <h2 className="text-[#3D246A] font-bold text-lg ">
+          <h2 className="text-[#3D246A] font-bold text-lg  dark:text-[#E1DCE6]">
             Data əsaslı geri dönüşlər edir
           </h2>
-          <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+          <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
             Müştərinin qeyd olunan tarix, mövzu və keçmiş alışlarına əsaslanaraq
             uyğun zamanda əlaqə
-            <br />
+            <br className="dark:text-[#E1DCE6]" />
             yaradır
           </p>
         </div>
@@ -168,12 +168,12 @@ const Selnazsolutions = () => {
       </div>
       <div className="md:flex  md:items-center md:text-start md:gap-[100px] md:justify-center">
         <div className="mb-4 flex flex-col gap-2.5">
-          <h2 className="text-[#3D246A] font-bold text-lg ">
+          <h2 className="text-[#3D246A] font-bold text-lg dark:text-[#E1DCE6] ">
             CRM ilə təbrik, kampaniya və
-            <br />
+            <br className="dark:text-[#E1DCE6]" />
             xatırlatma göndərir
           </h2>
-          <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+          <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
             Avtomatlaşdırılmış şəkildə bayram, ad günü və kampaniya mesajlarını
             çatdırır
           </p>

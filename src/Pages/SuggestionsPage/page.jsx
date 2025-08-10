@@ -6,7 +6,7 @@ import SelnazPro from "../../Components/Suggestions/SelnazPro";
 
 const SuggestionsPage = () => {
   return (
-    <div className="mb-[400px] md:mb-[600px]">
+    <div className="mb-[40px]">
       <Suggestions />
       <div className="md:flex">
         <SelnazStart />

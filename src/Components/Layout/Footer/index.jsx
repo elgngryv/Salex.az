@@ -16,16 +16,16 @@ const Footer = () => {
             <img src={Selnaz} alt="Selnaz" className="w-[96.62px] h-auto" />
           </div>
           <div className="flex flex-col items-center text-center">
-            <h2 className="font-montserrat font-semibold md:text-[40px] md:w-[845px] md:leading-[100%] text-xl">
-              Sən də <span className="font-bold text-[#5B2E91]">Selnaz</span>{" "}
+            <h2 className="font-montserrat font-semibold md:text-[40px]  dark:text-[#E1DCE6] md:w-[845px] md:leading-[100%] text-xl">
+              Sən də <span className="font-bold dark:text-[#E1DCE6] text-[#5B2E91]">Selnaz</span>{" "}
               ilə canlı satışın rəqəmsal gücünü hiss etməyə hazırsan?
             </h2>
-            <h2 className="font-openSans mt-2 text-base font-normal md:text-[18px]">
+            <h2 className="font-openSans mt-2 text-base font-normal dark:text-[#E1DCE6] md:text-[18px]">
               AI ilə satışları avtomatlaşdır, amma insan toxunuşunu itirmə.
             </h2>
             <div className="font-montserrat mt-4 md:flex items-center gap-2">
-              <h2 className="font-semibold text-lg">Satışlarını Artırmağa</h2>
-              <button className="bg-[#3D246A] py-3 px-6 rounded-full text-white text-base font-semibold">
+              <h2 className="font-semibold text-lg dark:text-[#E1DCE6]">Satışlarını Artırmağa</h2>
+              <button className="bg-[#3D246A] dark:text-[#E1DCE6] py-3 px-6 rounded-full text-white text-base font-semibold">
                 Başla
               </button>
             </div>
@@ -45,38 +45,52 @@ const Footer = () => {
             {/* 1 */}
             <div>
               <div className="text-white mb-4">
-                <h2 className="font-extrabold text-base">Sürətli Menü</h2>
+                <h2 className="font-extrabold text-base dark:text-[#E1DCE6] ">
+                  Sürətli Menü
+                </h2>
               </div>
               <div className="text-white">
-                <p className="font-thin text-base">Ana Səhifə</p>
-                <p className="font-thin text-base">Haqqımızda</p>
-                <p className="font-thin text-base">Həll Yolları</p>
-                <p className="font-thin text-base">Təkliflər</p>
-                <p className="font-thin text-base">Əlaqə</p>
+                <p className="font-thin text-base dark:text-[#E1DCE6] ">
+                  Ana Səhifə
+                </p>
+                <p className="font-thin text-base dark:text-[#E1DCE6] ">
+                  Haqqımızda
+                </p>
+                <p className="font-thin text-base dark:text-[#E1DCE6] ">
+                  Həll Yolları
+                </p>
+                <p className="font-thin text-base dark:text-[#E1DCE6] ">
+                  Təkliflər
+                </p>
+                <p className="font-thin text-base dark:text-[#E1DCE6] ">
+                  Əlaqə
+                </p>
               </div>
             </div>
             {/* 2 */}
             <div className="md:flex md:gap-[213.38px]">
               <div>
                 <div className="mb-4">
-                  <h2 className="font-extrabold text-base text-white">
+                  <h2 className="font-extrabold text-base text-white dark:text-[#E1DCE6]">
                     Əlaqə və Sosial media
                   </h2>
                 </div>
                 <div className="flex flex-col gap-2">
                   <div className="flex gap-[6px]">
                     <FaInstagram className="text-[#E1DCE6] w-[24px] h-[24px]" />
-                    <p className="font-thin text-base text-[#E1DCE6]">
+                    <p className="font-thin text-base dark:text-[#E1DCE6] text-[#E1DCE6]">
                       @salex.az
                     </p>
                   </div>
                   <div className="flex gap-[6px]">
-                    <FaLinkedin className="text-[#E1DCE6] w-[24px] h-[24px]" />
-                    <p className="font-thin text-base text-[#E1DCE6]">@salex</p>
+                    <FaLinkedin className="text-[#E1DCE6] dark:text-[#E1DCE6] w-[24px] h-[24px]" />
+                    <p className="font-thin text-base dark:text-[#E1DCE6] text-[#E1DCE6]">
+                      @salex
+                    </p>
                   </div>
                   <div className="flex gap-[6px]">
-                    <FaFacebook className="text-[#E1DCE6] w-[24px] h-[24px]" />
-                    <p className="font-thin text-base text-[#E1DCE6]">
+                    <FaFacebook className="text-[#E1DCE6] dark:text-[#E1DCE6] w-[24px] h-[24px]" />
+                    <p className="font-thin text-base dark:text-[#E1DCE6] text-[#E1DCE6]">
                       @salex.az
                     </p>
                   </div>
@@ -84,15 +98,15 @@ const Footer = () => {
               </div>
               <div className="mt-[22px]">
                 <div>
-                  <h2 className="font-extrabold text-base mb-[16px] text-white">
+                  <h2 className="font-extrabold text-base dark:text-[#E1DCE6] mb-[16px] text-white">
                     Məlumat
                   </h2>
                 </div>
                 <div>
-                  <h2 className="font-thin text-base text-white">
+                  <h2 className="font-thin text-base dark:text-[#E1DCE6] text-white">
                     Məxfilik Siyasəti
                   </h2>
-                  <h2 className="font-thin text-base text-white">
+                  <h2 className="font-thin text-base dark:text-[#E1DCE6] text-white">
                     İstifadə Şərtləri
                   </h2>
                 </div>

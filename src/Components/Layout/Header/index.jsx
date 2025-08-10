@@ -3,11 +3,14 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { GoChevronDown } from "react-icons/go";
 import Headerlogo from "../../../assets/images/logo.svg";
 import { Link } from "react-router-dom";
+import { useTheme } from "../../theme-provider";
+import FooterDarkLogo from "../../../assets/images/Footer-logo.svg";
 
 const Header = () => {
   const [isAtTop, setIsAtTop] = useState(true);
   const [collapsed, setCollapsed] = useState(false);
   const [darkMode] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +30,10 @@ const Header = () => {
 
   return (
     <div
-      className={`sticky z-50 p-4 md:px-[52px] openSans mb-[24px] transition-all duration-300 ${
+      className={`sticky z-50 p-4 md:px-[52px]  openSans  transition-all duration-300 ${
         isAtTop ? "top-4" : "top-0"
       }`}>
-      <div className="relative">
+      <div className="relative ">
         <div
           className={`flex items-center justify-between transition-all duration-500
           border border-white/30 shadow-[0_4px_30px_rgba(0,0,0,0.1)]
@@ -45,17 +48,21 @@ const Header = () => {
               collapsed ? "opacity-0" : "opacity-100"
             }`}
             style={{ pointerEvents: collapsed ? "none" : "auto" }}>
-            <img src={Headerlogo} alt="Headerlogo" />
+   <img
+    src={theme === "dark" ? FooterDarkLogo : Headerlogo}
+    alt="Headerlogo"
+  />
           </Link>
 
           {/* Desktop menu */}
           <nav
-            className={`hidden lg:flex items-center montserrat justify-center gap-8 flex-1 text-[#3D246A] font-normal text-lg transition-opacity duration-300 ${
+            className={`hidden lg:flex items-center dark:text-[#E1DCE6]  montserrat justify-center gap-8 flex-1 text-[#3D246A] font-normal text-lg transition-opacity duration-300 ${
               collapsed ? "opacity-0 pointer-events-none" : "opacity-100"
             }`}>
-            <Link to="/AboutPage" className="hover:underline cursor-pointer">
+            <Link to="/AboutPage" className="hover:underline  cursor-pointer">
               Haqqımızda
             </Link>
+
             <Link to="/SolutionsPage" className="hover:underline">
               Həll yolları
             </Link>
@@ -73,12 +80,12 @@ const Header = () => {
             <div className="flex items-center gap-4 lg:hidden">
               {/* Daxil ol düyməsi */}
               <button className="bg-[#3D246A] font-semibold text-base montserrat text-white px-6 py-3 rounded-[24px] whitespace-nowrap">
-            Qeydiyyat
+                Qeydiyyat
               </button>
 
               {/* AZ + Dropdown ox + Hamburger */}
               <div
-                className="flex items-center gap-2 cursor-pointer select-none"
+                className="flex dark:text-[#E1DCE6] items-center gap-2 cursor-pointer select-none"
                 onClick={() => setCollapsed(!collapsed)}>
                 <span className="font-semibold text-[#3D246A]">AZ</span>
                 <GoChevronDown
@@ -87,16 +94,25 @@ const Header = () => {
                     collapsed ? "rotate-180" : "rotate-0"
                   }`}
                 />
-                <RxHamburgerMenu className="text-3xl text-[#3D246A] font-extrabold" />
+                <RxHamburgerMenu className="text-3xl dark:text-[#E1DCE6] text-[#3D246A] font-extrabold" />
               </div>
             </div>
 
             {/* Desktop görünüş */}
-
-            <div className="hidden lg:flex items-center gap-1 cursor-pointer text-[#3D246A] font-semibold select-none">
+            <div className="hidden dark:text-[#E1DCE6] lg:flex items-center gap-1 cursor-pointer text-[#3D246A] font-semibold select-none">
+              <button
+                onClick={toggleTheme}
+                className="flex items-center gap-2 px-4 py-2 rounded-full shadow-md border 
+               bg-gradient-to-r from-gray-200 to-gray-300 text-black 
+               dark:from-gray-800 dark:to-gray-900 dark:text-white
+               hover:from-gray-300 hover:to-gray-400 dark:hover:from-gray-700 dark:hover:to-gray-800
+               transition-all duration-300">
+                {theme === "dark" ? "🌙 " : "☀️ "}
+              </button>
               <span>AZ</span>
               <GoChevronDown size={20} />
             </div>
+
             <button
               onClick={() =>
                 window.open(
@@ -104,7 +120,7 @@ const Header = () => {
                   "_blank"
                 )
               }
-              className="hidden lg:block bg-[#3D246A] font-semibold text-base montserrat text-white px-[24px] py-3 rounded-[24px]">
+              className="hidden dark:text-[#E1DCE6] lg:block bg-[#3D246A] font-semibold text-base montserrat text-white px-[24px] py-3 rounded-[24px]">
               Qeydiyyat
             </button>
           </div>
@@ -112,7 +128,7 @@ const Header = () => {
 
         {/* Alt menyu: mobilda collapsed olarkən görünür */}
         <div
-          className={`lg:hidden w-[249px] overflow-hidden transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-[10px] rounded-b-[12px] mt-1 p-4 text-[#3D246A] font-medium montserrat
+          className={`lg:hidden dark:text-[#E1DCE6]  w-[249px] overflow-hidden transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-[10px] rounded-b-[12px] mt-1 p-4 text-[#3D246A] font-medium montserrat
           ${collapsed ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}
           style={{ pointerEvents: collapsed ? "auto" : "none" }}>
           <Link

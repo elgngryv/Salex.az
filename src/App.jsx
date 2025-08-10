@@ -10,6 +10,7 @@ import AboutPage from "./Pages/AboutPage/page";
 import SolutionsPage from "./Pages/SolutionsPage/page";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { ThemeProvider } from "./Components/theme-provider";
 
 const AppContent = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || null);
@@ -38,26 +39,28 @@ const AppContent = () => {
   }
 
   return (
-    // Burada əsas konteyner flex və min-h-screen ilə səhifəni tam hündürlüyə çəkirik
-    <div className="flex flex-col min-h-screen">
-      {/* Header yuxarıda */}
-      <Header />
+    <ThemeProvider>
+  
+      <div className="flex flex-col min-h-screen">
+        {/* Header yuxarıda */}
+        <Header />
 
-      {/* Main hissə flex-grow ilə böyüyür */}
-      <main className="flex-grow">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/SuggestionsPage" element={<SuggestionsPage />} />
-          <Route path="/ContactPage" element={<ContactPage />} />
-          <Route path="/AboutPage" element={<AboutPage />} />
-          <Route path="/SolutionsPage" element={<SolutionsPage />} />
-        </Routes>
-      </main>
+        {/* Main hissə flex-grow ilə böyüyür */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/SuggestionsPage" element={<SuggestionsPage />} />
+            <Route path="/ContactPage" element={<ContactPage />} />
+            <Route path="/AboutPage" element={<AboutPage />} />
+            <Route path="/SolutionsPage" element={<SolutionsPage />} />
+          </Routes>
+        </main>
 
-      {/* Footer aşağıda yapışıq */}
-      <Footer />
-      {/* <FooterElem /> */}
-    </div>
+        {/* Footer aşağıda yapışıq */}
+        <Footer />
+        {/* <FooterElem /> */}
+      </div>
+    </ThemeProvider>
   );
 };
 

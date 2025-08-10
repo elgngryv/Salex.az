@@ -18,7 +18,7 @@ const SelnazMsg = () => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center relative">
+    <div className="w-full flex items-center justify-center relative ">
       <div
         className="w-[290px] md:w-[477px] openSans mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10"
         data-aos="zoom-out-down"
@@ -59,14 +59,18 @@ const SelnazMsg = () => {
         </div>
 
         {/* Selnaz şəkilləri və Button */}
-        <div className="fixed z-50 bottom-0 right-0">
+        <div className="fixed z-50 bottom-0 right-0 ">
           <div className="relative w-[150px] h-[180px]">
             {/* Mobil */}
             <img
               src={SelnazHome}
               alt="Selnaz"
               className="absolute z-20 block md:hidden cursor-auto"
-              style={{ bottom: "-108px", right: "-64px" ,pointerEvents: "none"  }}
+              style={{
+                bottom: "-108px",
+                right: "-64px",
+                pointerEvents: "none",
+              }}
               data-aos="fade-right"
               data-aos-delay="100"
             />
@@ -97,9 +101,8 @@ const SelnazMsg = () => {
             {/* RobotChat Pəncərəsi */}
             {isChatOpen && (
               <div
-                className="fixed z-50 md:bottom-[-300px] md:right-[60px] right-[30px] "
+                className="fixed z-50 bottom-[550px]  md:bottom-[-650px] md:right-[-170px] right-[-30px] "
                 style={{
-                  bottom: "-500px",
                   width: "320px",
                   height: "420px",
                   boxShadow: "0 4px 20px rgba(0,0,0,0.2)",

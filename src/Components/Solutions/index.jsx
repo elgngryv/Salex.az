@@ -27,7 +27,7 @@ const Solutions = () => {
               className="flex items-center openSans  w-fit h-fit  px-[8px] py-[6px] gap-[10px] rounded-[8px]"
               data-aos="fade-up"
               data-aos-delay="300">
-              <span className="text-[14px] text-[#3D246A] md:text-xl font-normal md:font-thin  leading-[140%]">
+              <span className="text-[14px] text-[#3D246A] md:text-xl font-normal md:font-thin  dark:text-[#E1DCE6] leading-[140%]">
                 Problemləri analiz etdik və onları aradan qaldırmaq üçün ağıllı
                 və effektiv yollar yaratdıq
               </span>
@@ -103,8 +103,8 @@ const Solutions = () => {
             className="flex items-start mb-[24px] justify-start  md:w-[775px] w-[256px]"
             data-aos="fade-up"
             data-aos-delay="500">
-            <h2 className="text-[#3D246A] md:text-[40px] text-[22px] font-bold  montserrat">
-              <span className="text-[#3D246A]  text-[26px] md:text-[46px]">
+            <h2 className="text-[#3D246A] md:text-[40px] dark:text-[#E1DCE6] text-[22px] font-bold  montserrat">
+              <span className="text-[#3D246A]  dark:text-[#E1DCE6] text-[26px] md:text-[46px]">
                 Problemlər
               </span>{" "}
             </h2>
@@ -113,10 +113,10 @@ const Solutions = () => {
             <div className="flex flex-col gap-2.5 md:flex-row md:flex-wrap md:gap-5">
               {/* Kart 1 */}
               <div className="px-[32px] md:w-[422px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                <h2 className="font-semibold text-[20px] leading-[100%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Yönləndirmə yoxdur
                 </h2>
-                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Canlı satış meneceri olmadığından <br /> müştəri nə alacağını
                   bilmir
                 </p>
@@ -124,21 +124,22 @@ const Solutions = () => {
 
               {/* Kart 2 */}
               <div className="px-[32px] md:w-[513px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                <h2 className="font-semibold text-[20px] leading-[100%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Zamanında geri dönüş yoxdur
                 </h2>
-                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
-                  Bayram, kampaniya və ad günləri <br /> unudulur, müştəri
+                <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
+                  Bayram, kampaniya və ad günləri{" "}
+                  <br className="dark:text-[#E1DCE6]" /> unudulur, müştəri
                   münasibəti zəifləyir
                 </p>
               </div>
 
               {/* Kart 3 */}
               <div className="px-[32px] md:w-[427px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                <h2 className="font-semibold text-[20px] leading-[100%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Parçalanmış platformalar
                 </h2>
-                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Sayt, sosial şəbəkələr və WhatsApp <br /> arasında məlumatlar
                   itir
                 </p>
@@ -146,10 +147,10 @@ const Solutions = () => {
 
               {/* Kart 4 */}
               <div className="px-[32px] md:w-[463px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                <h2 className="font-semibold text-[20px] leading-[100%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Emosional bağ qurulmur
                 </h2>
-                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Standart cavablar müştərinin marağını <br /> çəkmir, çevrilmə
                   azalır
                 </p>
@@ -157,10 +158,10 @@ const Solutions = () => {
 
               {/* Kart 5 */}
               <div className="px-[32px] md:w-[387px] py-[24px] flex flex-col gap-2.5 border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
-                <h2 className="font-semibold text-[20px] leading-[100%] text-[#3D246A]">
+                <h2 className="font-semibold text-[20px] leading-[100%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Ehtiyac analizi aparılmır
                 </h2>
-                <p className="font-normal text-base leading-[150%] text-[#3D246A]">
+                <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
                   Sistem müştərinin nə istədiyini anlamır
                 </p>
               </div>

@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import SelnazHome from "../../assets/images/selnazHome.svg";
 import Vector from "../../assets/images/Vector.svg";
 import SelnazHomeHuge from "../../assets/images/selnazHomeHuge.png";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import RobotChat from "../../Widgets/RobotChat";
 const About = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
-  useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-  }, []);
 
   const toggleChat = () => {
     setIsChatOpen((prev) => !prev);
@@ -17,17 +12,11 @@ const About = () => {
   return (
     <div>
       <div className="w-full flex items-center justify-center relative">
-        <div
-          className="w-[290px] md:w-[477px] openSans mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10"
-          data-aos="zoom-out-down"
-          data-aos-delay="500">
+        <div className="w-[290px] md:w-[477px] openSans mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10">
           <div className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]">
             {/* Salam mesajı */}
-            <div
-              className="flex items-center openSans  w-fit h-fit  px-[8px] py-[6px] gap-[10px] rounded-[8px]"
-              data-aos="fade-up"
-              data-aos-delay="300">
-              <span className="text-[14px] text-[#3D246A] md:text-xl font-normal md:font-thin  leading-[140%]">
+            <div className="flex items-center openSans   w-fit h-fit  px-[8px] py-[6px] gap-[10px] rounded-[8px]">
+              <span className="text-[14px] text-[#3D246A] dark:text-[#E1DCE6] md:text-xl font-normal md:font-thin  leading-[140%]">
                 Artıq təxminlər yox, dəqiq analiz və real nəticələr dövrüdür
               </span>
             </div>
@@ -49,8 +38,6 @@ const About = () => {
                   pointerEvents: "none",
                 }}
                 className="absolute z-20 block md:hidden"
-                data-aos="fade-right"
-                data-aos-delay="100"
               />
 
               {/* Desktop üçün böyük şəkil */}
@@ -58,17 +45,13 @@ const About = () => {
                 src={SelnazHomeHuge}
                 alt="Selnaz Huge"
                 className="absolute bottom-[-164px] hidden md:block right-[-85px] z-20"
-                data-aos="fade-right"
-                data-aos-delay="100"
               />
 
               {/* Button */}
               <button
                 onClick={toggleChat}
                 className="absolute md:w-[110px] md:h-[110px] z-10 flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-126px] right-[-32px] md:bottom-[-220px] md:right-[-64px]"
-                style={{ backgroundColor: "#5B2E91" }}
-                data-aos="fade-left"
-                data-aos-delay="250">
+                style={{ backgroundColor: "#5B2E91" }}>
                 <img
                   src={Vector}
                   alt="Vector"
@@ -98,24 +81,18 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className="p-4 mt-[74px] md:p-[54px]">
+      <div className="p-4 mt-[74px] md:p-[54px] ">
         <div className="md:flex md:flex-col md:gap-[24px] md:mb-[24px]">
-          <div
-            className="flex items-start  justify-start  md:w-[775px] w-[256px]"
-            data-aos="fade-up"
-            data-aos-delay="500">
+          <div className="flex items-start  justify-start  md:w-[775px] w-[256px]">
             <h2 className="text-[#3D246A] text-[22px] md:text-[40px] font-bold montserrat flex flex-col md:flex-row md:items-center md:justify-center md:gap-2 text-center">
-              <span className="text-[#5B2E91] text-[26px] md:text-[46px]">
+              <span className="text-[#5B2E91] dark:text-[#E1DCE6] text-[26px] md:text-[46px]">
                 Biznesə
               </span>
-              <span className="md:ml-2">Yeni Baxış</span>
+              <span className="md:ml-2 dark:text-[#E1DCE6]">Yeni Baxış</span>
             </h2>
           </div>
-          <div
-            className="flex items-start mt-3  justify-start "
-            data-aos="fade-up"
-            data-aos-delay="600">
-            <h2 className="font-normal md:w-[1013px] md:h-[155px] openSans md:text-[22px] w-[358px] text-base md:leading-[140%] text-[#3D246A] openSans">
+          <div className="flex items-start mt-3  justify-start ">
+            <h2 className="font-normal dark:text-[#E1DCE6] md:w-[1013px] md:h-[155px] openSans md:text-[22px] w-[358px] text-base md:leading-[140%] text-[#3D246A] openSans">
               Selnaz — süni intellekt əsaslı rəqəmsal satış meneceridir. Müştəri
               mesajlarını toplayır, sualları cavablandırır, ehtiyacları təhlil
               edir və onları satış fürsətlərinə çevirir. Real vaxtda çalışan
