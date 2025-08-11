@@ -43,7 +43,7 @@ const Suggestions = () => {
               style={{ width: "150px", height: "180px" }}>
               {/* Mobil üçün */}
               <img
-                src={SugSel}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899498/Sugsel_hufr6k.svg"
                 alt="Selnaz"
                 style={{
                   bottom: "-150px",
@@ -58,7 +58,7 @@ const Suggestions = () => {
 
               {/* Desktop üçün böyük şəkil */}
               <img
-                src={SugselHuge}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899498/SugselHUge_dkplvk.svg"
                 alt="Selnaz Huge"
                 className="absolute bottom-[-164px] w-[200px] h-[299px] hidden md:block right-[-85px] z-20"
                 data-aos="fade-right"

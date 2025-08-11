@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RobotChat from "../../../Widgets/RobotChat";
-import SelnazHomeHuge from "../../../assets/images/selnazHomeHuge.png";
-import SelnazHome from "../../../assets/images/selnazHome.svg";
 import Vector from "../../../assets/images/Vector.svg";
 
 export default function SelnazMsg() {

@@ -1,7 +1,5 @@
 import React from "react";
 
-import Photo from "../../assets/images/6.svg";
-import PhotoH from "../../assets/images/6h.svg";
 import Photo2 from "../../assets/images/5.svg";
 import Photo2H from "../../assets/images/5H.svg";
 
@@ -33,14 +31,14 @@ const Selnazsolutions = () => {
           <div className="">
             <img
               className="w-[358px] md:hidden  h-[322px]"
-              src={Photo}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899479/6_xhiptu.svg"
               alt=""
             />
           </div>
           <div className="">
             <img
               className="md:w-[600px] md:h-[551px] hidden md:block  h-[322px]"
-              src={PhotoH}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899481/6h_idmkhp.svg"
               alt=""
             />
           </div>
@@ -62,7 +60,7 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src={Photo2}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899477/5_sjuxy2.svg"
               alt=""
             />
           </div>
@@ -70,7 +68,7 @@ const Selnazsolutions = () => {
             <div>
               <img
                 className="w-[358px] md:w-[600px] md:h-[551px]  hidden md:block h-[322px]"
-                src={Photo2H}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899478/5H_ftmpfi.svg"
                 alt=""
               />
             </div>
@@ -95,14 +93,14 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src={Photo3}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899476/4_hvojwo.svg"
               alt=""
             />
           </div>
           <div>
             <img
               className="w-[358px] md:w-[600px] md:h-[551px]  hidden md:block h-[322px]"
-              src={Photo3H}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899477/4h_afw4jl.svg"
               alt=""
             />
           </div>
@@ -124,14 +122,14 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src={Photo4}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899475/3_kvgkr5.svg"
               alt=""
             />
           </div>
           <div>
             <img
               className="w-[358px] md:w-[600px] md:h-[551px]  hidden md:block h-[322px]"
-              src={Photo4H}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899476/3H_xzss7h.svg"
               alt=""
             />
           </div>
@@ -153,14 +151,14 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src={Photo5}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899475/2_veoluo.svg"
               alt=""
             />
           </div>
           <div>
             <img
               className="w-[358px]  md:w-[600px] md:h-[551px] hidden md:block h-[322px]"
-              src={Photo5H}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899475/2h_mctmu2.svg"
               alt=""
             />
           </div>
@@ -182,14 +180,14 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src={Photo6}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899474/1_snl4sm.svg"
               alt=""
             />
           </div>
           <div>
             <img
               className="w-[358px]  md:w-[600px] md:h-[551px] hidden md:block h-[322px]"
-              src={Photo6H}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899475/1h_guldgg.svg"
               alt=""
             />
           </div>

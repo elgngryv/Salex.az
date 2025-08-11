@@ -29,7 +29,7 @@ const About = () => {
               style={{ width: "150px", height: "180px" }}>
               {/* Mobil üçün */}
               <img
-                src={SelnazHome}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/selnazHome_qfd76w.svg"
                 alt="Selnaz"
                 style={{
                   bottom: "-108px",
@@ -42,7 +42,7 @@ const About = () => {
 
               {/* Desktop üçün böyük şəkil */}
               <img
-                src={SelnazHomeHuge}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899404/selnazHomeHuge_ykxu2u.png"
                 alt="Selnaz Huge"
                 className="absolute bottom-[-164px] hidden md:block right-[-85px] z-20"
               />

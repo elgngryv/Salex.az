@@ -38,13 +38,13 @@ const AboutSel = () => {
           {/* Mobil şəkil */}
           <img
             className="absolute bottom-[170px]  right-[60px]  block md:hidden"
-            src={AboutImg}
+            src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899482/aboutImage_at9ysy.svg"
             alt="about"
           />
           {/* Desktop şəkil */}
           <img
             className="absolute bottom-[170px]  right-[50px] hidden md:block"
-            src={AboutImgHuge}
+            src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899480/aboutHuge_azzsvd.svg"
             alt="about"
           />
         </div>

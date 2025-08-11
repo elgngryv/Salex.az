@@ -41,7 +41,7 @@ const Solutions = () => {
               style={{ width: "150px", height: "180px" }}>
               {/* Mobil üçün */}
               <img
-                src={SelnazHome}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/Hellyollar%C4%B1_tdyhek.svg"
                 alt="Selnaz"
                 style={{
                   bottom: "-108px",
@@ -55,7 +55,7 @@ const Solutions = () => {
 
               {/* Desktop üçün böyük şəkil */}
               <img
-                src={SelnazHomeHuge}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899484/Hellyollar%C4%B1Huge_zhvpne.svg"
                 alt="Selnaz Huge"
                 className="absolute bottom-[-138px] hidden md:block right-[-75px] z-20"
                 data-aos="fade-right"

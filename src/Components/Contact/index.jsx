@@ -31,7 +31,7 @@ const Contact = () => {
               style={{ width: "150px", height: "180px" }}>
               {/* Mobil üçün */}
               <img
-                src={SelnazHome}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/SelnazContact_u3ofcv.svg"
                 alt="Selnaz"
                 style={{
                   bottom: "-150px",
@@ -47,7 +47,7 @@ const Contact = () => {
                 style={{
                   pointerEvents: "none", // <-- Əlavə et
                 }}
-                src={SelnazHuge}
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899482/ELageHuge_pulqgo.svg"
                 alt="Selnaz Huge"
                 className="absolute bottom-[-164px] w-[700px] h-[300px]   hidden md:block right-[-85px] z-20"
               />
