@@ -6,7 +6,7 @@ const HomeSvg = () => {
     <div className="relative hidden md:block w-full mb-[250px] ">
       {/* SVG sağ aşağı küncdə */}
       <img
-        src={HomeSvgEffect}
+        src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/homeEffect_ceebcl.svg"
         alt="HomeSvgEffect"
         className="absolute right-[120px] bottom-[-255px]  w-[1106px]"
       />

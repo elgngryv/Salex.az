@@ -99,7 +99,7 @@ export default function SelnazMsg() {
           <div className="relative w-[150px] h-[180px]">
             {/* Mobile image */}
             <img
-              src={SelnazHome}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/selnazHome_qfd76w.svg"
               alt="Selnaz"
               className="absolute z-20 block md:hidden cursor-auto"
               style={{
@@ -112,7 +112,7 @@ export default function SelnazMsg() {
             />
             {/* Desktop image */}
             <img
-              src={SelnazHomeHuge}
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899404/selnazHomeHuge_ykxu2u.png"
               alt="Selnaz Huge"
               className="absolute bottom-[-164px] hidden md:block right-[-85px] z-20"
               data-aos="fade-right"

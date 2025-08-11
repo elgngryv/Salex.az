@@ -51,7 +51,11 @@ const SalexCRM = () => {
         {/* Sağ tərəf: CRM şəkli */}
         <div className="mt-6 md:mt-0  md:w-[613px]  flex justify-center md:justify-end">
           <div className="border md:min-w-[613px] rounded-[24px] border-white w-full  h-auto">
-            <img className="w-full   md:w-[613px] h-auto" src={CRM} alt="CRM" />
+            <img
+              className="w-full   md:w-[613px] h-auto"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899483/Crm_yyxroa.svg"
+              alt="CRM"
+            />
           </div>
         </div>
       </div>

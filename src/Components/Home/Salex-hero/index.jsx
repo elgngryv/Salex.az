@@ -14,32 +14,38 @@ import Photo6 from "../../../assets/images/1.svg";
 const slides = [
   {
     text: "Canlı qarşılayır, tanıyır, yönləndirir",
-    image: Photo,
+    image:
+      "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899479/6_xhiptu.svg",
     hasBreak: false,
   },
   {
     text: "Emosional ehtiyacı anlayır və uyğun cavab verir",
-    image: Photo2,
+    image:
+      "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899477/5_sjuxy2.svg",
     hasBreak: false,
   },
   {
     text: "Real vaxtda davranış analizi aparır",
-    image: Photo3,
+    image:
+      "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899476/4_hvojwo.svg",
     hasBreak: false,
   },
   {
     text: "Bütün mesajları birləşdirir",
-    image: Photo4,
+    image:
+      "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899475/3_kvgkr5.svg",
     hasBreak: true,
   },
   {
     text: "Data əsaslı geri dönüşlər edir",
-    image: Photo5,
+    image:
+      "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899475/2_veoluo.svg",
     hasBreak: true,
   },
   {
     text: "CRM ilə təbrik, kampaniya və xatırlatma göndərir",
-    image: Photo6,
+    image:
+      "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899474/1_snl4sm.svg",
     hasBreak: false,
   },
 ];
@@ -78,7 +84,7 @@ const SalexHero = () => {
     <div className="px-4 mt-[74px] overflow-hidden">
       <Slider {...settings}>
         {slides.map((item, index) => (
-          <div key={index} className="px-2 w-[390px]  md:w-[434px] " >
+          <div key={index} className="px-2 w-[390px]  md:w-[434px] ">
             <div className="border border-white/30  rounded-[20px] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150 p-[24px] flex flex-col items-center justify-center min-h-[400px]">
               <div className="flex w-[310px] mb-3 dark:text-[#E1DCE6] text-[#3D246A]">
                 <h2 className="font-semibold openSans dark:text-[#E1DCE6] text-xl">
