@@ -49,7 +49,11 @@ const Header = () => {
             }`}
             style={{ pointerEvents: collapsed ? "none" : "auto" }}>
             <img
-              src={theme === "dark" ? FooterDarkLogo : Headerlogo}
+              src={
+                theme === "dark"
+                  ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899482/Footer-logo_j56opi.svg"
+                  : "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/logo_xzeulg.svg"
+              }
               alt="Headerlogo"
             />
           </Link>
@@ -79,21 +83,15 @@ const Header = () => {
             {/* Mobil görünüş */}
             <div className="flex items-center gap-4 lg:hidden">
               {/* Daxil ol düyməsi */}
-              <button className="bg-[#3D246A] font-semibold text-base montserrat text-white px-6 py-3 rounded-[24px] whitespace-nowrap"
+              <button
+                className="bg-[#3D246A] font-semibold text-base montserrat text-white px-6 py-3 rounded-[24px] whitespace-nowrap"
                 onClick={() =>
-                window.open(
-                  "https://docs.google.com/forms/d/1EusUYjYDL-9nf-LYiI2g_TlpM5ZyZEGwSfRaJXwejq8/edit",
-                  "_blank"
-                )
-              }
-              
-              
-              >
-
-                
+                  window.open(
+                    "https://docs.google.com/forms/d/1EusUYjYDL-9nf-LYiI2g_TlpM5ZyZEGwSfRaJXwejq8/edit",
+                    "_blank"
+                  )
+                }>
                 Qeydiyyat
-
-
               </button>
 
               {/* AZ + Dropdown ox + Hamburger */}
