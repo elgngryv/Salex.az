@@ -88,7 +88,7 @@ const Contact = () => {
                 {isChatOpen && (
                   <div
                     ref={chatRef}
-                    className="fixed z-50 md:bottom-[-490px] md:right-[-140px] bottom-[-500px] right-[-30px]"
+                    className="fixed z-50 md:bottom-[-470px] md:right-[-140px] bottom-[-470px] right-[-30px]"
                     style={{
                       width: "320px",
                       height: "420px",

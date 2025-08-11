@@ -101,7 +101,7 @@ const Solutions = () => {
               {isChatOpen && (
                 <div
                   ref={chatRef}
-                  className="fixed z-50 md:bottom-[-550px] md:right-[-140px] bottom-[-500px] right-[-30px]"
+                  className="fixed z-50 md:bottom-[-520px] md:right-[-140px] bottom-[-495px] right-[-30px]"
                   style={{
                     width: "320px",
                     height: "420px",

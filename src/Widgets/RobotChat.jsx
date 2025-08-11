@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import SockJS from "sockjs-client";
 import { Client } from "@stomp/stompjs";
 import axios from "axios";
-import { Mic, Send, X } from "lucide-react";
+import { Mic, Send, X, Trash2 } from "lucide-react";
 import { v4 as uuidv4 } from "uuid";
 import ReactMarkdown from "react-markdown";
 import { useChatStore } from "../../Stores/chat-store";
@@ -24,11 +24,13 @@ export default function RobotChat({
   const [loading, setLoading] = useState(false);
   const [receiverId, setReceiverId] = useState(null);
   const [isTyping, setIsTyping] = useState(false);
+  const [showConfirm, setShowConfirm] = useState(false);
 
-  // Zustand store for messages (no localStorage persistence)
+  // Zustand store for messages
   const messages = useChatStore((s) => s.messages);
   const setMessages = useChatStore((s) => s.setMessages);
   const addMessage = useChatStore((s) => s.addMessage);
+  const clearMessages = useChatStore((s) => s.clearMessages);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -59,7 +61,7 @@ export default function RobotChat({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Token handling (unchanged, still uses localStorage for token)
+  // Token handling
   useEffect(() => {
     const localToken = localStorage.getItem("token");
     if (!localToken) {
@@ -135,7 +137,6 @@ export default function RobotChat({
       },
       onConnect: () => {
         setConnected(true);
-        // Send any pending queued message immediately after we connect
         if (pendingQueuedRef.current && pendingQueuedRef.current.trim()) {
           sendMessageWithText(pendingQueuedRef.current);
           pendingQueuedRef.current = null;
@@ -187,7 +188,6 @@ export default function RobotChat({
     setConnected(false);
   };
 
-  // Send message helper with explicit text (used by CTA queuedMessage as well)
   const sendMessageWithText = (text) => {
     const trimmed = (text || "").trim();
     if (!trimmed) return;
@@ -223,9 +223,6 @@ export default function RobotChat({
     setMessageContent("");
   };
 
-  // Handle queuedMessage from parent:
-  // - If connected, send immediately
-  // - If not connected yet, store and dispatch on connect
   useEffect(() => {
     if (!queuedMessage) return;
     if (connected) {
@@ -264,9 +261,30 @@ export default function RobotChat({
     </div>
   );
 
+  const handleClearMessages = async () => {
+    if (!showConfirm) {
+      setShowConfirm(true);
+      setTimeout(() => setShowConfirm(false), 3000);
+      return;
+    }
+
+    try {
+      const localToken = localStorage.getItem("token");
+      if (!localToken) return;
+
+      await axios.delete(`${API_URL}/message`, {
+        headers: { Authorization: `Bearer ${localToken}` },
+      });
+
+      clearMessages();
+      setShowConfirm(false);
+    } catch (error) {
+      console.error("Mesajları silərkən xəta:", error);
+    }
+  };
+
   return (
     <div className={`chat-container ${reverse ? "reverse" : ""}`}>
-      {/* Chat Header */}
       <div className="chat-header">
         <div className="chat-title">
           <div
@@ -276,17 +294,27 @@ export default function RobotChat({
             {connected ? "ONLINE" : "OFFLINE"}
           </div>
         </div>
-        {onClose && (
+        <div className="header-actions">
           <button
-            className="close-button"
-            onClick={onClose}
-            aria-label="Söhbəti bağla">
-            <X size={20} />
+            className={`action-button clear-button ${
+              showConfirm ? "confirm" : ""
+            }`}
+            onClick={handleClearMessages}
+            aria-label={showConfirm ? "Təsdiqlə" : "Bütün mesajları sil"}
+            title={showConfirm ? "Təsdiqlə" : "Bütün mesajları sil"}>
+            {showConfirm ? "Təsdiqlə?" : <Trash2 size={20} />}
           </button>
-        )}
+          {onClose && (
+            <button
+              className="close-button"
+              onClick={onClose}
+              aria-label="Söhbəti bağla">
+              <X size={20} />
+            </button>
+          )}
+        </div>
       </div>
 
-      {/* Messages Area */}
       <div className="messages-container" ref={messagesContainerRef}>
         <div className="messages">
           {Object.keys(groupedMessages).map((date) => (
@@ -318,7 +346,6 @@ export default function RobotChat({
             </div>
           ))}
 
-          {/* Loading indicator */}
           {loading && (
             <div className="message-item selnaz">
               <div className="message-bubble">
@@ -328,7 +355,6 @@ export default function RobotChat({
             </div>
           )}
 
-          {/* Typing indicator */}
           {isTyping && !loading && (
             <div className="message-item selnaz">
               <div className="message-bubble">
@@ -342,7 +368,6 @@ export default function RobotChat({
         </div>
       </div>
 
-      {/* Input Area */}
       <div className="input-container">
         <div className="input-wrapper">
           <textarea
@@ -404,11 +429,43 @@ export default function RobotChat({
           display: flex;
           justify-content: space-between;
           align-items: center;
+          position: relative;
         }
 
         .chat-title {
           display: flex;
           flex-direction: column;
+        }
+
+        .header-actions {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+        }
+
+        .clear-button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #4a5568;
+          padding: 8px;
+          border-radius: 20px;
+          transition: all 0.2s ease;
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: auto;
+        }
+
+        .clear-button:hover {
+          background: rgba(0, 0, 0, 0.05);
+          color: #f56565;
+        }
+
+        .clear-button.confirm {
+          color: #f56565;
+          font-weight: bold;
         }
 
         .close-button {

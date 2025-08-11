@@ -1,9 +1,8 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/page";
 import Header from "./Components/Layout/Header";
 import Footer from "./Components/Layout/Footer";
-// import FooterElem from "./Components/Layout/FooterElem";
 import SuggestionsPage from "./Pages/SuggestionsPage/page";
 import ContactPage from "./Pages/ContactPage/page";
 import AboutPage from "./Pages/AboutPage/page";
@@ -11,6 +10,17 @@ import SolutionsPage from "./Pages/SolutionsPage/page";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "./Components/theme-provider";
+
+// ScrollToTop komponenti App.jsx-in içinə əlavə olunur
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return null;
+}
 
 const AppContent = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || null);
@@ -40,13 +50,11 @@ const AppContent = () => {
 
   return (
     <ThemeProvider>
-  
       <div className="flex flex-col min-h-screen">
-        {/* Header yuxarıda */}
         <Header />
-
-        {/* Main hissə flex-grow ilə böyüyür */}
         <main className="flex-grow">
+          {/* ScrollToTop burada */}
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/SuggestionsPage" element={<SuggestionsPage />} />
@@ -55,10 +63,7 @@ const AppContent = () => {
             <Route path="/SolutionsPage" element={<SolutionsPage />} />
           </Routes>
         </main>
-
-        {/* Footer aşağıda yapışıq */}
         <Footer />
-        {/* <FooterElem /> */}
       </div>
     </ThemeProvider>
   );

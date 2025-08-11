@@ -94,11 +94,9 @@ const Header = () => {
                 Qeydiyyat
               </button>
 
-              {/* AZ + Dropdown ox + Hamburger */}
               <div
                 className="flex dark:text-[#E1DCE6] items-center gap-2 cursor-pointer select-none"
                 onClick={() => setCollapsed(!collapsed)}>
-                <span className="font-semibold text-[#3D246A]">AZ</span>
                 <GoChevronDown
                   size={20}
                   className={`text-[#3D246A] transition-transform duration-300 ${
@@ -120,8 +118,6 @@ const Header = () => {
                transition-all duration-300">
                 {theme === "dark" ? "🌙 " : "☀️ "}
               </button>
-              <span>AZ</span>
-              <GoChevronDown size={20} />
             </div>
 
             <button

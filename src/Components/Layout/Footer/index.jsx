@@ -2,8 +2,11 @@ import React from "react";
 import FooterLogo from "../../../assets/images/Footer-logo.svg";
 import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import Selnaz from "../../../assets/images/selnazHome.svg";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="flex justify-center relative top-[80px]  md:top-[80px] mb-10">
@@ -17,15 +20,26 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-center text-center">
             <h2 className="font-montserrat font-semibold md:text-[40px]  dark:text-[#E1DCE6] md:w-[845px] md:leading-[100%] text-xl">
-              Sən də <span className="font-bold dark:text-[#E1DCE6] text-[#5B2E91]">Selnaz</span>{" "}
+              Sən də{" "}
+              <span className="font-bold dark:text-[#E1DCE6] text-[#5B2E91]">
+                Selnaz
+              </span>{" "}
               ilə canlı satışın rəqəmsal gücünü hiss etməyə hazırsan?
             </h2>
             <h2 className="font-openSans mt-2 text-base font-normal dark:text-[#E1DCE6] md:text-[18px]">
               AI ilə satışları avtomatlaşdır, amma insan toxunuşunu itirmə.
             </h2>
             <div className="font-montserrat mt-4 md:flex items-center gap-2">
-              <h2 className="font-semibold text-lg dark:text-[#E1DCE6]">Satışlarını Artırmağa</h2>
-              <button className="bg-[#3D246A] dark:text-[#E1DCE6] py-3 px-6 rounded-full text-white text-base font-semibold">
+              <h2 className="font-semibold text-lg dark:text-[#E1DCE6]">
+                Satışlarını Artırmağa
+              </h2>
+              <button
+                className="bg-[#3D246A] py-3 px-[24px] cursor-pointer dark:text-[#E1DCE6] rounded-[24px] text-white text-base font-semibold"
+                type="button"
+                style={{ zIndex: 9999, position: "relative" }}
+                onClick={() => {
+                  navigate("/SuggestionsPage");
+                }}>
                 Başla
               </button>
             </div>
