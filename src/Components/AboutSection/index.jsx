@@ -2,7 +2,7 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <div className="p-[42px] md:px-[362px]">
+    <div className="p-[42px] mt-[40px] md:px-[362px]">
       <div className="border p-[20px] leading-[100%] md:w-[717px]  border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px]   relative z-10">
         <div className="openSans px-4 md:max-w-[717px] md:p-[42px] md:mx-auto md:text-[16px] md:leading-[28px]">
           <div className="mb-4">

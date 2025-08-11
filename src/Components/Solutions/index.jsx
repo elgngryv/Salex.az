@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import SelnazHome from "../../assets/images/solutionssel.svg";
 import Vector from "../../assets/images/Vector.svg";
 import SelnazHomeHuge from "../../assets/images/HellyollarıHuge.svg";
@@ -8,12 +8,37 @@ import RobotChat from "../../Widgets/RobotChat";
 
 const Solutions = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const chatRef = useRef(null);
+
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
   }, []);
+
   const toggleChat = () => {
     setIsChatOpen((prev) => !prev);
   };
+
+  const closeChat = () => {
+    setIsChatOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isChatOpen &&
+        chatRef.current &&
+        !chatRef.current.contains(event.target)
+      ) {
+        closeChat();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isChatOpen]);
+
   return (
     <div>
       <div className="w-full flex items-center justify-center relative">
@@ -22,7 +47,6 @@ const Solutions = () => {
           data-aos="zoom-out-down"
           data-aos-delay="500">
           <div className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]">
-            {/* Salam mesajı */}
             <div
               className="flex items-center openSans  w-fit h-fit  px-[8px] py-[6px] gap-[10px] rounded-[8px]"
               data-aos="fade-up"
@@ -34,12 +58,10 @@ const Solutions = () => {
             </div>
           </div>
 
-          {/* Şəkillər və button */}
           <div className="fixed z-50" style={{ bottom: "0px", right: "0px" }}>
             <div
               className="relative"
               style={{ width: "150px", height: "180px" }}>
-              {/* Mobil üçün */}
               <img
                 src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/Hellyollar%C4%B1_tdyhek.svg"
                 alt="Selnaz"
@@ -53,7 +75,6 @@ const Solutions = () => {
                 data-aos-delay="100"
               />
 
-              {/* Desktop üçün böyük şəkil */}
               <img
                 src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899484/Hellyollar%C4%B1Huge_zhvpne.svg"
                 alt="Selnaz Huge"
@@ -62,34 +83,56 @@ const Solutions = () => {
                 data-aos-delay="100"
               />
 
-              {/* Button */}
-              <button
-                onClick={toggleChat}
-                className="absolute md:w-[110px] md:h-[110px] z-30 flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-122px] right-[-40px] md:bottom-[-220px] md:right-[-64px]"
-                style={{ backgroundColor: "#5B2E91" }}
-                data-aos="fade-left"
-                data-aos-delay="250">
-                <img
-                  src={Vector}
-                  alt="Vector"
-                  className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
-                />
-              </button>
-              {/* RobotChat Pəncərəsi */}
+              {!isChatOpen && (
+                <button
+                  onClick={toggleChat}
+                  className="absolute md:w-[110px] md:h-[110px] z-30 flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-122px] right-[-40px] md:bottom-[-220px] md:right-[-64px]"
+                  style={{ backgroundColor: "#5B2E91" }}
+                  data-aos="fade-left"
+                  data-aos-delay="250">
+                  <img
+                    src={Vector}
+                    alt="Vector"
+                    className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
+                  />
+                </button>
+              )}
+
               {isChatOpen && (
                 <div
-                  className="fixed z-50 md:bottom-[-300px] md:right-[60px] right-[30px] "
+                  ref={chatRef}
+                  className="fixed z-50 md:bottom-[-550px] md:right-[-140px] bottom-[-500px] right-[-30px]"
                   style={{
-                    bottom: "-500px",
                     width: "320px",
                     height: "420px",
                     boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
                     borderRadius: "16px",
                     backgroundColor: "white",
                     overflow: "hidden",
+                  
                     display: "flex",
                     flexDirection: "column",
                   }}>
+                  <div className="flex justify-between items-center p-2 bg-[#5B2E91]">
+                    <div className="text-white font-semibold px-2">Selnaz</div>
+                    <div
+                      className="cursor-pointer p-1 rounded-full hover:bg-purple-700"
+                      onClick={closeChat}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </div>
+                  </div>
                   <RobotChat />
                 </div>
               )}

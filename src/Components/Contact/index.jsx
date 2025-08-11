@@ -1,21 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import SelnazHome from "../../assets/images/SelnazContact.svg";
 import SelnazHuge from "../../assets/images/ELageHuge.svg";
 import Vector from "../../assets/images/Vector.svg";
 import RobotChat from "../../Widgets/RobotChat";
+
 const Contact = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const chatRef = useRef(null);
 
   const toggleChat = () => {
     setIsChatOpen((prev) => !prev);
   };
+
+  const closeChat = () => {
+    setIsChatOpen(false);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isChatOpen &&
+        chatRef.current &&
+        !chatRef.current.contains(event.target)
+      ) {
+        closeChat();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isChatOpen]);
+
   return (
-    <div className="  md:px-[52px]">
-      {/* Mesaj qutusu */}
+    <div className="md:px-[52px]">
       <div className="w-full flex items-center justify-center relative">
         <div className="w-[290px] md:w-[477px] openSans mt-[10px] border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10">
           <div className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]">
-            {/* Salam mesajı */}
             <div className="flex items-center openSans  w-fit h-fit  px-[8px] py-[6px] gap-[10px] rounded-[8px]">
               <span className="text-[14px] text-[#3D246A] md:text-xl font-normal md:font-thin dark:text-[#E1DCE6] leading-[140%]">
                 Ehtiyacına uyğun planı seç — gizli ödənişlər yoxdur, yalnız
@@ -24,12 +46,10 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Şəkillər və button */}
           <div className="fixed z-50" style={{ bottom: "0px", right: "0px" }}>
             <div
               className="relative"
               style={{ width: "150px", height: "180px" }}>
-              {/* Mobil üçün */}
               <img
                 src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/SelnazContact_u3ofcv.svg"
                 alt="Selnaz"
@@ -42,44 +62,61 @@ const Contact = () => {
                 className="absolute z-20 block md:hidden"
               />
 
-              {/* Desktop üçün böyük şəkil */}
               <img
-                style={{
-                  pointerEvents: "none", // <-- Əlavə et
-                }}
+                style={{ pointerEvents: "none" }}
                 src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899482/ELageHuge_pulqgo.svg"
                 alt="Selnaz Huge"
-                className="absolute bottom-[-164px] w-[700px] h-[300px]   hidden md:block right-[-85px] z-20"
+                className="absolute bottom-[-164px] w-[700px] h-[300px] hidden md:block right-[-85px] z-20"
               />
 
               <div className="relative">
-                {/* Button */}
-                <button
-                  onClick={toggleChat}
-                  className="absolute z-10 cursor-pointer md:w-[110px] md:h-[110px] flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-296px] right-[-40px] md:bottom-[-320px] md:right-[-78px]"
-                  style={{ backgroundColor: "#5B2E91" }}>
-                  <img
-                    src={Vector}
-                    alt="Vector"
-                    className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
-                    style={{ pointerEvents: "none" }}
-                  />
-                </button>
-                {/* RobotChat Pəncərəsi */}
+                {!isChatOpen && (
+                  <button
+                    onClick={toggleChat}
+                    className="absolute z-10 cursor-pointer md:w-[110px] md:h-[110px] flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-296px] right-[-40px] md:bottom-[-320px] md:right-[-78px]"
+                    style={{ backgroundColor: "#5B2E91" }}>
+                    <img
+                      src={Vector}
+                      alt="Vector"
+                      className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
+                      style={{ pointerEvents: "none" }}
+                    />
+                  </button>
+                )}
+
+                {/* RobotChat açıq olanda */}
                 {isChatOpen && (
                   <div
-                    className="fixed z-50 md:bottom-[-300px] md:right-[60px] right-[30px] "
+                    ref={chatRef}
+                    className="fixed z-50 md:bottom-[-490px] md:right-[-140px] bottom-[-500px] right-[-30px]"
                     style={{
-                      bottom: "-500px",
                       width: "320px",
                       height: "420px",
                       boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
                       borderRadius: "16px",
                       backgroundColor: "white",
                       overflow: "hidden",
+
                       display: "flex",
                       flexDirection: "column",
                     }}>
+                    <div
+                      className="flex justify-end p-2 cursor-pointer"
+                      onClick={closeChat}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </div>
                     <RobotChat />
                   </div>
                 )}
@@ -90,107 +127,63 @@ const Contact = () => {
       </div>
       <div className="p-4">
         <div className="flex items-start mt-[50px] justify-start w-[256px]">
-          <h2 className="text-[#3D246A] dark:text-[#E1DCE6]  text-[26px] font-bold montserrat">
+          <h2 className="text-[#3D246A] dark:text-[#E1DCE6] text-[26px] font-bold montserrat">
             Bizimlə Əlaqə
           </h2>
         </div>
       </div>
       <div className="p-4 openSans">
-        <div className="md:flex md:gap-[40px] ">
+        <div className="md:flex md:gap-[40px]">
           <div>
-            {/* AD */}
             <div className="relative w-full md:w-[476.5px] mt-6">
               <input
                 type="text"
                 id="ad"
-                placeholder=" "
+                placeholder="AD"
                 className="peer w-full px-[20px] py-4 text-[#3D246A] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
-              <label
-                htmlFor="ad"
-                className="absolute left-[20px] top-[14px] text-sm text-[#3D246A] dark:text-[#E1DCE6] font-light bg-white/10 px-1 transition-all duration-200
-          peer-placeholder-shown:top-[14px] peer-placeholder-shown:text-sm
-          peer-focus:-top-5 peer-focus:text-xs peer-focus:bg-white/10
-          peer-focus:px-1 peer-focus:rounded-md">
-                AD
-              </label>
             </div>
 
-            {/* SOYAD */}
             <div className="relative md:w-[476.5px] w-full mt-6">
               <input
                 type="text"
                 id="soyad"
-                placeholder=" "
+                placeholder="SOYAD "
                 className="peer w-full px-[20px] py-4 text-[#3D246A] dark:text-[#E1DCE6] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
-              <label
-                htmlFor="soyad"
-                className="absolute left-[20px] top-[14px] text-sm dark:text-[#E1DCE6] text-[#3D246A] font-light bg-white/10 px-1 transition-all duration-200
-          peer-placeholder-shown:top-[14px] peer-placeholder-shown:text-sm
-          peer-focus:-top-5 peer-focus:text-xs peer-focus:bg-white/10
-          peer-focus:px-1 peer-focus:rounded-md">
-                Soyad
-              </label>
             </div>
 
-            {/* EMAIL */}
             <div className="relative md:w-[476.5px] w-full mt-6">
               <input
                 type="email"
                 id="email"
-                placeholder=" "
+                placeholder="Email "
                 className="peer w-full px-[20px] py-4 dark:text-[#E1DCE6] text-[#3D246A] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
-              <label
-                htmlFor="email"
-                className="absolute left-[20px] top-[14px] dark:text-[#E1DCE6] text-sm text-[#3D246A] font-light bg-white/10 px-1 transition-all duration-200
-          peer-placeholder-shown:top-[14px] peer-placeholder-shown:text-sm
-          peer-focus:-top-5 peer-focus:text-xs peer-focus:bg-white/10
-          peer-focus:px-1 peer-focus:rounded-md">
-                Email
-              </label>
             </div>
 
-            {/* MOBİL */}
             <div className="relative md:w-[476.5px] w-full mt-6">
               <input
                 type="tel"
                 id="mobil"
-                placeholder=" "
+                placeholder="Mobil Nömrə"
                 className="peer w-full px-[20px] dark:text-[#E1DCE6] py-4 text-[#3D246A] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
-              <label
-                htmlFor="mobil"
-                className="absolute left-[20px] top-[14px] text-sm dark:text-[#E1DCE6] text-[#3D246A] font-light bg-white/10 px-1 transition-all duration-200
-          peer-placeholder-shown:top-[14px] peer-placeholder-shown:text-sm
-          peer-focus:-top-5 peer-focus:text-xs peer-focus:bg-white/10
-          peer-focus:px-1 peer-focus:rounded-md">
-                Mobil nömrə
-              </label>
             </div>
           </div>
 
           <div>
-            <div className="relative md:w-[659px]  w-full mt-6">
+            <div className="relative md:w-[659px] w-full mt-6">
               <textarea
                 id="mesaj"
-                placeholder=" "
+                placeholder="Mesaj "
                 rows={6}
                 className="peer w-full px-[20px] py-4 md:py-[90px] dark:text-[#E1DCE6] text-[#3D246A] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
-              <label
-                htmlFor="mesaj"
-                className="absolute left-[20px] top-[14px] text-sm dark:text-[#E1DCE6] text-[#3D246A] font-light bg-white/10 px-1 transition-all duration-200
-      peer-placeholder-shown:top-[14px] peer-placeholder-shown:text-sm
-      peer-focus:-top-5 peer-focus:text-xs peer-focus:bg-white/10
-      peer-focus:px-1 peer-focus:rounded-md">
-                Mesaj
-              </label>
             </div>
           </div>
         </div>
-        <div className="montserrat mt-4 ">
-          <button className="bg-[#3D246A] md:w-[110px] md:px-[24px] dark:text-[#E1DCE6] md:py-3 md:text-base  py-4 px-[140.5px] w-full rounded-[24px]  text-white text-xl font-semibold">
+        <div className="montserrat mt-4">
+          <button className="bg-[#3D246A] md:w-[110px] md:px-[24px] dark:text-[#E1DCE6] md:py-3 md:text-base py-4 px-[140.5px] w-full rounded-[24px] text-white text-xl font-semibold">
             Göndər
           </button>
         </div>
