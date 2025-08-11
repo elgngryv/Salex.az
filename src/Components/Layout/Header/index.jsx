@@ -48,10 +48,10 @@ const Header = () => {
               collapsed ? "opacity-0" : "opacity-100"
             }`}
             style={{ pointerEvents: collapsed ? "none" : "auto" }}>
-   <img
-    src={theme === "dark" ? FooterDarkLogo : Headerlogo}
-    alt="Headerlogo"
-  />
+            <img
+              src={theme === "dark" ? FooterDarkLogo : Headerlogo}
+              alt="Headerlogo"
+            />
           </Link>
 
           {/* Desktop menu */}
@@ -79,8 +79,21 @@ const Header = () => {
             {/* Mobil görünüş */}
             <div className="flex items-center gap-4 lg:hidden">
               {/* Daxil ol düyməsi */}
-              <button className="bg-[#3D246A] font-semibold text-base montserrat text-white px-6 py-3 rounded-[24px] whitespace-nowrap">
+              <button className="bg-[#3D246A] font-semibold text-base montserrat text-white px-6 py-3 rounded-[24px] whitespace-nowrap"
+                onClick={() =>
+                window.open(
+                  "https://docs.google.com/forms/d/1EusUYjYDL-9nf-LYiI2g_TlpM5ZyZEGwSfRaJXwejq8/edit",
+                  "_blank"
+                )
+              }
+              
+              
+              >
+
+                
                 Qeydiyyat
+
+
               </button>
 
               {/* AZ + Dropdown ox + Hamburger */}

@@ -1,25 +1,34 @@
-"use client";
-
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import SockJS from "sockjs-client";
 import { Client } from "@stomp/stompjs";
 import axios from "axios";
-import { Mic, Send } from "lucide-react";
+import { Mic, Send, X } from "lucide-react";
 import { v4 as uuidv4 } from "uuid";
 import ReactMarkdown from "react-markdown";
+import { useChatStore } from "../../Stores/chat-store";
 
-const RobotChat = ({ reverse = false, token }) => {
+export default function RobotChat({
+  reverse = false,
+  token,
+  onClose,
+  queuedMessage = null,
+}) {
   const client = useRef(null);
   const messagesEndRef = useRef(null);
   const textareaRef = useRef(null);
   const messagesContainerRef = useRef(null);
+  const pendingQueuedRef = useRef(null);
 
   const [connected, setConnected] = useState(false);
-  const [messages, setMessages] = useState([]);
   const [messageContent, setMessageContent] = useState("");
   const [loading, setLoading] = useState(false);
   const [receiverId, setReceiverId] = useState(null);
   const [isTyping, setIsTyping] = useState(false);
+
+  // Zustand store for messages (no localStorage persistence)
+  const messages = useChatStore((s) => s.messages);
+  const setMessages = useChatStore((s) => s.setMessages);
+  const addMessage = useChatStore((s) => s.addMessage);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -30,6 +39,16 @@ const RobotChat = ({ reverse = false, token }) => {
     }
   }, [messageContent]);
 
+  // Scroll to bottom when messages change
+  useEffect(() => {
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTo({
+        top: messagesContainerRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+  }, [messages]);
+
   // Initialize chat
   useEffect(() => {
     fetchMessages();
@@ -37,33 +56,29 @@ const RobotChat = ({ reverse = false, token }) => {
     return () => {
       disconnect();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // useEffect 2-ni belə saxla:
+  // Token handling (unchanged, still uses localStorage for token)
   useEffect(() => {
     const localToken = localStorage.getItem("token");
-
     if (!localToken) {
       axios
         .get("https://api.selnaz.com:9098/selnaz")
         .then((res) => {
-          const token = res.data.token;
-          localStorage.setItem("token", token);
+          const t = res.data.token;
+          localStorage.setItem("token", t);
           window.location.reload();
         })
         .catch((err) => {
           console.error("Token alınmadı:", err);
         });
     }
-
-    return () => {
-      disconnect();
-    };
   }, []);
 
-  const parseJwt = (token) => {
+  const parseJwt = (tkn) => {
     try {
-      return JSON.parse(atob(token.split(".")[1]));
+      return JSON.parse(atob(tkn.split(".")[1]));
     } catch (e) {
       return null;
     }
@@ -78,32 +93,10 @@ const RobotChat = ({ reverse = false, token }) => {
       console.log("Token tapılmadı!");
       return;
     }
-    const getToken = () => {
-      let token = localStorage.getItem("guest_token");
-
-      if (!token) {
-        token = uuidv4();
-        localStorage.setItem("guest_token", token);
-      }
-
-      return token;
-    };
-
-    axios.get("https://api.selnaz.com:9098/selnaz", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    // istifadə:
-    const token = getToken();
-    console.log("Istifadəçi tokeni:", token);
-
     try {
       const res = await axios.get(`${API_URL}/message`, {
         headers: { Authorization: `Bearer ${localToken}` },
       });
-
       const transformed = res.data.map((msg) => ({
         id: msg.id,
         message: msg.message,
@@ -111,7 +104,6 @@ const RobotChat = ({ reverse = false, token }) => {
         uuid: msg.uuid,
         status: msg.status,
       }));
-
       setMessages(transformed);
     } catch (error) {
       console.error("Mesajları gətirərkən xəta:", error);
@@ -143,6 +135,11 @@ const RobotChat = ({ reverse = false, token }) => {
       },
       onConnect: () => {
         setConnected(true);
+        // Send any pending queued message immediately after we connect
+        if (pendingQueuedRef.current && pendingQueuedRef.current.trim()) {
+          sendMessageWithText(pendingQueuedRef.current);
+          pendingQueuedRef.current = null;
+        }
         client.current?.subscribe("/user/queue/chat", (msg) => {
           let content;
           if (msg.binaryBody) {
@@ -168,7 +165,7 @@ const RobotChat = ({ reverse = false, token }) => {
             status: "selnaz",
           };
 
-          setMessages((prev) => [...prev, selnazMessage]);
+          addMessage(selnazMessage);
           setLoading(false);
           setIsTyping(false);
         });
@@ -189,29 +186,30 @@ const RobotChat = ({ reverse = false, token }) => {
     client.current?.deactivate();
     setConnected(false);
   };
-  const sendMessage = () => {
-    if (!messageContent.trim()) return;
+
+  // Send message helper with explicit text (used by CTA queuedMessage as well)
+  const sendMessageWithText = (text) => {
+    const trimmed = (text || "").trim();
+    if (!trimmed) return;
 
     const localToken = localStorage.getItem("token");
     if (client.current && connected && localToken && receiverId) {
       const newMessage = {
         id: uuidv4(),
-        message: messageContent,
+        message: trimmed,
         timestamp: new Date().toISOString(),
         uuid: uuidv4(),
         status: "user",
       };
-
-      setMessages((prev) => [...prev, newMessage]); // <- BURANI ƏLAVƏ ET
+      addMessage(newMessage);
       setLoading(true);
-      setMessageContent("");
       setIsTyping(false);
 
       client.current.publish({
         destination: "/chat/send",
         headers: { token: `Bearer ${localToken}` },
         body: JSON.stringify({
-          message: messageContent,
+          message: trimmed,
           receiverId: receiverId,
         }),
       });
@@ -219,6 +217,24 @@ const RobotChat = ({ reverse = false, token }) => {
       console.log("Göndərmək mümkün olmadı.");
     }
   };
+
+  const sendMessage = () => {
+    sendMessageWithText(messageContent);
+    setMessageContent("");
+  };
+
+  // Handle queuedMessage from parent:
+  // - If connected, send immediately
+  // - If not connected yet, store and dispatch on connect
+  useEffect(() => {
+    if (!queuedMessage) return;
+    if (connected) {
+      sendMessageWithText(queuedMessage);
+    } else {
+      pendingQueuedRef.current = queuedMessage;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [queuedMessage, connected]);
 
   const formatDate = (timestamp) => {
     const date = new Date(timestamp);
@@ -260,6 +276,14 @@ const RobotChat = ({ reverse = false, token }) => {
             {connected ? "ONLINE" : "OFFLINE"}
           </div>
         </div>
+        {onClose && (
+          <button
+            className="close-button"
+            onClick={onClose}
+            aria-label="Söhbəti bağla">
+            <X size={20} />
+          </button>
+        )}
       </div>
 
       {/* Messages Area */}
@@ -337,14 +361,18 @@ const RobotChat = ({ reverse = false, token }) => {
             disabled={!connected}
           />
           <div className="input-actions">
-            <button className="action-button mic-button" type="button">
+            <button
+              className="action-button mic-button"
+              type="button"
+              aria-label="Səsli mesaj">
               <Mic size={20} />
             </button>
             <button
               className="action-button send-button"
               onClick={sendMessage}
               disabled={loading || !connected || !messageContent.trim()}
-              type="button">
+              type="button"
+              aria-label="Mesajı göndər">
               <Send size={20} />
             </button>
           </div>
@@ -373,17 +401,29 @@ const RobotChat = ({ reverse = false, token }) => {
           backdrop-filter: blur(10px);
           padding: 20px 24px;
           border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
 
-        .chat-title h3 {
-          margin: 0;
-          font-size: 24px;
-          font-weight: 600;
+        .chat-title {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .close-button {
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: #4a5568;
+          padding: 8px;
+          border-radius: 50%;
+          transition: all 0.2s ease;
+        }
+
+        .close-button:hover {
+          background: rgba(0, 0, 0, 0.05);
           color: #2d3748;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
         }
 
         .connection-status {
@@ -405,6 +445,8 @@ const RobotChat = ({ reverse = false, token }) => {
           overflow-y: auto;
           background: rgba(255, 255, 255, 0.95);
           backdrop-filter: blur(10px);
+          display: flex;
+          flex-direction: column;
         }
 
         .messages {
@@ -412,6 +454,8 @@ const RobotChat = ({ reverse = false, token }) => {
           display: flex;
           flex-direction: column;
           gap: 16px;
+          flex-grow: 1;
+          min-height: min-content;
         }
 
         .date-separator {
@@ -650,7 +694,7 @@ const RobotChat = ({ reverse = false, token }) => {
           background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
         }
 
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 768px) {
           .chat-container {
             height: 100vh;
@@ -658,32 +702,22 @@ const RobotChat = ({ reverse = false, token }) => {
             border-radius: 0;
             margin: 0;
           }
-
           .chat-header {
             padding: 16px 20px;
           }
-
-          .chat-title h3 {
-            font-size: 20px;
-          }
-
           .messages {
             padding: 16px 20px;
           }
-
           .message-bubble {
             max-width: 85%;
             padding: 12px 16px;
           }
-
           .input-container {
             padding: 16px 20px;
           }
-
           .input-wrapper {
             padding: 10px 14px;
           }
-
           .action-button {
             width: 36px;
             height: 36px;
@@ -695,15 +729,12 @@ const RobotChat = ({ reverse = false, token }) => {
             max-width: 90%;
             padding: 10px 14px;
           }
-
           .chat-header {
             padding: 12px 16px;
           }
-
           .messages {
             padding: 12px 16px;
           }
-
           .input-container {
             padding: 12px 16px;
           }
@@ -713,22 +744,17 @@ const RobotChat = ({ reverse = false, token }) => {
         .messages-container::-webkit-scrollbar {
           width: 6px;
         }
-
         .messages-container::-webkit-scrollbar-track {
           background: rgba(0, 0, 0, 0.05);
         }
-
         .messages-container::-webkit-scrollbar-thumb {
           background: rgba(102, 126, 234, 0.3);
           border-radius: 3px;
         }
-
         .messages-container::-webkit-scrollbar-thumb:hover {
           background: rgba(102, 126, 234, 0.5);
         }
       `}</style>
     </div>
   );
-};
-
-export default RobotChat;
+}
