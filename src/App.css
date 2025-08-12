@@ -10,6 +10,7 @@
 
 body {
   background-color: #e1dce6;
+
 }
 /* 
 * {
@@ -24,6 +25,7 @@ body {
   overflow-x: hidden;
     scroll-behavior: smooth;
   overflow-y: auto; 
+  height: 100vh;
 }
 
 /* Dark mode styles */

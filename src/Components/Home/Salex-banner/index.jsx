@@ -25,10 +25,7 @@ const SalexBanner = () => {
           </h2>
         </div>
 
-        <div
-          className="flex items-start mt-3 md:w-[681px] justify-start w-[256px]"
-          data-aos="fade-up"
-          data-aos-delay="600">
+        <div className="flex items-start mt-3 md:w-[681px] justify-start w-[256px]">
           <h2 className="font-normal md:text-[22px] dark:text-[#E1DCE6] text-base md:leading-[140%] text-[#3D246A] openSans">
             SaleX, süni intellekt əsaslı rəqmsal satış meneceri{" "}
             <span className="font-semibold md:text-[22px] dark:text-[#E1DCE6]">
@@ -46,13 +43,10 @@ const SalexBanner = () => {
       <div className="montserrat flex gap-2.5 items-center mt-4">
         <h2
           className="font-semibold text-lg md:text-[22px] dark:text-[#E1DCE6] text-[#3D246A]"
-          data-aos="fade-up"
-          data-aos-delay="700">
+       >
           Satışlarını Artırmağa
         </h2>
         <button
-          data-aos="fade-up"
-          data-aos-delay="800"
           className="bg-[#3D246A] py-3 px-[24px] cursor-pointer dark:text-[#E1DCE6] rounded-[24px] text-white text-base font-semibold"
           type="button"
           style={{ zIndex: 10, position: "relative" }}
