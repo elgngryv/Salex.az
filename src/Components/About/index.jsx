@@ -44,8 +44,9 @@ const About = () => {
               </span>
             </div>
           </div>
-
-          <div className="fixed z-50" style={{ bottom: 20, right: 20 }}>
+        </div>
+        <div className="fixed">
+          <div className="  absolute z-80" style={{ bottom: 100, right: 20 }}>
             <div
               className="relative"
               style={{ width: "150px", height: "180px" }}>
