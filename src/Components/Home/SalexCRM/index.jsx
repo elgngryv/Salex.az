@@ -4,7 +4,7 @@ import Done from "../../../assets/images/material-symbols_done-rounded.svg";
 
 const SalexCRM = () => {
   return (
-    <div className="p-4 mb-[74px] md:px-[52px]">
+    <div className="p-4 mb-[74px]  md:container md:mx-auto md:max-w-[1336px]">
       <div className="text-[#3D246A] md:flex md:flex-row-reverse md:items-start md:justify-between md:max-w-[1613px] md:container md:mx-auto md:gap-[100px]">
         {/* Sol tərəf: Mətn və list */}
         <div className="md:w-1/2 md:flex md:flex-col md:mt-[94.27px]">

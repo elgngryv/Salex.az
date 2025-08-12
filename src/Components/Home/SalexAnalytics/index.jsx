@@ -4,7 +4,7 @@ import Done from "../../../assets/images/material-symbols_done-rounded.svg";
 
 const SalexAnalytics = () => {
   return (
-    <div className="p-4 mb-[74px] md:p-[52px]">
+    <div className="p-4 mb-[74px] md:container md:mx-auto md:max-w-[1336px] ">
       <div className="text-[#3D246A] flex flex-col md:flex-row md:items-start md:justify-between md:max-w-[1613px] md:container md:mx-auto md:gap-[100px]">
         {/* Mətn və siyahı (solda desktopda, üstdə mobil) */}
         <div className="md:w-1/2">

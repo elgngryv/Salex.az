@@ -8,8 +8,8 @@ import Instagram from "../../../assets/Icons/instagram-fill.svg";
 import Facebook from "../../../assets/Icons/facebook-1.svg";
 const Integrations = () => {
   return (
-    <div className=" ">
-      <div className="p-4 md:p-[52px] montserrat ">
+    <div className=" md:container md:mx-auto md:max-w-[1336px]">
+      <div className="p-4  montserrat ">
         <div className="mb-[22px] flex items-start text-start justify-start">
           <h2 className="font-bold dark:text-[#E1DCE6]  text-[#3D246A] text-[22px]">
             Bütün inteqrasiyalar

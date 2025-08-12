@@ -10,8 +10,8 @@ const SalexBanner = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  return (
-    <div className="p-4 md:p-[54px]">
+  return ( 
+    <div className="p-4  md:container md:mx-auto md:max-w-[1336px]">
       <div className="md:flex md:flex-col md:gap-[24px] md:mb-[24px]">
         <div
           className="flex items-start justify-start md:w-[775px] w-[256px]"

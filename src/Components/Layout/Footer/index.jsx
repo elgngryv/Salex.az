@@ -9,9 +9,9 @@ const Footer = () => {
 
   return (
     <div>
-      <div className="flex justify-center relative top-[80px]  md:top-[80px] mb-10">
-        <div
-          className="w-full max-w-[1366px] md:px-[245.5px] md:py-[200px] p-10 text-[#3D246A] border border-white/30
+      <div className="flex justify-center relative top-[80px] md:container md:max-w-[1336px] md:mx-auto  md:top-[80px] mb-10">
+        <div 
+          className=" md:px-[230px] md:py-[200px] p-10 text-[#3D246A] border border-white/30
                      shadow-[0_4px_30px_rgba(0,0,0,0.1)] bg-gradient-to-r 
                      backdrop-blur-[10px] backdrop-saturate-150 rounded-[20px] relative"
           style={{ overflow: "visible" }}>

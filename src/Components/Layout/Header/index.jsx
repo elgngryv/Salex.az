@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <div
-      className={`sticky z-50 p-4 md:px-[52px]  openSans  transition-all duration-300 ${
+      className={`sticky z-50 p-4  md:container md:max-w-[1336px] md:mx-auto  openSans  transition-all duration-300 ${
         isAtTop ? "top-4" : "top-0"
       }`}>
       <div className="relative ">
