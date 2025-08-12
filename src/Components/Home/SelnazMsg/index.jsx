@@ -101,7 +101,7 @@ export default function SelnazMsg() {
           className="absolute z-[9999] right-[50px] md:right-[250px]"
           initial={false}
           animate={{
-            bottom: isChatOpen ? 450 : 410,
+            bottom: isChatOpen ? 480 : 410,
           }}
           transition={{ duration: 0.4, ease: "easeInOut" }}>
           <div className="relative w-[150px] h-[180px]">
@@ -169,7 +169,7 @@ export default function SelnazMsg() {
                   animate={{ opacity: 1, scale: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.8, y: 20 }}
                   transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="fixed md:z-1 z-[-1] bottom-[128px] right-4 md:bottom-[40px] md:right-[100px]"
+                  className="fixed md:z-1 z-[-1] bottom-[-15px] right-4 md:bottom-[40px] md:right-[100px]"
                   style={{
                     width: "320px",
                     height: "420px",
