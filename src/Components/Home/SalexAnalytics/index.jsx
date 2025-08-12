@@ -74,7 +74,7 @@ const SalexAnalytics = () => {
 
         {/* Şəkil tərəfi (sağda desktopda, altda mobil) */}
         <div className="mt-6 md:mt-0 md:w-1/2 flex justify-center md:justify-end">
-          <div className="border rounded-[24px] border-white w-full max-w-[613px] h-auto">
+          <div className="border md:min-w-[613px] rounded-[24px]  dark:border-[1px] dark:border-[#BA9BD7] border-white w-full  h-auto">
             <img
               className="w-full h-auto"
               src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899480/analictcy_xz2ndo.svg"

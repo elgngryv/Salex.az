@@ -23,7 +23,7 @@ body {
   height: 100%;
   overflow-x: hidden;
     scroll-behavior: smooth;
-  overflow-y: auto; /* yalnız bir əsas scroll */
+  overflow-y: auto; 
 }
 
 /* Dark mode styles */

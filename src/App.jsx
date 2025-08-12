@@ -11,23 +11,43 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "./Components/theme-provider";
 
-// ScrollToTop komponenti App.jsx-in içinə əlavə olunur
+// Improved ScrollToTop component with smooth scrolling
 function ScrollToTop() {
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
+    // Smooth scroll to top with behavior: 'smooth'
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    // Fallback for browsers that don't support smooth scrolling
+    const scrollToTop = () => {
+      const c = document.documentElement.scrollTop || document.body.scrollTop;
+      if (c > 0) {
+        window.requestAnimationFrame(scrollToTop);
+        window.scrollTo(0, c - c / 8);
+      }
+    };
+
+    scrollToTop();
+  }, [pathname]);
 
   return null;
 }
 
 const AppContent = () => {
   const [token, setToken] = useState(localStorage.getItem("token") || null);
+  const [loading, setLoading] = useState(!localStorage.getItem("token"));
 
   useEffect(() => {
-    if (token) return;
+    if (token) {
+      setLoading(false);
+      return;
+    }
 
+    setLoading(true);
     axios
       .post(`https://api.selnaz.com:9098/selnaz/user`)
       .then((res) => {
@@ -41,11 +61,18 @@ const AppContent = () => {
       })
       .catch((err) => {
         console.error("Token alına bilmədi:", err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [token]);
 
-  if (!token) {
-    return <div>Yüklənir...</div>;
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-purple-500"></div>
+      </div>
+    );
   }
 
   return (
@@ -53,7 +80,6 @@ const AppContent = () => {
       <div className="flex flex-col min-h-screen">
         <Header />
         <main className="flex-grow">
-          {/* ScrollToTop burada */}
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />

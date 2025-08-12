@@ -51,11 +51,11 @@ const SalexBanner = () => {
           Satışlarını Artırmağa
         </h2>
         <button
-            data-aos="fade-up"
+          data-aos="fade-up"
           data-aos-delay="800"
           className="bg-[#3D246A] py-3 px-[24px] cursor-pointer dark:text-[#E1DCE6] rounded-[24px] text-white text-base font-semibold"
           type="button"
-          style={{ zIndex: 9999, position: "relative" }}
+          style={{ zIndex: 10, position: "relative" }}
           onClick={() => {
             navigate("/SuggestionsPage");
           }}>

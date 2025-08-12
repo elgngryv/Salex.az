@@ -1,9 +1,10 @@
+"use client";
+
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RobotChat from "../../../Widgets/RobotChat";
-import Vector from "../../../assets/images/Vector.svg";
 
 export default function SelnazMsg() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -44,22 +45,19 @@ export default function SelnazMsg() {
 
   return (
     <div className="w-full flex items-center justify-center relative">
-      <div
-        className="w-[290px] md:w-[477px] openSans mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10"
-        data-aos="zoom-out-down"
-        data-aos-delay="500">
-        {/* Message content with collapse effect */}
-        <AnimatePresence>
-          {!isChatOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]"
-              onClick={toggleChat}>
+      <AnimatePresence>
+        {!isChatOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
+            className="w-[290px] md:w-fit openSans mt-[10px] md:mt-[52px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[32px] p-[12px] md:p-0 md:ml-[450px] relative z-10"
+            data-aos="zoom-out-down"
+            data-aos-delay="500">
+            <div className="flex flex-col items-start gap-[8px] md:px-[24px] md:py-[24px]">
               <div
-                className="flex items-center italic w-fit h-fit bg-[#D2B0FE] px-[8px] py-[6px] gap-[10px] rounded-[8px]"
+                className="flex items-center italic w-fit h-fit bg-[#D2B0FE] px-[8px] py-[6px] gap-[10px] rounded-tl-[12px] rounded-tr-[12px] rounded-br-[12px]"
                 data-aos="fade-up"
                 data-aos-delay="300">
                 <span className="text-[12px] md:text-xl font-normal italic leading-[140%]">
@@ -68,7 +66,7 @@ export default function SelnazMsg() {
               </div>
 
               <div
-                className="flex items-center w-fit md:w-[429px] md:h-[68px] h-fit bg-[#D2B0FE] px-[8px] py-[6px] gap-[10px] rounded-[8px]"
+                className="flex items-center w-fit md:w-[429px] md:h-[68px] h-fit bg-[#D2B0FE] px-[8px] py-[6px] gap-[10px] rounded-tl-[12px] rounded-tr-[12px] rounded-br-[12px] rounded-b"
                 data-aos="fade-up"
                 data-aos-delay="500">
                 <span className="text-[12px] md:text-xl font-normal italic leading-[140%]">
@@ -84,72 +82,94 @@ export default function SelnazMsg() {
                 data-aos-delay="700">
                 <button
                   onClick={() => handleCtaClick("Bəli, istərdim! 😄")}
-                  className="w-full md:bg-[#3D246A] md:text-white text-[10px] bg-[#E1DCE6] text-[#3D246A] rounded-[20px] px-3 py-[6px]">
+                  className="w-fit  md:bg-[#3D246A] md:text-white text-[10px]  md:text-[14px] openSans bg-[#E1DCE6] text-[#3D246A] rounded-full px-3 py-[6px] md:py-3 md:px-[30px]  hover:opacity-80 transition-opacity">
                   Bəli, istərdim! 😄
                 </button>
                 <button
                   onClick={() => handleCtaClick("Bəli, çox istərdim! 😄")}
-                  className="w-full md:bg-[#3D246A] md:text-white text-[10px] bg-[#E1DCE6] text-[#3D246A] rounded-[20px] px-3 py-[6px]">
+                  className="w-fit  md:bg-[#3D246A] md:text-white text-[10px]  md:text-[14px] openSans bg-[#E1DCE6] text-[#3D246A] rounded-full px-3 py-[6px] md:py-3 md:px-[30px]  hover:opacity-80 transition-opacity">
                   Bəli, çox istərdim! 😄
                 </button>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-        {/* Selnaz images and button */}
-        <div className="fixed z-50 bottom-0 right-0">
-          <div className="relative w-[150px] h-[180px]">
-            {/* Mobile image */}
-            <img
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/selnazHome_qfd76w.svg"
-              alt="Selnaz"
-              className="absolute z-20 block md:hidden cursor-auto"
-              style={{
-                bottom: "-108px",
-                right: "-64px",
-                pointerEvents: "none",
-              }}
-              data-aos="fade-right"
-              data-aos-delay="100"
-            />
-            {/* Desktop image */}
-            <img
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899404/selnazHomeHuge_ykxu2u.png"
-              alt="Selnaz Huge"
-              className="absolute bottom-[-164px] hidden md:block right-[-85px] z-20"
-              data-aos="fade-right"
-              data-aos-delay="100"
-            />
+      {/* Selnaz images and button */}
+      <motion.div
+        className="fixed z-50 right-[50px] md:right-[250px]"
+        initial={false}
+        animate={{
+          bottom: isChatOpen ? 600 : 410,
+        }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}>
+        <div className="relative w-[150px] h-[180px]">
+          {/* Mobile image */}
+          <img
+            src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/selnazHome_qfd76w.svg"
+            alt="Selnaz"
+            className="absolute z-90 block md:hidden cursor-auto"
+            style={{
+              bottom: "-108px",
+              right: "-64px",
+              pointerEvents: "none",
+            }}
+            data-aos="fade-right"
+            data-aos-delay="100"
+          />
+          {/* Desktop image */}
+          <img
+            src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899404/selnazHomeHuge_ykxu2u.png"
+            alt="Selnaz Huge"
+            className="absolute bottom-[-180px] hidden md:block right-[-60px] z-20"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          />
 
-            {/* Round button */}
-            <AnimatePresence>
-              {!isChatOpen && (
-                <motion.button
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  transition={{ duration: 0.3 }}
-                  onClick={toggleChat}
-                  className="absolute md:w-[110px] md:h-[110px] w-[60px] h-[60px] bottom-[-126px] right-[-32px] md:bottom-[-220px] md:right-[-64px] z-10 flex justify-center items-center rounded-full shadow-md"
-                  style={{ backgroundColor: "#5B2E91" }}
-                  data-aos="fade-left"
-                  data-aos-delay="250">
-                  <img
-                    src={Vector}
-                    alt="Vector"
-                    className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
-                    style={{ pointerEvents: "none" }}
+          {/* Round button - only show when chat is closed */}
+          <AnimatePresence>
+            {!isChatOpen && (
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+                onClick={toggleChat}
+                className="absolute md:w-[110px] md:h-[110px] w-[60px] h-[60px] bottom-[-126px] right-[-32px] md:bottom-[-250px] md:right-[-44px] z-10 flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
+                style={{ backgroundColor: "#5B2E91" }}
+                data-aos="fade-left"
+                data-aos-delay="250">
+                {/* Inline SVG chat icon */}
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]">
+                  <path
+                    d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"
+                    fill="white"
                   />
-                </motion.button>
-              )}
-            </AnimatePresence>
+                  <circle cx="7" cy="9" r="1" fill="white" />
+                  <circle cx="12" cy="9" r="1" fill="white" />
+                  <circle cx="17" cy="9" r="1" fill="white" />
+                </svg>
+              </motion.button>
+            )}
+          </AnimatePresence>
 
-            {/* Chat window */}
+          {/* Chat window with animation */}
+          <AnimatePresence>
             {isChatOpen && (
-              <div
+              <motion.div
                 ref={chatRef}
-                className="fixed z-50 bottom-[-495px] md:bottom-[-550px] md:right-[-170px] right-[-30px]"
+                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="fixed z-0 bottom-[108px] right-4 md:bottom-[40px] md:right-[100px]"
                 style={{
                   width: "320px",
                   height: "420px",
@@ -165,11 +185,11 @@ export default function SelnazMsg() {
                   onClose={handleChatClose}
                   onMessageSent={() => setQueuedMessage(null)}
                 />
-              </div>
+              </motion.div>
             )}
-          </div>
+          </AnimatePresence>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
