@@ -139,26 +139,26 @@ const Contact = () => {
               <input
                 type="text"
                 id="ad"
-                placeholder="AD"
-                className="peer w-full px-[20px] py-4 text-[#3D246A] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                placeholder="Ad"
+                className="peer w-full px-[20px] py-4 text-[#3D246A] placeholder:text-[#3D246A] placeholder:font-light italic  font-normal text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
-            <div className="relative md:w-[476.5px] w-full mt-6">
+            <div className="relative md:w-[476.5px] text-[#3D246A]  w-full mt-6">
               <input
                 type="text"
                 id="soyad"
-                placeholder="SOYAD "
-                className="peer w-full px-[20px] py-4 text-[#3D246A] dark:text-[#E1DCE6] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                placeholder="Soyad "
+                className=" w-full px-[20px] py-4 placeholder:text-[#3D246A]  text-[#3D246A] dark:text-[#E1DCE6] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
-            <div className="relative md:w-[476.5px] w-full mt-6">
+            <div className="relative md:w-[476.5px] text-[#3D246A]  w-full mt-6">
               <input
                 type="email"
                 id="email"
                 placeholder="Email "
-                className="peer w-full px-[20px] py-4 dark:text-[#E1DCE6] text-[#3D246A] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                className="peer w-full px-[20px] py-4 dark:text-[#E1DCE6] placeholder:text-[#3D246A] text-[#3D246A] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
@@ -167,7 +167,7 @@ const Contact = () => {
                 type="tel"
                 id="mobil"
                 placeholder="Mobil Nömrə"
-                className="peer w-full px-[20px] dark:text-[#E1DCE6] py-4 text-[#3D246A] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                className="peer w-full px-[20px] placeholder:text-[#3D246A] dark:text-[#E1DCE6] py-4 text-[#3D246A] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
           </div>
@@ -178,12 +178,12 @@ const Contact = () => {
                 id="mesaj"
                 placeholder="Mesaj "
                 rows={6}
-                className="peer w-full px-[20px] py-4 md:py-[90px] dark:text-[#E1DCE6] text-[#3D246A] font-light text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
+                className="peer w-full px-[20px] py-2 placeholder:text-[#3D246A] dark:text-[#E1DCE6] text-[#3D246A] placeholder:font-light font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
             </div>
           </div>
         </div>
         <div className="montserrat mt-4">
-          <button className="bg-[#3D246A] md:w-[110px] md:px-[24px] dark:text-[#E1DCE6] md:py-3 md:text-base py-4 px-[140.5px] w-full rounded-[24px] text-white text-xl font-semibold">
+          <button className="bg-[#3D246A] md:w-[110px] md:px-[24px]  dark:text-[#E1DCE6] md:py-3 md:text-base py-4 px-[140.5px] w-full rounded-[24px] text-white text-xl font-semibold">
             Göndər
           </button>
         </div>
