@@ -1,4 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 import SelnazHome from "../../assets/images/solutionssel.svg";
 import Vector from "../../assets/images/Vector.svg";
 import SelnazHomeHuge from "../../assets/images/HellyollarıHuge.svg";
@@ -8,6 +10,7 @@ import RobotChat from "../../Widgets/RobotChat";
 
 const Solutions = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [queuedMessage, setQueuedMessage] = useState(null);
   const chatRef = useRef(null);
 
   useEffect(() => {
@@ -18,22 +21,20 @@ const Solutions = () => {
     setIsChatOpen((prev) => !prev);
   };
 
-  const closeChat = () => {
+  const handleChatClose = () => {
+    setQueuedMessage(null);
     setIsChatOpen(false);
   };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        isChatOpen &&
-        chatRef.current &&
-        !chatRef.current.contains(event.target)
-      ) {
-        closeChat();
+      if (chatRef.current && !chatRef.current.contains(event.target)) {
+        handleChatClose();
       }
     };
-
-    document.addEventListener("mousedown", handleClickOutside);
+    if (isChatOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -41,103 +42,130 @@ const Solutions = () => {
 
   return (
     <div>
-      <div className="w-full flex items-center justify-center relative">
-        <div
-          className="w-[290px] md:w-[477px] openSans mt-[10px] border border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10"
-          data-aos="zoom-out-down"
-          data-aos-delay="500">
-          <div className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]">
-            <div
-              className="flex items-center openSans  w-fit h-fit  px-[8px] py-[6px] gap-[10px] rounded-[8px]"
-              data-aos="fade-up"
-              data-aos-delay="300">
-              <span className="text-[14px] text-[#3D246A] md:text-xl font-normal md:font-thin  dark:text-[#E1DCE6] leading-[140%]">
-                Problemləri analiz etdik və onları aradan qaldırmaq üçün ağıllı
-                və effektiv yollar yaratdıq
-              </span>
-            </div>
-          </div>
+      <div className="w-full flex md:h-[100%] mx-auto items-center justify-center relative">
+        <div>
+          <AnimatePresence>
+            {!isChatOpen && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                data-aos="zoom-out-down"
+                data-aos-delay="500">
+                <div className="w-[290px] md:w-[477px] openSans md:mt-[80px] mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10">
+                  <div className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]">
+                    <div className="flex items-center openSans w-fit h-fit px-[8px] py-[6px] gap-[10px] rounded-[8px]">
+                      <h2 className="text-[14px] text-[#3D246A] dark:text-[#E1DCE6] md:text-xl font-normal md:font-thin leading-[140%]">
+                        Problemləri analiz etdik və onları aradan qaldırmaq üçün
+                        ağıllı və effektiv yollar yaratdıq
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+        {/* Selnaz images and button */}
+        <div className="fixed z-[9999] ">
+          <motion.div
+            className="absolute z-[9999] right-[50px] md:right-[250px]"
+            initial={false}
+            animate={{
+              bottom: isChatOpen ? 480 : 410,
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}>
+            <div className="relative w-[150px] h-[180px]">
+              {/* Mobile image */}
 
-          <div className="fixed z-50" style={{ bottom: "0px", right: "0px" }}>
-            <div
-              className="relative"
-              style={{ width: "150px", height: "180px" }}>
-              <img
-                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/Hellyollar%C4%B1_tdyhek.svg"
-                alt="Selnaz"
-                style={{
-                  bottom: "-108px",
-                  right: "-64px",
-                  position: "absolute",
-                }}
-                className="absolute z-20 block md:hidden"
-                data-aos="fade-right"
-                data-aos-delay="100"
-              />
-
+              {/* Desktop image */}
               <img
                 src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899484/Hellyollar%C4%B1Huge_zhvpne.svg"
                 alt="Selnaz Huge"
-                className="absolute bottom-[-138px] hidden md:block right-[-75px] z-20"
+                className="absolute bottom-[-700px] hidden md:block right-[-775px] z-[9999] cursor-auto"
                 data-aos="fade-right"
                 data-aos-delay="100"
               />
 
-              {!isChatOpen && (
-                <button
-                  onClick={toggleChat}
-                  className="absolute md:w-[110px] md:h-[110px] z-30 flex justify-center items-center rounded-full shadow-md w-[60px] h-[60px] bottom-[-122px] right-[-40px] md:bottom-[-220px] md:right-[-64px]"
-                  style={{ backgroundColor: "#5B2E91" }}
-                  data-aos="fade-left"
-                  data-aos-delay="250">
-                  <img
-                    src={Vector}
-                    alt="Vector"
-                    className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]"
-                  />
-                </button>
-              )}
+              {/* Round button - only show when chat is closed */}
+              <AnimatePresence>
+                {!isChatOpen && (
+                  <motion.button
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.3 }}
+                    onClick={toggleChat}
+                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-334%] right-[-213px] md:bottom-[-750px] md:right-[-751px] z-[9999] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
+                    style={{ backgroundColor: "#5B2E91" }}
+                    data-aos="fade-left"
+                    data-aos-delay="250">
+                    {/* Inline SVG chat icon */}
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-[24px] h-[24px] md:w-[35px] md:h-[35px]">
+                      <path
+                        d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z"
+                        fill="white"
+                      />
+                      <circle cx="7" cy="9" r="1" fill="white" />
+                      <circle cx="12" cy="9" r="1" fill="white" />
+                      <circle cx="17" cy="9" r="1" fill="white" />
+                    </svg>
+                  </motion.button>
+                )}
+              </AnimatePresence>
 
-              {isChatOpen && (
-                <div
-                  ref={chatRef}
-                  className="fixed z-50 md:bottom-[-520px] md:right-[-140px] bottom-[-495px] right-[-30px]"
-                  style={{
-                    width: "320px",
-                    height: "420px",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-                    borderRadius: "16px",
-                    backgroundColor: "white",
-                    overflow: "hidden",
-                  
-                    display: "flex",
-                    flexDirection: "column",
-                  }}>
-                  <div className="flex justify-between items-center p-2 bg-[#5B2E91]">
-                    <div className="text-white font-semibold px-2">Selnaz</div>
-                    <div
-                      className="cursor-pointer p-1 rounded-full hover:bg-purple-700"
-                      onClick={closeChat}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                      </svg>
-                    </div>
-                  </div>
-                  <RobotChat />
+              {/* Chat window with animation */}
+              <div
+                className="md:container md:mx-auto md:max-w-[1336px] relative"
+                style={{ minHeight: "600px" }}>
+                <AnimatePresence>
+                  {isChatOpen && (
+                    <motion.div
+                      ref={chatRef}
+                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                      transition={{ duration: 0.3, ease: "easeOut" }}
+                      className="absolute bottom-[-540px] right-[-220px] md:bottom-[-677px] md:right-[-800px] z-[999]"
+                      style={{
+                        width: "320px",
+                        height: "420px",
+                        boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                        borderRadius: "16px",
+                        backgroundColor: "white",
+                        overflow: "hidden",
+                        display: "flex",
+                        flexDirection: "column",
+                      }}>
+                      <RobotChat
+                        queuedMessage={queuedMessage}
+                        onClose={handleChatClose}
+                        onMessageSent={() => setQueuedMessage(null)}
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <div className="relative w-full h-[200px] md:h-[400px]">
+                  <img
+                    src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/Hellyollar%C4%B1_tdyhek.svg"
+                    alt="Selnaz"
+                    className="absolute bottom-[-550px] z-[999] right-[-240px] block md:hidden cursor-auto pointer-events-none"
+                    style={{ width: "138px", height: "138px" }}
+                    data-aos="fade-right"
+                    data-aos-delay="100"
+                  />
                 </div>
-              )}
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <div className="p-4 mt-[74px] md:p-[54px]">

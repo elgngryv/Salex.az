@@ -125,7 +125,7 @@ export default function SelnazMsg() {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
                   onClick={toggleChat}
-                  className="absolute   md:w-[110px] md:h-[110px] w-[60px] h-[60px] bottom-[-380%] right-[-213px] md:bottom-[-780px] md:right-[-764px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
+                  className="absolute   md:w-[110px] md:h-[110px] w-[60px] h-[60px] bottom-[-350%] right-[-213px] md:bottom-[-780px] md:right-[-764px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
                   style={{ backgroundColor: "#5B2E91" }}
                   data-aos="fade-left"
                   data-aos-delay="250">
@@ -161,7 +161,7 @@ export default function SelnazMsg() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8, y: 20 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute bottom-[-630px] right-[-220px] md:bottom-[-690px] md:right-[-800px] z-[999]"
+                    className="absolute bottom-[-580px] right-[-220px] md:bottom-[-690px] md:right-[-800px] z-[999]"
                     style={{
                       width: "320px",
                       height: "420px",
@@ -183,10 +183,10 @@ export default function SelnazMsg() {
 
               <div className="relative w-full h-[200px] md:h-[400px]">
                 <img
-                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/selnazHome_qfd76w.svg"
+                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755111062/SelnazHome_o3gwqg.png"
                   alt="Selnaz"
-                  className="absolute bottom-[-650px] z-[9999] right-[-260px] block md:hidden cursor-auto pointer-events-none"
-                  style={{ width: "150px", height: "auto" }}
+                  className="absolute bottom-[-590px] z-[9999] right-[-230px] block md:hidden cursor-auto pointer-events-none"
+                  style={{ width: "96.62px", height: "144.98px" }}
                   data-aos="fade-right"
                   data-aos-delay="100"
                 />
