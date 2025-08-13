@@ -42,7 +42,7 @@ export default function SelnazMsg() {
   }, [isChatOpen]);
 
   return (
-    <div className="w-full flex md:h-[100%] items-center justify-center relative">
+    <div className="w-full flex md:h-[100%] mx-auto items-center justify-center relative">
       <div>
         <AnimatePresence>
           {!isChatOpen && (
@@ -96,7 +96,7 @@ export default function SelnazMsg() {
         </AnimatePresence>
       </div>
       {/* Selnaz images and button */}
-      <div className="fixed z-[9999]">
+      <div className="fixed z-[9999] ">
         <motion.div
           className="absolute z-[9999] right-[50px] md:right-[250px]"
           initial={false}
@@ -106,18 +106,7 @@ export default function SelnazMsg() {
           transition={{ duration: 0.4, ease: "easeInOut" }}>
           <div className="relative w-[150px] h-[180px]">
             {/* Mobile image */}
-            <img
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/selnazHome_qfd76w.svg"
-              alt="Selnaz"
-              className="absolute z-9999 block md:hidden cursor-auto"
-              style={{
-                bottom: "-623px",
-                right: "-248px",
-                pointerEvents: "none",
-              }}
-              data-aos="fade-right"
-              data-aos-delay="100"
-            />
+
             {/* Desktop image */}
             <img
               src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899404/selnazHomeHuge_ykxu2u.png"
@@ -136,7 +125,7 @@ export default function SelnazMsg() {
                   exit={{ opacity: 0, scale: 0.8 }}
                   transition={{ duration: 0.3 }}
                   onClick={toggleChat}
-                  className="absolute   md:w-[110px] md:h-[110px] w-[60px] h-[60px] bottom-[-636px] right-[-213px] md:bottom-[-780px] md:right-[-764px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
+                  className="absolute   md:w-[110px] md:h-[110px] w-[60px] h-[60px] bottom-[-380%] right-[-213px] md:bottom-[-780px] md:right-[-764px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
                   style={{ backgroundColor: "#5B2E91" }}
                   data-aos="fade-left"
                   data-aos-delay="250">
@@ -161,33 +150,48 @@ export default function SelnazMsg() {
             </AnimatePresence>
 
             {/* Chat window with animation */}
-            <AnimatePresence>
-              {isChatOpen && (
-                <motion.div
-                  ref={chatRef}
-                  initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  className="fixed md:z-1 z-[-1] bottom-[-15px] right-4 md:bottom-[40px] md:right-[100px]"
-                  style={{
-                    width: "320px",
-                    height: "420px",
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-                    borderRadius: "16px",
-                    backgroundColor: "white",
-                    overflow: "hidden",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}>
-                  <RobotChat
-                    queuedMessage={queuedMessage}
-                    onClose={handleChatClose}
-                    onMessageSent={() => setQueuedMessage(null)}
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <div
+              className="md:container md:mx-auto md:max-w-[1336px] relative"
+              style={{ minHeight: "600px" }}>
+              <AnimatePresence>
+                {isChatOpen && (
+                  <motion.div
+                    ref={chatRef}
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                    transition={{ duration: 0.3, ease: "easeOut" }}
+                    className="absolute bottom-[-630px] right-[-220px] md:bottom-[-690px] md:right-[-800px] z-[999]"
+                    style={{
+                      width: "320px",
+                      height: "420px",
+                      boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                      borderRadius: "16px",
+                      backgroundColor: "white",
+                      overflow: "hidden",
+                      display: "flex",
+                      flexDirection: "column",
+                    }}>
+                    <RobotChat
+                      queuedMessage={queuedMessage}
+                      onClose={handleChatClose}
+                      onMessageSent={() => setQueuedMessage(null)}
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              <div className="relative w-full h-[200px] md:h-[400px]">
+                <img
+                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/selnazHome_qfd76w.svg"
+                  alt="Selnaz"
+                  className="absolute bottom-[-650px] z-[9999] right-[-260px] block md:hidden cursor-auto pointer-events-none"
+                  style={{ width: "150px", height: "auto" }}
+                  data-aos="fade-right"
+                  data-aos-delay="100"
+                />
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
