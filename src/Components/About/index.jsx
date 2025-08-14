@@ -119,9 +119,7 @@ const About = () => {
 
               {/* Chat window with animation */}
               <div className="absolute">
-                <div
-                  className="md:container md:mx-auto md:max-w-[1336px] relative"
-               >
+                <div className="md:container md:mx-auto md:max-w-[1336px] relative">
                   <AnimatePresence>
                     {isChatOpen && (
                       <motion.div
@@ -166,7 +164,7 @@ const About = () => {
           </motion.div>
         </div>
       </div>
-      <div className="p-4 mt-[74px] md:p-[54px] ">
+      <div className="p-4 md:container md:max-w-[1336px] md:mx-auto mt-[74px]  ">
         <div className="md:flex md:flex-col md:gap-[24px] md:mb-[24px]">
           <div className="flex items-start justify-start md:w-[775px] w-[256px]">
             <h2 className="text-[#3D246A] text-[22px] md:text-[40px] font-bold montserrat flex flex-col md:flex-row md:items-center md:justify-center md:gap-2 text-center">

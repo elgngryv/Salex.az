@@ -6,8 +6,8 @@ const SolutionsPage = () => {
   return (
     <div>
       <Solutions />
-      <div className="mt-[74px] mb-[40px]">
-        <h2 className="px-4 font-bold text-[26px] text-[#3D246A] montserrat">
+      <div className="mt-[74px] md:container md:max-w-[1336px] md:mx-auto  mb-[40px]">
+        <h2 className="px-4 font-bold text-[26px] md:mb-[42px] text-[#3D246A] montserrat">
           Selnazın həlləri
         </h2>
         <Selnazsolutions />

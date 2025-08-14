@@ -507,10 +507,9 @@ export default function RobotChat({
         }
 
         .messages {
-          padding: 20px 24px;
+          padding: 5px;
           display: flex;
           flex-direction: column;
-          gap: 16px;
           flex-grow: 1;
           min-height: min-content;
         }

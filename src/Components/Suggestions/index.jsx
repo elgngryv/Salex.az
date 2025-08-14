@@ -164,7 +164,7 @@ const Suggestions = () => {
           </motion.div>
         </div>
       </div>
-      <div className="p-4">
+      <div className="p-4 md:container md:max-w-[1336px] md:mx-auto">
         <div className="flex items-start mt-[50px] justify-start w-[256px]">
           <h2 className="text-[#3D246A] dark:text-[#E1DCE6] text-[26px] font-bold montserrat">
             Ağıllı Həllər

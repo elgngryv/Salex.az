@@ -170,7 +170,7 @@ const Solutions = () => {
           </motion.div>
         </div>
       </div>
-      <div className="p-4 mt-[74px] md:p-[54px]">
+      <div className="p-4 mt-[74px]   md:px-[60px]">
         <div className="md:flex  md:flex-col md:gap-[24px] md:mb-[24px]">
           <div
             className="flex items-start mb-[24px] justify-start  md:w-[775px] w-[256px]"
