@@ -120,7 +120,7 @@ const Suggestions = () => {
               {/* Chat window with animation */}
               <div
                 className="md:container md:mx-auto md:max-w-[1336px] relative"
-                style={{ minHeight: "600px" }}>
+             >
                 <AnimatePresence>
                   {isChatOpen && (
                     <motion.div
@@ -129,7 +129,7 @@ const Suggestions = () => {
                       animate={{ opacity: 1, scale: 1, y: 0 }}
                       exit={{ opacity: 0, scale: 0.8, y: 20 }}
                       transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="absolute bottom-[-540px] right-[-220px] md:bottom-[-650px] md:right-[-800px] z-[999]"
+                      className="absolute bottom-[-940px] right-[-220px] md:bottom-[-860px] md:right-[-800px] z-[999]"
                       style={{
                         width: "320px",
                         height: "420px",

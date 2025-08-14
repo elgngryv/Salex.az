@@ -150,9 +150,7 @@ export default function SelnazMsg() {
             </AnimatePresence>
 
             {/* Chat window with animation */}
-            <div
-              className="md:container md:mx-auto md:max-w-[1336px] relative"
-              style={{ minHeight: "600px" }}>
+            <div className="md:container md:mx-auto md:max-w-[1336px] relative">
               <AnimatePresence>
                 {isChatOpen && (
                   <motion.div
@@ -161,7 +159,7 @@ export default function SelnazMsg() {
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.8, y: 20 }}
                     transition={{ duration: 0.3, ease: "easeOut" }}
-                    className="absolute bottom-[-580px] right-[-220px] md:bottom-[-690px] md:right-[-800px] z-[999]"
+                    className="absolute bottom-[-980px] right-[-220px] md:bottom-[-880px] md:right-[-800px] z-[999]"
                     style={{
                       width: "320px",
                       height: "420px",

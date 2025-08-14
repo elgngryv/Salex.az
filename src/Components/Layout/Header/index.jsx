@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GoChevronDown } from "react-icons/go";
 import Headerlogo from "../../../assets/images/logo.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTheme } from "../../theme-provider";
 import FooterDarkLogo from "../../../assets/images/Footer-logo.svg";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   const [isAtTop, setIsAtTop] = useState(true);
   const [collapsed, setCollapsed] = useState(false);
   const [darkMode] = useState(false);
@@ -42,12 +44,18 @@ const Header = () => {
           ${collapsed ? "max-w-[249px]" : "max-w-full"}`}
           style={{ width: collapsed ? "249px" : "100%" }}>
           {/* Logo */}
+          {/* Logo kapsayıcı */}
           <Link
             to="/"
+            onClick={() => console.log("Logo klikləndi")}
             className={`transition-opacity duration-300 ease-in-out ${
               collapsed ? "opacity-0" : "opacity-100"
             }`}
-            style={{ pointerEvents: collapsed ? "none" : "auto" }}>
+            style={{
+              pointerEvents: collapsed ? "none" : "auto",
+              position: "relative",
+              zIndex: 9999,
+            }}>
             <img
               src={
                 theme === "dark"
@@ -135,7 +143,7 @@ const Header = () => {
 
         {/* Alt menyu: mobilda collapsed olarkən görünür */}
         <div
-          className={`lg:hidden dark:text-[#E1DCE6]  w-[249px] overflow-hidden transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-[10px] rounded-b-[12px] mt-1 p-4 text-[#3D246A] font-medium montserrat
+          className={`lg:hidden dark:text-[#E1DCE6]  absolute w-[249px] overflow-hidden transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-[10px] rounded-b-[12px] mt-1 p-4 text-[#3D246A] font-medium montserrat
           ${collapsed ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}
           style={{ pointerEvents: collapsed ? "auto" : "none" }}>
           <Link

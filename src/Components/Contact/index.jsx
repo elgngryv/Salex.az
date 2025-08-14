@@ -93,7 +93,7 @@ const Contact = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3 }}
                     onClick={toggleChat}
-                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-320%] right-[-213px] md:bottom-[-710px] md:right-[-765px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
+                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-313%] right-[-213px] md:bottom-[-710px] md:right-[-765px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
                     style={{ backgroundColor: "#5B2E91" }}
                     data-aos="fade-left"
                     data-aos-delay="250">
@@ -118,46 +118,46 @@ const Contact = () => {
               </AnimatePresence>
 
               {/* Chat window with animation */}
-              <div
-                className="md:container md:mx-auto md:max-w-[1336px] relative"
-                style={{ minHeight: "600px" }}>
-                <AnimatePresence>
-                  {isChatOpen && (
-                    <motion.div
-                      ref={chatRef}
-                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="absolute bottom-[-520px] right-[-220px] md:bottom-[-640px] md:right-[-800px] z-[999]"
-                      style={{
-                        width: "320px",
-                        height: "420px",
-                        boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-                        borderRadius: "16px",
-                        backgroundColor: "white",
-                        overflow: "hidden",
-                        display: "flex",
-                        flexDirection: "column",
-                      }}>
-                      <RobotChat
-                        queuedMessage={queuedMessage}
-                        onClose={handleChatClose}
-                        onMessageSent={() => setQueuedMessage(null)}
-                      />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+              <div className="absolute">
+                <div className="md:container md:mx-auto md:max-w-[1336px] relative">
+                  <AnimatePresence>
+                    {isChatOpen && (
+                      <motion.div
+                        ref={chatRef}
+                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="absolute bottom-[-910px] right-[-241px] md:bottom-[-840px] md:right-[-970px] z-[999]"
+                        style={{
+                          width: "320px",
+                          height: "420px",
+                          boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                          borderRadius: "16px",
+                          backgroundColor: "white",
+                          overflow: "hidden",
+                          display: "flex",
+                          flexDirection: "column",
+                        }}>
+                        <RobotChat
+                          queuedMessage={queuedMessage}
+                          onClose={handleChatClose}
+                          onMessageSent={() => setQueuedMessage(null)}
+                        />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
-                <div className="relative w-full h-[200px] md:h-[400px]">
-                  <img
-                    src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/SelnazContact_u3ofcv.svg"
-                    alt="Selnaz"
-                    className="absolute bottom-[-570px] z-[9999] right-[-230px] block md:hidden cursor-auto pointer-events-none"
-                    style={{ width: "122px", height: "189px" }}
-                    data-aos="fade-right"
-                    data-aos-delay="100"
-                  />
+                  <div className="relative w-full h-[200px] md:h-[400px]">
+                    <img
+                      src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/SelnazContact_u3ofcv.svg"
+                      alt="Selnaz"
+                      className="relative bottom-[-570px] z-[9999] right-[-257px] block md:hidden cursor-auto pointer-events-none"
+                      style={{ width: "122px", height: "189px" }}
+                      data-aos="fade-right"
+                      data-aos-delay="100"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
