@@ -2,7 +2,7 @@ const SelnazMain = () => {
   return (
     <div className="md:relative md:bottom-[-130px]">
       <div className="md:container md:mx-auto md:max-w-[1336px]">
-        <div className="relative w-full min-h-[700px] md:min-h-[910px]  overflow-hidden">
+        <div className="relative w-full min-h-[700px] md:min-h-[820px]  ">
           {/* Container for the four top images */}
 
           <div className="absolute bottom-[336px] left-1/2 -translate-x-1/2 z-10 hidden md:block">
@@ -19,7 +19,7 @@ const SelnazMain = () => {
             />
           </div>
 
-          <div className="absolute bottom-[210px] md:left-[610px] left-1/2 transform -translate-x-1/2 z-20 px-4 w-full max-w-md">
+          <div className="absolute bottom-[210px] md:left-[577px] left-1/2 transform -translate-x-1/2 z-20 px-4 w-full max-w-md">
             <div className="w-full md:w-[610px] text-[#3D246A] border border-white/30 shadow-[0_4px_30px_rgba(0.1)] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150 rounded-[20px] flex justify-center items-center">
               <div className="flex justify-center items-center text-center py-[24px] px-3">
                 <h2 className="font-light md:w-[578px] text-base leading-relaxed text-center dark:text-[#E1DCE6]">

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RobotChat from "../../../Widgets/RobotChat";
+// import GlassButton from "./GlassButton";
 
 export default function SelnazMsg() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -44,6 +45,7 @@ export default function SelnazMsg() {
   return (
     <div className="w-full flex md:h-[100%] mx-auto items-center justify-center relative">
       <div>
+          {/* <GlassButton /> */}
         <AnimatePresence>
           {!isChatOpen && (
             <motion.div
@@ -63,7 +65,7 @@ export default function SelnazMsg() {
                     Salam mən Selnazam
                   </span>
                 </div>
-
+              
                 <div
                   className="flex items-center w-fit md:w-[429px] md:h-[68px] h-fit bg-[#D2B0FE] px-[8px] py-[6px] gap-[10px] rounded-tl-[12px] rounded-tr-[12px] rounded-br-[12px] rounded-b"
                   data-aos="fade-up"
@@ -81,12 +83,12 @@ export default function SelnazMsg() {
                   data-aos-delay="700">
                   <button
                     onClick={() => handleCtaClick("Bəli, istərdim! 😄")}
-                    className="w-fit  md:bg-[#3D246A] md:text-white text-[10px]  md:text-[14px] openSans bg-[#E1DCE6] text-[#3D246A] rounded-full px-3 py-[6px] md:py-3 md:px-[30px]  hover:opacity-80 transition-opacity">
+                    className="w-fit bg-[#3D246A]  md:bg-[#3D246A] md:text-white text-[10px]  md:text-[14px] openSans text-white  rounded-full px-3 py-[6px] md:py-3 md:px-[30px]  hover:opacity-80 transition-opacity">
                     Bəli, istərdim! 😄
                   </button>
                   <button
                     onClick={() => handleCtaClick("Bəli, çox istərdim! 😄")}
-                    className="w-fit  md:bg-[#3D246A] md:text-white text-[10px]  md:text-[14px] openSans bg-[#E1DCE6] text-[#3D246A] rounded-full px-3 py-[6px] md:py-3 md:px-[30px]  hover:opacity-80 transition-opacity">
+                    className="w-fit  md:bg-[#3D246A] bg-[#3D246A] md:text-white text-[10px]  md:text-[14px] openSans  text-white rounded-full px-3 py-[6px] md:py-3 md:px-[30px]  hover:opacity-80 transition-opacity">
                     Bəli, çox istərdim! 😄
                   </button>
                 </div>

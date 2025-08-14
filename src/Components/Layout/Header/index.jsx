@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GoChevronDown } from "react-icons/go";
 import Headerlogo from "../../../assets/images/logo.svg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { useTheme } from "../../theme-provider";
 import FooterDarkLogo from "../../../assets/images/Footer-logo.svg";
 
 const Header = () => {
-  const navigate = useNavigate();
 
   const [isAtTop, setIsAtTop] = useState(true);
   const [collapsed, setCollapsed] = useState(false);

@@ -26,14 +26,14 @@ const SalexBanner = () => {
         </div>
 
         <div className="flex items-start mt-3 md:w-[681px] justify-start w-[256px]">
-          <h2 className="font-normal md:text-[22px] dark:text-[#E1DCE6] text-base md:leading-[140%] text-[#3D246A] openSans">
+          <h2 className="font-normal md:text-[22px] dark:text-[#E1DCE6]  text-base md:leading-[140%] text-[#3D246A] openSans">
             SaleX, süni intellekt əsaslı rəqmsal satış meneceri{" "}
             <span className="font-semibold md:text-[22px] dark:text-[#E1DCE6]">
               Selnaz
             </span>{" "}
-            vasitəsilə web
-            <br className="hidden md:inline dark:text-[#E1DCE6]" /> sayta və
-            rəqəmsal platformalara daxil olan istifadəçiləri real
+            vasitəsilə 
+            <br className="hidden md:inline dark:text-[#E1DCE6]" />web  sayta və
+             rəqəmsal platformalara daxil olan istifadəçiləri real
             <br className="hidden md:inline dark:text-[#E1DCE6]" />
             müştəriyə çevirir.
           </h2>
