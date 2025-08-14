@@ -56,11 +56,11 @@ const Selnazsolutions = () => {
             empatik cavablar təqdim edir
           </p>
         </div>
-        <div className="border  md:w-[600px] md:h-[551px] border-white bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
+        <div className="  md:w-[600px] md:h-[551px] ">
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899477/5_sjuxy2.svg"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755173173/Frame_7230_wms3d3.png"
               alt=""
             />
           </div>
@@ -68,7 +68,7 @@ const Selnazsolutions = () => {
             <div>
               <img
                 className="w-[358px] md:w-[600px] md:h-[551px]  hidden md:block h-[322px]"
-                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899478/5H_ftmpfi.svg"
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755173104/Frame_7230_ivsmgq.png"
                 alt=""
               />
             </div>

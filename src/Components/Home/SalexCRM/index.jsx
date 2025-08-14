@@ -1,5 +1,5 @@
 import React from "react";
-import CRM from "../../../assets/images/Crm.svg";
+
 import Done from "../../../assets/images/material-symbols_done-rounded.svg";
 
 const SalexCRM = () => {
@@ -50,10 +50,10 @@ const SalexCRM = () => {
 
         {/* Sağ tərəf: CRM şəkli */}
         <div className="mt-6 md:mt-0  md:w-[613px]  flex justify-center md:justify-end">
-          <div className="border md:min-w-[613px] rounded-[24px]  dark:border-[1px] dark:border-[#BA9BD7] border-white w-full  h-auto">
+          <div className=" md:min-w-[613px] rounded-[24px]    w-full  h-auto">
             <img
-              className="w-full   md:w-[613px] h-auto"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899483/Crm_yyxroa.svg"
+              className="  md:w-[613px] h-auto"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755172761/Frame_7389_cyl5ah.png"
               alt="CRM"
             />
           </div>
