@@ -53,7 +53,7 @@ export default function SelnazMsg() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
-              className="w-[290px] md:w-fit openSans mt-[10px] md:mt-[52px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[32px] p-[12px] md:p-0 md:ml-[450px] relative z-90"
+              className="w-[290px] md:w-fit openSans mt-[10px] md:mt-[52px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] md:rounded-[32px] p-[12px] md:p-0 md:ml-[450px] relative z-90"
               data-aos="zoom-out-down"
               data-aos-delay="500">
               <div className="flex flex-col items-start gap-[8px] md:px-[24px] md:py-[24px]">
