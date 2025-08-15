@@ -27,10 +27,7 @@ export default function RobotChat({
   const [showConfirm, setShowConfirm] = useState(false);
 
   // Zustand store for messages
-  const messages = useChatStore((s) => s.messages);
-  const setMessages = useChatStore((s) => s.setMessages);
-  const addMessage = useChatStore((s) => s.addMessage);
-  const clearMessages = useChatStore((s) => s.clearMessages);
+  const { messages, setMessages, addMessage, clearMessages } = useChatStore();
 
   // Auto-resize textarea
   useEffect(() => {
@@ -53,12 +50,10 @@ export default function RobotChat({
 
   // Initialize chat
   useEffect(() => {
-    fetchMessages();
     connect();
     return () => {
       disconnect();
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Token handling
@@ -88,29 +83,6 @@ export default function RobotChat({
 
   const BASE_URL = "https://api.selnaz.com:9098/selnaz";
   const API_URL = "https://api.selnaz.com:9098/selnaz";
-
-  const fetchMessages = async () => {
-    const localToken = localStorage.getItem("token");
-    if (!localToken) {
-      console.log("Token tapılmadı!");
-      return;
-    }
-    try {
-      const res = await axios.get(`${API_URL}/message`, {
-        headers: { Authorization: `Bearer ${localToken}` },
-      });
-      const transformed = res.data.map((msg) => ({
-        id: msg.id,
-        message: msg.message,
-        timestamp: msg.timestamp,
-        uuid: msg.uuid,
-        status: msg.status,
-      }));
-      setMessages(transformed);
-    } catch (error) {
-      console.error("Mesajları gətirərkən xəta:", error);
-    }
-  };
 
   const connect = () => {
     const localToken = token || localStorage.getItem("token");
@@ -230,7 +202,6 @@ export default function RobotChat({
     } else {
       pendingQueuedRef.current = queuedMessage;
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [queuedMessage, connected]);
 
   const formatDate = (timestamp) => {
@@ -261,26 +232,15 @@ export default function RobotChat({
     </div>
   );
 
-  const handleClearMessages = async () => {
+  const handleClearMessages = () => {
     if (!showConfirm) {
       setShowConfirm(true);
       setTimeout(() => setShowConfirm(false), 3000);
       return;
     }
-
-    try {
-      const localToken = localStorage.getItem("token");
-      if (!localToken) return;
-
-      await axios.delete(`${API_URL}/message`, {
-        headers: { Authorization: `Bearer ${localToken}` },
-      });
-
-      clearMessages();
-      setShowConfirm(false);
-    } catch (error) {
-      console.error("Mesajları silərkən xəta:", error);
-    }
+    
+    clearMessages();
+    setShowConfirm(false);
   };
 
   return (
@@ -290,7 +250,8 @@ export default function RobotChat({
           <div
             className={`connection-status ${
               connected ? "connected" : "disconnected"
-            }`}>
+            }`}
+          >
             {connected ? "ONLINE" : "OFFLINE"}
           </div>
         </div>
@@ -301,14 +262,16 @@ export default function RobotChat({
             }`}
             onClick={handleClearMessages}
             aria-label={showConfirm ? "Təsdiqlə" : "Bütün mesajları sil"}
-            title={showConfirm ? "Təsdiqlə" : "Bütün mesajları sil"}>
+            title={showConfirm ? "Təsdiqlə" : "Bütün mesajları sil"}
+          >
             {showConfirm ? "Təsdiqlə?" : <Trash2 size={20} />}
           </button>
           {onClose && (
             <button
               className="close-button"
               onClick={onClose}
-              aria-label="Söhbəti bağla">
+              aria-label="Söhbəti bağla"
+            >
               <X size={20} />
             </button>
           )}
@@ -329,7 +292,8 @@ export default function RobotChat({
                   key={msg.id}
                   className={`message-item ${
                     msg.status === "selnaz" ? "selnaz" : "user"
-                  }`}>
+                  }`}
+                >
                   <div className="message-bubble">
                     {msg.status === "selnaz" && (
                       <div className="sender-name">Selnaz</div>
@@ -389,7 +353,8 @@ export default function RobotChat({
             <button
               className="action-button mic-button"
               type="button"
-              aria-label="Səsli mesaj">
+              aria-label="Səsli mesaj"
+            >
               <Mic size={20} />
             </button>
             <button
@@ -397,7 +362,8 @@ export default function RobotChat({
               onClick={sendMessage}
               disabled={loading || !connected || !messageContent.trim()}
               type="button"
-              aria-label="Mesajı göndər">
+              aria-label="Mesajı göndər"
+            >
               <Send size={20} />
             </button>
           </div>

@@ -1,8 +1,10 @@
 import React from "react";
 
 import Done from "../../../assets/images/material-symbols_done-rounded.svg";
+import { useTheme } from "../../theme-provider";
 
 const SalexCRM = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
     <div className="p-4 mb-[74px]  md:container md:mx-auto md:max-w-[1336px]">
       <div className="text-[#3D246A] md:flex md:flex-row-reverse md:items-start md:justify-between md:max-w-[1613px] md:container md:mx-auto md:gap-[100px]">
@@ -22,25 +24,53 @@ const SalexCRM = () => {
           </div>
           <div className="mt-[24px] flex flex-col gap-[8px]">
             <div className="flex gap-[8px] items-center">
-              <img src={Done} alt="" />
+              <img
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755249479/material-symbols_done-rounded_di9fzx.svg"
+                    : Done
+                }
+                alt=""
+              />
               <h2 className="font-normal text-base openSans dark:text-[#E1DCE6]">
                 Müştəriyə fərdi təklif göndər
               </h2>
             </div>
             <div className="flex gap-[8px] items-center">
-              <img src={Done} alt="" />
+              <img
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755249479/material-symbols_done-rounded_di9fzx.svg"
+                    : Done
+                }
+                alt=""
+              />
               <h2 className="font-normal text-base openSans dark:text-[#E1DCE6]">
                 Satınalma ehtimalını 3x artır
               </h2>
             </div>
             <div className="flex gap-[8px] items-center">
-              <img src={Done} alt="" />
+              <img
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755249479/material-symbols_done-rounded_di9fzx.svg"
+                    : Done
+                }
+                alt=""
+              />
               <h2 className="font-normal text-base openSans dark:text-[#E1DCE6]">
                 Aktiv müştəri bazasını genişləndir
               </h2>
             </div>
             <div className="flex gap-[8px] items-center">
-              <img src={Done} alt="" />
+              <img
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755249479/material-symbols_done-rounded_di9fzx.svg"
+                    : Done
+                }
+                alt=""
+              />
               <h2 className="font-normal text-base openSans dark:text-[#E1DCE6]">
                 Satış sonrası əlaqəni gücləndir
               </h2>
@@ -53,7 +83,11 @@ const SalexCRM = () => {
           <div className=" md:min-w-[613px] rounded-[24px]    w-full  h-auto">
             <img
               className="  md:w-[613px] h-auto"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755172761/Frame_7389_cyl5ah.png"
+              src={
+                theme === "dark"
+                  ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755240936/Frame_7389_bpnj1u.png"
+                  : "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755172761/Frame_7389_cyl5ah.png"
+              }
               alt="CRM"
             />
           </div>

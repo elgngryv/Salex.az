@@ -49,8 +49,8 @@ const Contact = () => {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 data-aos="zoom-out-down"
                 data-aos-delay="500">
-                <div className="w-[290px] md:w-[477px] openSans md:mt-[80px] mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10">
-                  <div className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]">
+                <div className="w-[290px] md:w-[477px] openSans md:mt-[80px] mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] md:rounded-[24px] p-[12px] md:p-0 md:ml-[500px] relative z-10">
+                  <div className="flex flex-col items-start gap-[14px] md:p-[24px] ">
                     <div className="flex items-center openSans w-fit h-fit px-[8px] py-[6px] gap-[10px] rounded-[8px]">
                       <h2 className="text-[14px] text-[#3D246A] dark:text-[#E1DCE6] md:text-xl font-normal md:font-thin leading-[140%]">
                         Əgər xidmətlərimizlə bağlı sualınız yaranıbsa, bizimlə
@@ -172,52 +172,52 @@ const Contact = () => {
         </div>
       </div>
       <div className="p-4 openSans">
-        <div className="md:flex md:gap-[40px]">
+        <div className="md:flex md:gap-[12px]">
           <div>
             <div className="relative w-full md:w-[476.5px] mt-6">
               <input
                 type="text"
                 id="ad"
                 placeholder="Ad"
-                className="peer w-full px-[20px] py-4 text-[#3D246A] placeholder:text-[#3D246A] placeholder:font-light italic  font-normal text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                className="peer w-full px-[20px] dark:placeholder:text-[#E1DCE6] py-4 text-[#3D246A] placeholder:text-[#3D246A] placeholder:font-light italic  font-normal text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
-            <div className="relative md:w-[476.5px] text-[#3D246A]  w-full mt-6">
+            <div className="relative md:w-[476.5px] text-[#3D246A] md:mt-3   w-full mt-6 ">
               <input
                 type="text"
                 id="soyad"
                 placeholder="Soyad "
-                className=" w-full px-[20px] py-4 placeholder:text-[#3D246A]  text-[#3D246A] dark:text-[#E1DCE6] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                className=" w-full px-[20px] dark:placeholder:text-[#E1DCE6] py-4 placeholder:text-[#3D246A]  text-[#3D246A] dark:text-[#E1DCE6] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
-            <div className="relative md:w-[476.5px] text-[#3D246A]  w-full mt-6">
+            <div className="relative md:w-[476.5px] text-[#3D246A]  md:mt-3  w-full mt-6">
               <input
                 type="email"
                 id="email"
                 placeholder="Email "
-                className="peer w-full px-[20px] py-4 dark:text-[#E1DCE6] placeholder:text-[#3D246A] text-[#3D246A] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                className="peer w-full px-[20px] dark:placeholder:text-[#E1DCE6] py-4 dark:text-[#E1DCE6] placeholder:text-[#3D246A] text-[#3D246A] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
-            <div className="relative md:w-[476.5px] w-full mt-6">
+            <div className="relative md:w-[476.5px]  md:mt-3 w-full mt-6">
               <input
                 type="tel"
                 id="mobil"
                 placeholder="Mobil Nömrə"
-                className="peer w-full px-[20px] placeholder:text-[#3D246A] dark:text-[#E1DCE6] py-4 text-[#3D246A] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                className="peer w-full px-[20px] dark:placeholder:text-[#E1DCE6] placeholder:text-[#3D246A] dark:text-[#E1DCE6] py-4 text-[#3D246A] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
           </div>
 
           <div>
-            <div className="relative md:w-[659px] w-full mt-6">
+            <div className="relative md:w-[659px]   w-full mt-6">
               <textarea
                 id="mesaj"
                 placeholder="Mesaj "
                 rows={6}
-                className="peer w-full px-[20px] py-2 placeholder:text-[#3D246A] dark:text-[#E1DCE6] text-[#3D246A] placeholder:font-light font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
+                className="peer w-full px-[20px] dark:placeholder:text-[#E1DCE6] py-2 placeholder:text-[#3D246A] dark:text-[#E1DCE6] text-[#3D246A] placeholder:font-light font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
             </div>
           </div>
         </div>

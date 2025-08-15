@@ -10,7 +10,7 @@ const SalexBanner = () => {
     AOS.init({ duration: 1000, once: true });
   }, []);
 
-  return ( 
+  return (
     <div className="p-4  md:container md:mx-auto md:max-w-[1336px]">
       <div className="md:flex md:flex-col md:gap-[24px] md:mb-[24px]">
         <div
@@ -31,9 +31,9 @@ const SalexBanner = () => {
             <span className="font-semibold md:text-[22px] dark:text-[#E1DCE6]">
               Selnaz
             </span>{" "}
-            vasitəsilə 
-            <br className="hidden md:inline dark:text-[#E1DCE6]" />web  sayta və
-             rəqəmsal platformalara daxil olan istifadəçiləri real
+            vasitəsilə
+            <br className="hidden md:inline dark:text-[#E1DCE6]" />
+            web sayta və rəqəmsal platformalara daxil olan istifadəçiləri real
             <br className="hidden md:inline dark:text-[#E1DCE6]" />
             müştəriyə çevirir.
           </h2>
@@ -41,13 +41,11 @@ const SalexBanner = () => {
       </div>
 
       <div className="montserrat flex gap-2.5 items-center mt-4">
-        <h2
-          className="font-semibold text-lg md:text-[22px] dark:text-[#E1DCE6] text-[#3D246A]"
-       >
+        <h2 className="font-semibold text-lg md:text-[22px] dark:text-[#E1DCE6] text-[#3D246A]">
           Satışlarını Artırmağa
         </h2>
         <button
-          className="bg-[#3D246A] py-3 px-[24px] cursor-pointer dark:text-[#E1DCE6] rounded-[24px] text-white text-base font-semibold"
+          className="bg-[#3D246A] dark:bg-[#E1DCE6] dark py-3 px-[24px] cursor-pointer dark:text-[#3D246A] rounded-[24px] text-white text-base font-semibold"
           type="button"
           style={{ zIndex: 10, position: "relative" }}
           onClick={() => {

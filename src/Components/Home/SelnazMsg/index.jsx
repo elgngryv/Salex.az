@@ -45,7 +45,7 @@ export default function SelnazMsg() {
   return (
     <div className="w-full flex md:h-[100%] mx-auto items-center justify-center relative">
       <div>
-          {/* <GlassButton /> */}
+        {/* <GlassButton /> */}
         <AnimatePresence>
           {!isChatOpen && (
             <motion.div
@@ -65,7 +65,7 @@ export default function SelnazMsg() {
                     Salam mən Selnazam
                   </span>
                 </div>
-              
+
                 <div
                   className="flex items-center w-fit md:w-[429px] md:h-[68px] h-fit bg-[#D2B0FE] px-[8px] py-[6px] gap-[10px] rounded-tl-[12px] rounded-tr-[12px] rounded-br-[12px] rounded-b"
                   data-aos="fade-up"

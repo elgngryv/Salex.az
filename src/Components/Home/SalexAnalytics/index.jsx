@@ -1,8 +1,9 @@
 import React from "react";
 import Analytcs from "../../../assets/images/analictcy.svg";
 import Done from "../../../assets/images/material-symbols_done-rounded.svg";
-
+import { useTheme } from "../../theme-provider";
 const SalexAnalytics = () => {
+  const { theme, toggleTheme } = useTheme();
   return (
     <div className="p-4 mb-[74px] md:container md:mx-auto md:max-w-[1336px] ">
       <div className="text-[#3D246A] flex flex-col md:flex-row md:items-start md:justify-between md:max-w-[1613px] md:container md:mx-auto md:gap-[100px]">
@@ -23,7 +24,15 @@ const SalexAnalytics = () => {
           </div>
           <div className="mt-[24px] flex flex-col gap-[8px]">
             <div className="flex gap-[8px] items-start">
-              <img src={Done} alt="" className="mt-[4px]" />
+              <img
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755249479/material-symbols_done-rounded_di9fzx.svg"
+                    : Done
+                }
+                alt=""
+                className="mt-[4px]"
+              />
               <div className="flex flex-col">
                 <span className="font-normal text-base openSans dark:text-[#E1DCE6]">
                   Hansı mesaj daha çox satır?
@@ -35,7 +44,15 @@ const SalexAnalytics = () => {
             </div>
 
             <div className="flex gap-[8px] items-start">
-              <img src={Done} alt="" className="mt-[4px]" />
+              <img
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755249479/material-symbols_done-rounded_di9fzx.svg"
+                    : Done
+                }
+                alt=""
+                className="mt-[4px]"
+              />
               <div className="flex flex-col">
                 <span className="font-normal text-base openSans dark:text-[#E1DCE6]">
                   Hər klikin arxasında nə olduğunu
@@ -47,7 +64,15 @@ const SalexAnalytics = () => {
             </div>
 
             <div className="flex gap-[8px] items-start">
-              <img src={Done} alt="" className="mt-[4px]" />
+              <img
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755249479/material-symbols_done-rounded_di9fzx.svg"
+                    : Done
+                }
+                alt=""
+                className="mt-[4px]"
+              />
               <div className="flex flex-col">
                 <span className="font-normal text-base openSans dark:text-[#E1DCE6]">
                   ROI və kampaniya effektivliyini
@@ -59,7 +84,15 @@ const SalexAnalytics = () => {
             </div>
 
             <div className="flex gap-[8px] items-start">
-              <img src={Done} alt="" className="mt-[4px]" />
+              <img
+                src={
+                  theme === "dark"
+                    ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755249479/material-symbols_done-rounded_di9fzx.svg"
+                    : Done
+                }
+                alt=""
+                className="mt-[4px]"
+              />
               <div className="flex flex-col">
                 <span className="font-normal text-base openSans dark:text-[#E1DCE6]">
                   Davranışa əsaslanan optimizasiya ilə
@@ -77,7 +110,11 @@ const SalexAnalytics = () => {
           <div className=" md:min-w-[613px]  w-full  h-auto">
             <img
               className="w-full h-auto"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755172925/Frame_7389_vnqbnv.png"
+              src={
+                theme === "dark"
+                  ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755240980/Frame_7389_1_m0rqiz.png"
+                  : "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755172925/Frame_7389_vnqbnv.png"
+              }
               alt="Analytics"
             />
           </div>

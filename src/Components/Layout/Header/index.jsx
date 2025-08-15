@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { GoChevronDown } from "react-icons/go";
-import Headerlogo from "../../../assets/images/logo.svg";
-import { Link, } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTheme } from "../../theme-provider";
-import FooterDarkLogo from "../../../assets/images/Footer-logo.svg";
+import Sun from "../../../assets/images/Sun.svg";
+import Moon from "../../../assets/images/Moon.svg";
 
 const Header = () => {
-
   const [isAtTop, setIsAtTop] = useState(true);
   const [collapsed, setCollapsed] = useState(false);
   const [darkMode] = useState(false);
@@ -46,8 +45,7 @@ const Header = () => {
           {/* Logo kapsayıcı */}
           <Link
             to="/"
-            onClick={() => console.log("Logo klikləndi")}
-            className={`transition-opacity duration-300 ease-in-out ${
+            className={`transition-opacity  duration-300 ease-in-out ${
               collapsed ? "opacity-0" : "opacity-100"
             }`}
             style={{
@@ -91,7 +89,7 @@ const Header = () => {
             <div className="flex items-center gap-4 lg:hidden">
               {/* Daxil ol düyməsi */}
               <button
-                className="bg-[#3D246A] font-semibold text-base montserrat text-white px-6 py-3 rounded-[24px] whitespace-nowrap"
+                className="bg-[#3D246A] dark:bg-[#E1DCE6] font-semibold text-base montserrat dark:text-[#3D246A] text-white px-6 py-3 rounded-[24px] whitespace-nowrap"
                 onClick={() =>
                   window.open(
                     "https://docs.google.com/forms/d/1EusUYjYDL-9nf-LYiI2g_TlpM5ZyZEGwSfRaJXwejq8/edit",
@@ -118,12 +116,16 @@ const Header = () => {
             <div className="hidden dark:text-[#E1DCE6] lg:flex items-center gap-1 cursor-pointer text-[#3D246A] font-semibold select-none">
               <button
                 onClick={toggleTheme}
-                className="flex items-center gap-2 px-4 py-2 rounded-full shadow-md border 
-               bg-gradient-to-r from-gray-200 to-gray-300 text-black 
-               dark:from-gray-800 dark:to-gray-900 dark:text-white
-               hover:from-gray-300 hover:to-gray-400 dark:hover:from-gray-700 dark:hover:to-gray-800
-               transition-all duration-300">
-                {theme === "dark" ? "🌙 " : "☀️ "}
+                className="flex items-center gap-2 p-2 rounded-full shadow-md border-2 
+     border-[#5B2E91] text-black 
+    dark:from-gray-800 dark:border-[#D3AEFF] dark:text-white
+    hover:from-gray-300 hover:to-gray-400 
+    transition-all duration-300">
+                <img
+                  src={theme === "dark" ? Moon : Sun}
+                  alt={theme === "dark" ? "Moon" : "Sun"}
+                  className="w-5 h-5"
+                />
               </button>
             </div>
 
@@ -134,7 +136,7 @@ const Header = () => {
                   "_blank"
                 )
               }
-              className="hidden dark:text-[#E1DCE6] lg:block bg-[#3D246A] font-semibold text-base montserrat text-white px-[24px] py-3 rounded-[24px]">
+              className="hidden  dark:bg-[#E1DCE6] dark:text-[#3D246A] lg:block bg-[#3D246A] font-semibold text-base montserrat text-white px-[24px] py-3 rounded-[24px]">
               Qeydiyyat
             </button>
           </div>

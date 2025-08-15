@@ -49,8 +49,8 @@ const About = () => {
                 transition={{ duration: 0.4, ease: "easeInOut" }}
                 data-aos="zoom-out-down"
                 data-aos-delay="500">
-                <div className="w-[290px] md:w-[477px] openSans md:mt-[80px] mt-[10px] border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10">
-                  <div className="flex flex-col items-start gap-[14px] md:px-[24px] md:py-[24px]">
+                <div className="w-[290px] md:w-[477px] openSans md:mt-[80px] mt-[10px] border md:p-0 md:rounded-[24px] border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] p-[12px] md:ml-[500px] relative z-10">
+                  <div className="flex flex-col items-start gap-[14px] md:p-[24px] ">
                     <div className="flex items-center openSans w-fit h-fit px-[8px] py-[6px] gap-[10px] rounded-[8px]">
                       <h2 className="text-[14px] text-[#3D246A] dark:text-[#E1DCE6] md:text-xl font-normal md:font-thin leading-[140%]">
                         Artıq təxminlər yox, dəqiq analiz və real nəticələr

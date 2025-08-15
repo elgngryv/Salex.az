@@ -10,7 +10,7 @@ const Footer = () => {
   return (
     <div>
       <div className="flex p-4 justify-center relative top-[80px] md:container md:max-w-[1336px] md:mx-auto  md:top-[80px] mb-10">
-        <div 
+        <div
           className=" md:px-[230px] md:py-[200px] p-10 text-[#3D246A] border border-white/30
                      shadow-[0_4px_30px_rgba(0,0,0,0.1)] bg-gradient-to-r 
                      backdrop-blur-[10px] backdrop-saturate-150 rounded-[20px] relative"
@@ -34,7 +34,7 @@ const Footer = () => {
                 Satışlarını Artırmağa
               </h2>
               <button
-                className="bg-[#3D246A] py-3 px-[24px] cursor-pointer dark:text-[#E1DCE6] rounded-[24px] text-white text-base font-semibold"
+                className="bg-[#3D246A] py-3 px-[24px] dark:bg-[#E1DCE6] dark:text-[#3D246A] cursor-pointer  rounded-[24px] text-white text-base font-semibold"
                 type="button"
                 style={{ zIndex: 9999, position: "relative" }}
                 onClick={() => {
