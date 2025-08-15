@@ -217,7 +217,7 @@ const Contact = () => {
                 id="mesaj"
                 placeholder="Mesaj "
                 rows={6}
-                className="peer w-full px-[20px] dark:placeholder:text-[#E1DCE6] py-2 placeholder:text-[#3D246A] dark:text-[#E1DCE6] text-[#3D246A] placeholder:font-light font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
+                className="peer w-full md:h-[250px] px-[20px] dark:placeholder:text-[#E1DCE6] py-2 placeholder:text-[#3D246A] dark:text-[#E1DCE6] text-[#3D246A] placeholder:font-light font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
             </div>
           </div>
         </div>
