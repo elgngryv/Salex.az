@@ -3,8 +3,6 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { GoChevronDown } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../theme-provider";
-import Sun from "../../../assets/images/Sun.svg";
-import Moon from "../../../assets/images/Moon.svg";
 
 const Header = () => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -122,7 +120,7 @@ const Header = () => {
     hover:from-gray-300 hover:to-gray-400 
     transition-all duration-300">
                 <img
-                  src={theme === "dark" ? Moon : Sun}
+                  src={theme === "dark" ? "/Moon.svg" : "/Sun.svg"}
                   alt={theme === "dark" ? "Moon" : "Sun"}
                   className="w-5 h-5"
                 />
