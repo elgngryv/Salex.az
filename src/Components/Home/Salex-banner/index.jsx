@@ -31,8 +31,7 @@ const SalexBanner = () => {
             <span className="font-semibold md:text-[22px] dark:text-[#E1DCE6]">
               Selnaz
             </span>{" "}
-            vasitəsilə
-            <br className="hidden md:inline dark:text-[#E1DCE6]" />
+            vasitəsilə <br className="hidden md:inline dark:text-[#E1DCE6]" />
             web sayta və rəqəmsal platformalara daxil olan istifadəçiləri real
             <br className="hidden md:inline dark:text-[#E1DCE6]" />
             müştəriyə çevirir.

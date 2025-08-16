@@ -81,9 +81,9 @@ const Solutions = () => {
 
               {/* Desktop image */}
               <img
-                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899484/Hellyollar%C4%B1Huge_zhvpne.svg"
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755259653/Vector_wt1wkm.png"
                 alt="Selnaz Huge"
-                className="absolute bottom-[-700px] hidden md:block right-[-775px] z-[9999] cursor-auto"
+                className="absolute  bottom-[-700px] hidden md:block right-[-775px] z-[9999] cursor-auto"
                 data-aos="fade-right"
                 data-aos-delay="100"
               />
@@ -122,50 +122,48 @@ const Solutions = () => {
               </AnimatePresence>
 
               {/* Chat window with animation */}
-            <div className="absolute">
-                <div
-                className="md:container md:mx-auto md:max-w-[1336px] relative"
-               >
-                <AnimatePresence>
-                  {isChatOpen && (
-                    <motion.div
-                      ref={chatRef}
-                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                      transition={{ duration: 0.3, ease: "easeOut" }}
-                      className="absolute bottom-[-950px] right-[-220px] md:bottom-[-880px] md:right-[-990px] z-[999]"
-                      style={{
-                        width: "320px",
-                        height: "420px",
-                        boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
-                        borderRadius: "16px",
-                        backgroundColor: "white",
-                        overflow: "hidden",
-                        display: "flex",
-                        flexDirection: "column",
-                      }}>
-                      <RobotChat
-                        queuedMessage={queuedMessage}
-                        onClose={handleChatClose}
-                        onMessageSent={() => setQueuedMessage(null)}
-                      />
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+              <div className="absolute">
+                <div className="md:container md:mx-auto md:max-w-[1336px] relative">
+                  <AnimatePresence>
+                    {isChatOpen && (
+                      <motion.div
+                        ref={chatRef}
+                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.8, y: 20 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                        className="absolute bottom-[-950px] right-[-220px] md:bottom-[-880px] md:right-[-990px] z-[999]"
+                        style={{
+                          width: "320px",
+                          height: "420px",
+                          boxShadow: "0 4px 20px rgba(0,0,0,0.2)",
+                          borderRadius: "16px",
+                          backgroundColor: "white",
+                          overflow: "hidden",
+                          display: "flex",
+                          flexDirection: "column",
+                        }}>
+                        <RobotChat
+                          queuedMessage={queuedMessage}
+                          onClose={handleChatClose}
+                          onMessageSent={() => setQueuedMessage(null)}
+                        />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
-                <div className="relative w-full h-[200px] md:h-[400px]">
-                  <img
-                    src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/Hellyollar%C4%B1_tdyhek.svg"
-                    alt="Selnaz"
-                    className="relative bottom-[-620px] z-[999] right-[-240px] block md:hidden cursor-auto pointer-events-none"
-                    style={{ width: "138px", height: "138px" }}
-                    data-aos="fade-right"
-                    data-aos-delay="100"
-                  />
+                  <div className="relative w-full h-[200px] md:h-[400px]">
+                    <img
+                      src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/Hellyollar%C4%B1_tdyhek.svg"
+                      alt="Selnaz"
+                      className="relative bottom-[-620px] z-[999] right-[-240px] block md:hidden cursor-auto pointer-events-none"
+                      style={{ width: "138px", height: "138px" }}
+                      data-aos="fade-right"
+                      data-aos-delay="100"
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </motion.div>
         </div>

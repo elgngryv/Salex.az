@@ -71,7 +71,7 @@ export default function SelnazMsg() {
                   data-aos="fade-up"
                   data-aos-delay="500">
                   <span className="text-[12px] md:text-xl font-normal italic leading-[140%]">
-                    Şirkətlər mənimlə satışlarını 30% artırır, sən də
+                    Şirkətlər mənimlə satışlarını 30% artırır,sən də{" "}
                     <br className="hidden md:inline" />
                     artırmaq istəyərsən? 🤩
                   </span>
