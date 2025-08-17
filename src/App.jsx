@@ -14,7 +14,7 @@ import { ThemeProvider } from "./Components/theme-provider";
 import AdminRoute from "./routes/AdminRoute";
 import AdminLayout from "./Admin/Components/Layouts/AdminLayout";
 import PublicLayout from "./Components/Layout/PublicLayout";
-import Package from "./Admin/Components/package";
+import Package from "./Admin/Components/Package/index";
 import Login from "./Admin/Login";
 // import CompanyMenu from "./Admin/Company/CompanyMenu";
 import DataManagement from "./Admin/Company/DataManagement";
