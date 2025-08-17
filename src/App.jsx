@@ -11,18 +11,22 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "./Components/theme-provider";
 
-// Improved ScrollToTop component with smooth scrolling
+import AdminRoute from "./routes/AdminRoute";
+import AdminLayout from "./Admin/Components/Layouts/AdminLayout";
+import PublicLayout from "./Components/Layout/PublicLayout";
+import Package from "./Admin/Components/package";
+import Login from "./Admin/Login";
+// import CompanyMenu from "./Admin/Company/CompanyMenu";
+import DataManagement from "./Admin/Company/DataManagement";
+import Dashboard from "./Admin/Company/DashboardButton";
+import AnalyticsDashboard from "./Admin/AnalyticsDashboard";
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Smooth scroll to top with behavior: 'smooth'
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
 
-    // Fallback for browsers that don't support smooth scrolling
     const scrollToTop = () => {
       const c = document.documentElement.scrollTop || document.body.scrollTop;
       if (c > 0) {
@@ -30,7 +34,6 @@ function ScrollToTop() {
         window.scrollTo(0, c - c / 8);
       }
     };
-
     scrollToTop();
   }, [pathname]);
 
@@ -55,16 +58,10 @@ const AppContent = () => {
           localStorage.setItem("token", res.data);
           setToken(res.data);
           axios.defaults.headers.common["Authorization"] = `Bearer ${res.data}`;
-        } else {
-          console.warn("Token cavabda tapılmadı!");
         }
       })
-      .catch((err) => {
-        console.error("Token alına bilmədi:", err);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false));
   }, [token]);
 
   if (loading) {
@@ -78,18 +75,37 @@ const AppContent = () => {
   return (
     <ThemeProvider>
       <div className="flex flex-col min-h-screen">
-        <Header />
         <main className="flex-grow">
           <ScrollToTop />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/SuggestionsPage" element={<SuggestionsPage />} />
-            <Route path="/ContactPage" element={<ContactPage />} />
-            <Route path="/AboutPage" element={<AboutPage />} />
-            <Route path="/SolutionsPage" element={<SolutionsPage />} />
+            {/* Public routes */}
+            <Route element={<PublicLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/SuggestionsPage" element={<SuggestionsPage />} />
+              <Route path="/ContactPage" element={<ContactPage />} />
+              <Route path="/AboutPage" element={<AboutPage />} />
+              <Route path="/SolutionsPage" element={<SolutionsPage />} />
+            </Route>
+            {/* Admin routes */}
+            <Route path="/admin" element={<Login />} />{" "}
+            {/* Birbaşa admin = Login */}
+            <Route path="/admin/*" element={<AdminRoute />}>
+              <Route element={<AdminLayout />}>
+                <Route path="Package" element={<Package />} />
+                <Route
+                  path="company/datamanagement"
+                  element={<DataManagement />}
+                />
+                <Route path="company/dashboard" element={<Dashboard />} />
+                <Route
+                  path="company/AnalyticsDashboard"
+                  element={<AnalyticsDashboard />}
+                />
+                {/* Başqa admin səhifələr buraya əlavə oluna bilər */}
+              </Route>
+            </Route>
           </Routes>
         </main>
-        <Footer />
       </div>
     </ThemeProvider>
   );
