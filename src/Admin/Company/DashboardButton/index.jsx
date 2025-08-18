@@ -9,16 +9,16 @@ export default function Dashboard() {
 
   const buttons = [
     { id: 1, label: "Selnaz", path: "/selnaz" },
-    { id: 2, label: "Qeydiyyat", path: "/admin/company/datamanagement" },
     { id: 3, label: "Robot", path: "/robot" },
     { id: 4, label: "Chat", path: "/chat" },
-    { id: 5, label: "Analitika", path: "/analitika" },
+    { id: 5, label: "Analitika", path: "/admin/company/AnalyticsDashboard" },
+
     { id: 6, label: "CRM", path: "/crm" },
   ];
 
   const handleButtonClick = (buttonId, path) => {
     setSelectedButton(buttonId);
-    navigate(path); // səhifəyə yönləndirmə
+    navigate(path);
   };
 
   return (
@@ -35,8 +35,7 @@ export default function Dashboard() {
                 text-xl min-h-[120px] flex items-center justify-center
                 ${selectedButton === button.id ? "ring-4 ring-purple-400" : ""}
                 hover:scale-105 active:scale-95
-              `}
-            >
+              `}>
               {button.label}
             </button>
           ))}

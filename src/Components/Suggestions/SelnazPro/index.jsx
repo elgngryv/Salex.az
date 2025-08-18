@@ -23,7 +23,7 @@ const SelnazPro = () => {
   };
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className="px-4 mt-3 max-w-md mx-auto">
+    <div className="p-4 md:p-0 ">
       <div className="border p-[32px] md:w-[389px] border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
         <h2 className="font-bold text-[#3D246A] dark:text-[#E1DCE6] text-2xl montserrat">
           {selnazPro.title}
@@ -48,7 +48,7 @@ const SelnazPro = () => {
         <div className="montserrat mt-[28px]">
           <h2 className="font-semibold text-lg dark:text-[#E1DCE6] text-[#4200BA]">
             <span className="text-[#4200BA] text-2xl font-semibold dark:text-[#E1DCE6]">
-              189
+              198
             </span>{" "}
             AZN / aylıq
           </h2>

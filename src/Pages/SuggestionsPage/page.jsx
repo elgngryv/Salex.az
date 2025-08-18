@@ -8,7 +8,7 @@ const SuggestionsPage = () => {
   return (
     <div className="mb-[40px]">
       <Suggestions />
-      <div className="md:flex  md:container md:max-w-[1336px] md:mx-auto">
+      <div className="md:flex md:gap-[24px]   md:container md:max-w-[1305px] md:mx-auto">
         <SelnazStart />
         <SelnazSmart />
         <SelnazPro />

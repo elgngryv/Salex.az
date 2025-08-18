@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RobotChat from "../../Widgets/RobotChat";
+import "./contact.css";
 
 const Contact = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -77,9 +78,10 @@ const Contact = () => {
 
               {/* Desktop image */}
               <img
-                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899482/ELageHuge_pulqgo.svg "
+                id="SelnazHugeContact"
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755507741/ChatGPT_Image_Jul_16_2025_07_12_28_PM-Photoroom-Photoroom-Photoroom_1_cynmor.png "
                 alt="Selnaz Huge"
-                className="absolute bottom-[-720px] hidden md:block pointer-events-none right-[-790px] z-[9999] cursor-auto"
+                className="absolute bottom-[-730px] hidden md:block pointer-events-none right-[-810px] z-[9999] cursor-auto"
                 data-aos="fade-right"
                 data-aos-delay="100"
               />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import "./solution.css";
 
 import SelnazHome from "../../assets/images/solutionssel.svg";
 import Vector from "../../assets/images/Vector.svg";
@@ -81,9 +82,10 @@ const Solutions = () => {
 
               {/* Desktop image */}
               <img
-                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755259653/Vector_wt1wkm.png"
+                id="SelnazHuge"
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755506622/Vector_pklntq.webp"
                 alt="Selnaz Huge"
-                className="absolute  bottom-[-700px] hidden md:block right-[-775px] z-[9999] cursor-auto"
+                className="absolute  bottom-[-710px] hidden md:block right-[-800px] z-[9999] cursor-auto"
                 data-aos="fade-right"
                 data-aos-delay="100"
               />

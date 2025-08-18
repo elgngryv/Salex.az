@@ -20,6 +20,7 @@ import Login from "./Admin/Login";
 import DataManagement from "./Admin/Company/DataManagement";
 import Dashboard from "./Admin/Company/DashboardButton";
 import AnalyticsDashboard from "./Admin/AnalyticsDashboard";
+import Company from "./Admin/Company/Company";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -101,6 +102,7 @@ const AppContent = () => {
                   path="company/AnalyticsDashboard"
                   element={<AnalyticsDashboard />}
                 />
+                <Route path="company/Company" element={<Company />} />
                 {/* Başqa admin səhifələr buraya əlavə oluna bilər */}
               </Route>
             </Route>

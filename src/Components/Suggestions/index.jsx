@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import RobotChat from "../../Widgets/RobotChat";
+import "./suggestions.css"
 
 const Suggestions = () => {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -77,9 +78,10 @@ const Suggestions = () => {
 
               {/* Desktop image */}
               <img
-                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899498/SugselHUge_dkplvk.svg"
+              id="SelnazHugeimg"
+                src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755507574/Vector_qlavs6.png"
                 alt="Selnaz Huge"
-                className="absolute bottom-[-720px] hidden md:block right-[-790px] z-[999] cursor-auto"
+                className="absolute bottom-[-750px] hidden md:block right-[-810px] z-[999] cursor-auto"
                 data-aos="fade-right"
                 data-aos-delay="100"
               />

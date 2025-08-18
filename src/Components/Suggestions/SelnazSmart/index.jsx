@@ -18,7 +18,7 @@ const SelnazSmart = () => {
       { id: 1, text: "3 kanalda qarşılanma (veb, IG, WhatsApp)" },
       { id: 2, text: "Davranış əsaslı yönləndirmə" },
       { id: 3, text: "Kampaniya və təklif avtomatlaşdırması" },
-      { id: 4, text: "CRM inteqrasiyası avtomatik follow-up"},
+      { id: 4, text: "CRM inteqrasiyası avtomatik follow-up" },
       { id: 5, text: "Müştəri segmentasiyası" },
       { id: 5, text: "Həftəlik analitik hesabat" },
     ],
@@ -26,7 +26,7 @@ const SelnazSmart = () => {
 
   const { theme, toggleTheme } = useTheme();
   return (
-    <div className="px-4 mt-3 max-w-md mx-auto">
+    <div className="p-4 md:p-0 ">
       <div className="border p-[32px] md:w-[389px] border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px]">
         <h2 className="font-bold text-[#3D246A] dark:text-[#E1DCE6] text-2xl montserrat">
           {selnazSmart.title}
@@ -51,7 +51,7 @@ const SelnazSmart = () => {
         <div className="montserrat mt-[28px]">
           <h2 className="font-semibold text-lg dark:text-[#E1DCE6] text-[#4200BA]">
             <span className="text-[#4200BA] text-2xl font-semibold dark:text-[#E1DCE6]">
-              119
+              128
             </span>{" "}
             AZN / aylıq
           </h2>

@@ -28,7 +28,7 @@ const Selnazsolutions = () => {
           </div>
           <div className="">
             <img
-              className="md:w-[600px] md:h-[551px] hidden md:block  h-[322px]"
+              className="md:w-[600px] md:h-[510px] hidden md:block  h-[322px]"
               src={
                 theme === "dark"
                   ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755242536/Frame_7229_1_oiyimy.png"
@@ -62,7 +62,7 @@ const Selnazsolutions = () => {
           <div>
             <div>
               <img
-                className="w-[358px] md:w-[600px] md:h-[551px]  hidden md:block h-[322px]"
+                className="w-[358px] md:w-[600px] md:h-[510px]  hidden md:block h-[322px]"
                 src={
                   theme === "dark"
                     ? " https://res.cloudinary.com/duy7rcf4m/image/upload/v1755173447/Frame_7230_s44sli.png"
@@ -85,7 +85,7 @@ const Selnazsolutions = () => {
             Hərəkət, klik və gözləmə müddətini analiz edərək müştərinin
             maraqlandığı məhsulu
             <br className="dark:text-[#E1DCE6] md:hidden " />
-            {''}
+            {""}
             müəyyənləşdirir
           </p>
         </div>
@@ -99,7 +99,7 @@ const Selnazsolutions = () => {
           </div>
           <div>
             <img
-              className="w-[358px] md:w-[600px] md:h-[551px]  hidden md:block h-[322px]"
+              className="w-[358px] md:w-[600px] md:h-[510px]  hidden md:block h-[322px]"
               src={
                 theme === "dark"
                   ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755242873/Frame_7231_i7wrjq.png "
@@ -118,9 +118,7 @@ const Selnazsolutions = () => {
           <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
             WhatsApp, sosial şəbəkə və sayt mesajlarını bir yerə toplayaraq
             parçalanmanı aradan
-            <br className="dark:text-[#E1DCE6] md:hidden " />
-            {" "}
-            qaldırır.{" "}
+            <br className="dark:text-[#E1DCE6] md:hidden " /> qaldırır.{" "}
           </p>
         </div>
         <div className="  md:w-[600px] md:h-[551px]">
@@ -133,7 +131,7 @@ const Selnazsolutions = () => {
           </div>
           <div>
             <img
-              className="w-[358px] md:w-[600px] md:h-[551px]  hidden md:block h-[322px]"
+              className="w-[358px] md:w-[600px] md:h-[510px]  hidden md:block h-[322px]"
               src={
                 theme === "dark"
                   ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755243092/Frame_7232_1_ehnfyh.png"
@@ -152,9 +150,7 @@ const Selnazsolutions = () => {
           <p className="font-normal text-base leading-[150%] dark:text-[#E1DCE6] text-[#3D246A]">
             Müştərinin qeyd olunan tarix, mövzu və keçmiş alışlarına əsaslanaraq
             uyğun zamanda əlaqə
-            <br className="dark:text-[#E1DCE6] md:hidden" /> 
-            {' '}
-            yaradır
+            <br className="dark:text-[#E1DCE6] md:hidden" /> yaradır
           </p>
         </div>
         <div className="  md:w-[600px] md:h-[551px]">
@@ -167,7 +163,7 @@ const Selnazsolutions = () => {
           </div>
           <div>
             <img
-              className="w-[358px]  md:w-[600px] md:h-[551px] hidden md:block h-[322px]"
+              className="w-[358px]  md:w-[600px] md:h-[510px] hidden md:block h-[322px]"
               src={
                 theme === "dark"
                   ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755243653/Frame_7233_1_wtakya.png"
