@@ -95,7 +95,7 @@ const Contact = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3 }}
                     onClick={toggleChat}
-                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-313%] right-[-213px] md:bottom-[-707`px] md:right-[-760px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
+                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-313%] right-[-213px] md:bottom-[-707px] md:right-[-759px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
                     style={{ backgroundColor: "#5B2E91" }}
                     data-aos="fade-left"
                     data-aos-delay="250">
@@ -130,7 +130,7 @@ const Contact = () => {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.8, y: 20 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="absolute bottom-[-910px] right-[-241px] md:bottom-[-840px] md:right-[-970px] z-[999]"
+                        className="absolute bottom-[-910px] right-[-241px] md:bottom-[-830px] md:right-[-970px] z-[999]"
                         style={{
                           width: "320px",
                           height: "420px",
