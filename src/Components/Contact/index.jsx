@@ -152,7 +152,7 @@ const Contact = () => {
 
                   <div className="relative w-full h-[200px] md:h-[400px]">
                     <img
-                      src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899492/SelnazContact_u3ofcv.svg"
+                      src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755523661/ChatGPT_Image_Jul_16_2025_07_12_28_PM-Photoroom-Photoroom-Photoroom_2_hvtbt5.png"
                       alt="Selnaz"
                       className="relative bottom-[-570px] z-[9999] right-[-257px] block md:hidden cursor-auto pointer-events-none"
                       style={{ width: "122px", height: "189px" }}

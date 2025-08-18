@@ -151,7 +151,7 @@ const Suggestions = () => {
 
                 <div className="relative w-full h-[200px] md:h-[400px]">
                   <img
-                    src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899498/Sugsel_hufr6k.svg"
+                    src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755523584/Vector_yvwqzo.png"
                     alt="Selnaz"
                     className="absolute bottom-[-580px] z-[999] right-[-240px] block md:hidden cursor-auto pointer-events-none"
                     style={{ width: "126px", height: "189px" }}
