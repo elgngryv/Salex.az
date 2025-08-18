@@ -3,6 +3,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { GoChevronDown } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../theme-provider";
+import ScrollToTop from "../../../../ScrollToTop";
 
 const Header = () => {
   const [isAtTop, setIsAtTop] = useState(true);
@@ -68,6 +69,7 @@ const Header = () => {
             }`}>
             <Link to="/AboutPage" className="hover:underline  cursor-pointer">
               Haqqımızda
+               <ScrollToTop/>
             </Link>
 
             <Link to="/SolutionsPage" className="hover:underline">

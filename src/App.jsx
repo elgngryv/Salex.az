@@ -78,7 +78,6 @@ const AppContent = () => {
 
   return (
     <ThemeProvider>
-          <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <main className="flex-grow">
           <Routes>
@@ -91,8 +90,7 @@ const AppContent = () => {
               <Route path="/SolutionsPage" element={<SolutionsPage />} />
             </Route>
             {/* Admin routes */}
-            <Route path="/admin" element={<Login />} />{" "}
-            {/* Birbaşa admin = Login */}
+            <Route path="/admin" element={<Login />} />
             <Route path="/admin/*" element={<AdminRoute />}>
               <Route element={<AdminLayout />}>
                 <Route path="Package" element={<Package />} />
@@ -112,7 +110,6 @@ const AppContent = () => {
                   element={<SelnazMessage />}
                 />
                 <Route path="company/Buttons" element={<Buttons />} />
-                {/* Başqa admin səhifələr buraya əlavə oluna bilər */}
               </Route>
             </Route>
           </Routes>
@@ -125,6 +122,7 @@ const AppContent = () => {
 const App = () => {
   return (
     <BrowserRouter>
+     <ScrollToTop />
       <AppContent />
     </BrowserRouter>
   );
