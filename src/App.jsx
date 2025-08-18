@@ -21,6 +21,9 @@ import DataManagement from "./Admin/Company/DataManagement";
 import Dashboard from "./Admin/Company/DashboardButton";
 import AnalyticsDashboard from "./Admin/AnalyticsDashboard";
 import Company from "./Admin/Company/Company";
+import UserMessage from "./Admin/UserMessage";
+import SelnazMessage from "./Admin/SelnazMessage";
+import Buttons from "./Admin/Buttons";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -103,6 +106,12 @@ const AppContent = () => {
                   element={<AnalyticsDashboard />}
                 />
                 <Route path="company/Company" element={<Company />} />
+                <Route path="company/UserMessage" element={<UserMessage />} />
+                <Route
+                  path="company/SelnazMessage"
+                  element={<SelnazMessage />}
+                />
+                <Route path="company/Buttons" element={<Buttons />} />
                 {/* Başqa admin səhifələr buraya əlavə oluna bilər */}
               </Route>
             </Route>

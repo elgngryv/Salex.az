@@ -74,6 +74,39 @@ export const Sidebar = () => {
           }>
           Analitika
         </NavLink>
+        <NavLink
+          to="/admin/company/UserMessage"
+          className={({ isActive }) =>
+            `py-2 px-4 rounded-md text-sm transition duration-200 ${
+              isActive
+                ? "bg-[#5B2E91] text-white"
+                : "hover:bg-[#5B2E91] hover:text-white"
+            }`
+          }>
+          İstifadəçi Mesajları
+        </NavLink>
+        <NavLink
+          to="/admin/company/SelnazMessage"
+          className={({ isActive }) =>
+            `py-2 px-4 rounded-md text-sm transition duration-200 ${
+              isActive
+                ? "bg-[#5B2E91] text-white"
+                : "hover:bg-[#5B2E91] hover:text-white"
+            }`
+          }>
+          Selnazın Mesajları
+        </NavLink>
+        <NavLink
+          to="/admin/company/Buttons"
+          className={({ isActive }) =>
+            `py-2 px-4 rounded-md text-sm transition duration-200 ${
+              isActive
+                ? "bg-[#5B2E91] text-white"
+                : "hover:bg-[#5B2E91] hover:text-white"
+            }`
+          }>
+         Buttons
+        </NavLink>
       </nav>
     </aside>
   );

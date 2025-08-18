@@ -1,9 +1,9 @@
 import React from "react";
 import { Trash2 } from "lucide-react";
-import { useNavigate } from "react-router-dom"; // 🚀 burada import
+import { useNavigate } from "react-router-dom";
 
 const Company = () => {
-  const navigate = useNavigate(); // 🚀 navigate funksiyası
+  const navigate = useNavigate();
 
   // Sample data for the table
   const tableData = [

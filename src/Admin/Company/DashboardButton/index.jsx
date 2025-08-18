@@ -10,10 +10,21 @@ export default function Dashboard() {
   const buttons = [
     { id: 1, label: "Selnaz", path: "/selnaz" },
     { id: 3, label: "Robot", path: "/robot" },
-    { id: 4, label: "Chat", path: "/chat" },
+    // { id: 4, label: "Chat", path: "/admin/company/UserMessage" },
     { id: 5, label: "Analitika", path: "/admin/company/AnalyticsDashboard" },
 
     { id: 6, label: "CRM", path: "/crm" },
+    {
+      id: 7,
+      label: "Selnazın mesajı rəngi",
+      path: "/admin/company/SelnazMessage",
+    },
+    {
+      id: 8,
+      label: "İstifadəçinin mesajı rəngi",
+      path: "/admin/company/UserMessage",
+    },
+    { id: 9, label: "Butonlar", path: "/admin/company/Buttons" },
   ];
 
   const handleButtonClick = (buttonId, path) => {
