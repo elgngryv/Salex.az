@@ -16,7 +16,11 @@ const Footer = () => {
                      backdrop-blur-[10px] backdrop-saturate-150 rounded-[20px] relative"
           style={{ overflow: "visible" }}>
           <div className="absolute -top-28 right-0 z-30">
-            <img src={Selnaz} alt="Selnaz" className="w-[96.62px] h-auto" />
+            <img
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755548473/WhatsApp_Image_2025-07-13_at_20.30.25-Photoroom-Photoroom_2_xatsh1.png"
+              alt="Selnaz"
+              className="w-[96.62px] h-auto"
+            />
           </div>
           <div className="flex flex-col items-center text-center">
             <h2 className="font-montserrat font-semibold md:text-[40px]  dark:text-[#E1DCE6] md:w-[845px] md:leading-[100%] text-xl">

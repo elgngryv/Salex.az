@@ -22,7 +22,7 @@ const Selnazsolutions = () => {
           <div className="">
             <img
               className="w-[358px] md:hidden  h-[322px]"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899479/6_xhiptu.svg"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755548282/Frame_7229_llokln.png"
               alt=""
             />
           </div>
@@ -93,7 +93,7 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899476/4_hvojwo.svg"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755547980/Frame_7231_winjf5.png"
               alt=""
             />
           </div>
@@ -125,7 +125,7 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899475/3_kvgkr5.svg"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755548085/Frame_7232_flgu5u.png"
               alt=""
             />
           </div>
@@ -157,7 +157,7 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899475/2_veoluo.svg"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755548161/Frame_7233_fpb0ia.png"
               alt=""
             />
           </div>
@@ -190,7 +190,7 @@ const Selnazsolutions = () => {
           <div>
             <img
               className="w-[358px] md:hidden h-[322px]"
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899474/1_snl4sm.svg"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755548214/Frame_7234_gl04bq.png"
               alt=""
             />
           </div>

@@ -14,7 +14,8 @@ const SelnazMain = () => {
 
           <div className="absolute bottom-[336px] left-1/2 -translate-x-1/2 z-10 block md:hidden">
             <img
-              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899488/ortasel_w8amaq.svg"
+              className="w-[140px]"
+              src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755547143/image_1_zirhag.png"
               alt="Main happy character with hands up (mobile)"
             />
           </div>
@@ -48,7 +49,8 @@ const SelnazMain = () => {
             <div className="relative right-[17px] top-[50px] md:hidden">
               <div className="absolute right-[-43px] top-[-50px]">
                 <img
-                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899489/sagsel1_yrcdci.svg"
+                className="w-[80px]"
+                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755547560/Ellipse_8_hj0qbb.png"
                   alt="Smiling character looking right"
                 />
               </div>
@@ -78,7 +80,8 @@ const SelnazMain = () => {
             <div className="relative right-[-180px] top-[20px] md:hidden">
               <div className=" absolute left-[27px]  w-[80px] h-[80px] top-[-44px]">
                 <img
-                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899490/sagsel2_wuglu7.svg"
+                className="w-[80px]"
+                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755547496/Frame_7240_b9jbtw.png"
                   alt="Surprised character looking forward"
                 />
               </div>
@@ -110,7 +113,8 @@ const SelnazMain = () => {
             <div className="relative left-[10px] top-[20px] md:hidden">
               <div className="absolute left-[-3px]  top-[-80px]">
                 <img
-                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899495/solsel2_bcekyc.svg"
+                  className=" w-[80px]"
+                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755547398/Ellipse_11_xd0ac8.png"
                   alt="Thinking character looking up-left"
                 />
               </div>
@@ -140,7 +144,8 @@ const SelnazMain = () => {
             <div className="relative left-[17px]  top-[50px] md:hidden">
               <div className=" absolute left-[-43px]  top-[-60px] ">
                 <img
-                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899495/solsel1_wojp7b.svg"
+                  className="w-[80px]"
+                  src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755547274/Ellipse_12_woedjb.png"
                   alt="Smiling character looking left"
                 />
               </div>

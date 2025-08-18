@@ -53,10 +53,11 @@ const Header = () => {
               zIndex: 9999,
             }}>
             <img
+              className="w-[100px]"
               src={
                 theme === "dark"
                   ? "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899482/Footer-logo_j56opi.svg"
-                  : "https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/logo_xzeulg.svg"
+                  : "https://res.cloudinary.com/duy7rcf4m/image/upload/v1755547004/Frame_7207_dkdnys.png"
               }
               alt="Headerlogo"
             />
@@ -69,7 +70,7 @@ const Header = () => {
             }`}>
             <Link to="/AboutPage" className="hover:underline  cursor-pointer">
               Haqqımızda
-               <ScrollToTop/>
+              <ScrollToTop />
             </Link>
 
             <Link to="/SolutionsPage" className="hover:underline">
