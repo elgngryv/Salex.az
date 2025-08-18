@@ -29,7 +29,7 @@ function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ bottom: 0, behavior: "smooth" });
 
     const scrollToTop = () => {
       const c = document.documentElement.scrollTop || document.body.scrollTop;
@@ -78,9 +78,9 @@ const AppContent = () => {
 
   return (
     <ThemeProvider>
+          <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <main className="flex-grow">
-          <ScrollToTop />
           <Routes>
             {/* Public routes */}
             <Route element={<PublicLayout />}>

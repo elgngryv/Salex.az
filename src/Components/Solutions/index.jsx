@@ -155,11 +155,11 @@ const Solutions = () => {
                   </AnimatePresence>
 
                   <div className="relative w-full h-[200px] md:h-[400px]">
-                    <img
-                      src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899485/Hellyollar%C4%B1_tdyhek.svg"
+                    <img 
+                    id="SelnazAboutMobile"
+                      src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755520834/Vector_ggr3vw.png"
                       alt="Selnaz"
-                      className="relative bottom-[-620px] z-[999] right-[-240px] block md:hidden cursor-auto pointer-events-none"
-                      style={{ width: "138px", height: "138px" }}
+                      className="relative bottom-[-600px] z-[999] right-[-240px] block md:hidden cursor-auto pointer-events-none"
                       data-aos="fade-right"
                       data-aos-delay="100"
                     />

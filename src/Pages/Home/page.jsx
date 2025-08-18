@@ -9,10 +9,13 @@ import Integrations from "../../Components/Home/Integrations";
 import SalexCRM from "../../Components/Home/SalexCRM";
 import SalexAnalytics from "../../Components/Home/SalexAnalytics";
 import HomeSvg from "../../Components/Home/HomeSvg";
+import ScrollToTop from "../../../ScrollToTop";
 
 const Home = () => {
   return (
-    <div style={{ position: "relative", overflowX:"hidden" }}>
+    <div style={{ position: "relative", overflowX: "hidden" }}>
+      <ScrollToTop />
+
       <SelnazMsg />
       <SalexBanner />
       <HomeSvg />

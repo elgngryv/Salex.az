@@ -5,10 +5,7 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Yuxarı scroll üçün müxtəlif metodlar
     window.scrollTo(0, 0);
-    document.body.scrollTop = 0; // Safari
-    document.documentElement.scrollTop = 0; // Chrome, Firefox, IE, Opera
   }, [pathname]);
 
   return null;
