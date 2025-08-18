@@ -58,7 +58,7 @@ const SelnazSmart = () => {
         </div>
         <div className="montserrat mt-4">
           <button
-            className="bg-[#3D246A] dark:bg-[#E1DCE6] dark:text-[#3D246A] py-3 px-[75px] w-full rounded-[24px] text-white text-xl font-semibold"
+            className="bg-[#3D246A] dark:bg-[#E1DCE6] dark:text-[#3D246A] py-3 px-[75px] w-full rounded-[24px] text-white text-xl "
             onClick={() => handleSelect(selnazSmart.title)}>
             İNDİ ƏLDƏ ET
           </button>
