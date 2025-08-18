@@ -95,7 +95,7 @@ const Contact = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3 }}
                     onClick={toggleChat}
-                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-313%] right-[-213px] md:bottom-[-710px] md:right-[-765px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
+                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-313%] right-[-213px] md:bottom-[-707`px] md:right-[-760px] z-[-1] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
                     style={{ backgroundColor: "#5B2E91" }}
                     data-aos="fade-left"
                     data-aos-delay="250">

@@ -95,7 +95,7 @@ const Suggestions = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.3 }}
                     onClick={toggleChat}
-                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-335%] right-[-217px] md:bottom-[-730px] md:right-[-765px] z-[9999] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
+                    className="absolute   md:w-[80px] md:h-[80px] w-[60px] h-[60px] bottom-[-330%] right-[-221px] md:bottom-[-730px] md:right-[-765px] z-[9999] flex justify-center items-center rounded-full shadow-md hover:scale-105 transition-transform"
                     style={{ backgroundColor: "#5B2E91" }}
                     data-aos="fade-left"
                     data-aos-delay="250">
