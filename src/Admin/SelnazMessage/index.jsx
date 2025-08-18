@@ -16,7 +16,7 @@ const SelnazMessage = () => {
       {/* Mesajlar */}
       <div
         className="flex items-center w-fit px-6 py-3 gap-3 rounded-3xl shadow-lg transform transition duration-300 hover:scale-105"
-        style={{ backgroundColor: bgColor, color: textColor }}>
+        style={{ backgroundColor: tempBgColor, color: tempTextColor }}>
         <span className="font-semibold italic text-lg">
           Salam! Mən Selnazam 🌟
         </span>
@@ -24,7 +24,7 @@ const SelnazMessage = () => {
 
       <div
         className="flex items-center w-fit px-6 py-3 gap-3 rounded-3xl shadow-md transform transition duration-300 hover:scale-105"
-        style={{ backgroundColor: bgColor, color: textColor }}>
+        style={{ backgroundColor: tempBgColor, color: tempTextColor }}>
         <span className="font-medium italic text-base md:text-lg">
           Şirkətlər mənimlə satışlarını <span className="font-bold">30%</span>{" "}
           artırır, sən də artırmaq istəyərsən? 🤩

@@ -16,7 +16,7 @@ const UserMessage = () => {
       {/* İstifadəçi mesajları */}
       <div
         className="flex items-center w-fit px-6 py-3 gap-3 rounded-3xl shadow-md transform transition duration-300 hover:scale-105"
-        style={{ backgroundColor: bgColor, color: textColor }}
+        style={{ backgroundColor: tempBgColor, color: tempTextColor }}
       >
         <span className="font-medium text-base md:text-lg">
           Salam, mən istifadəçiyəm! 👋
@@ -25,7 +25,7 @@ const UserMessage = () => {
 
       <div
         className="flex items-center w-fit px-6 py-3 gap-3 rounded-3xl shadow-sm transform transition duration-300 hover:scale-105"
-        style={{ backgroundColor: bgColor, color: textColor }}
+        style={{ backgroundColor: tempBgColor, color: tempTextColor }}
       >
         <span className="font-normal text-base md:text-lg">
           Sualım var: Sizin xidmətlərdən necə istifadə edə bilərəm? 🤔
