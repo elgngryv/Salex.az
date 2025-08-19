@@ -1,15 +1,10 @@
 import React from "react";
 import Slider from "react-slick";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import Photo from "../../../assets/images/6.svg";
-import Photo2 from "../../../assets/images/5.svg";
-import Photo3 from "../../../assets/images/4.svg";
-import Photo4 from "../../../assets/images/3.svg";
-import Photo5 from "../../../assets/images/2.svg";
-import Photo6 from "../../../assets/images/1.svg";
 
 const slides = [
   {
@@ -54,16 +49,16 @@ const SalexHero = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 5000,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
+    speed: 3000,
     autoplaySpeed: 0,
     cssEase: "linear",
     arrows: false,
     pauseOnHover: false,
-    swipe: true,
-    draggable: true,
+    swipe: false,
+    draggable: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -84,8 +79,8 @@ const SalexHero = () => {
     <div className="px-4 mt-[74px] overflow-hidden">
       <Slider {...settings}>
         {slides.map((item, index) => (
-          <div key={index} className="px-2 w-[390px]  md:w-[434px] ">
-            <div className="border border-white/30  rounded-[20px] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150 p-[24px] flex flex-col items-center justify-center min-h-[400px]">
+          <div key={index} className="px-2 w-[390px] md:w-[434px]">
+            <div className="border border-white/30 rounded-[20px] bg-gradient-to-r from-white/10 via-white/5 to-white/10 backdrop-blur-[10px] backdrop-saturate-150 p-[24px] flex flex-col items-center justify-center min-h-[400px]">
               <div className="flex w-[310px] mb-3 dark:text-[#E1DCE6] text-[#3D246A]">
                 <h2 className="font-semibold openSans dark:text-[#E1DCE6] text-xl">
                   {item.hasBreak ? (
@@ -98,9 +93,10 @@ const SalexHero = () => {
                   )}
                 </h2>
               </div>
-              <img
+              <LazyLoadImage
                 src={item.image}
                 alt={`slide-${index}`}
+                effect="blur"
                 className="max-w-full h-auto"
               />
             </div>
