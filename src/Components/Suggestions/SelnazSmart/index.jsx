@@ -20,7 +20,7 @@ const SelnazSmart = () => {
       { id: 3, text: "Kampaniya və təklif avtomatlaşdırması" },
       { id: 4, text: "CRM inteqrasiyası avtomatik follow-up" },
       { id: 5, text: "Müştəri segmentasiyası" },
-      { id: 5, text: "Həftəlik analitik hesabat" },
+      { id: 6, text: "Həftəlik analitik hesabat" },
     ],
   };
 

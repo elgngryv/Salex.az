@@ -3,6 +3,7 @@ import FooterLogo from "../../../assets/images/Footer-logo.svg";
 import { FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa";
 import Selnaz from "../../../assets/images/selnazHome.svg";
 import { useNavigate } from "react-router-dom";
+import ScrollToTop from "../../../../ScrollToTop";
 
 const Footer = () => {
   const navigate = useNavigate();
@@ -37,15 +38,26 @@ const Footer = () => {
               <h2 className="font-semibold text-lg dark:text-[#E1DCE6]">
                 Satışlarını Artırmağa
               </h2>
-              <button
-                className="bg-[#3D246A] py-3 px-[24px] dark:bg-[#E1DCE6] dark:text-[#3D246A] cursor-pointer  rounded-[24px] text-white text-base font-semibold"
-                type="button"
-                style={{ zIndex: 9999, position: "relative" }}
-                onClick={() => {
-                  navigate("/SuggestionsPage");
-                }}>
-                Başla
-              </button>
+           <button
+  className="bg-[#3D246A] py-3 px-[24px] dark:bg-[#E1DCE6] dark:text-[#3D246A] cursor-pointer rounded-[24px] text-white text-base font-semibold"
+  type="button"
+ onClick={() => {
+  if (window.location.pathname === "/SuggestionsPage") {
+    // Səhifədədirsə scroll elə
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else {
+    // Başqa səhifədədirsə navigate et və sonra scroll
+    navigate("/SuggestionsPage");
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100); // qısa gecikmə
+  }
+}}
+
+>
+  Başla
+</button>
+
             </div>
           </div>
         </div>

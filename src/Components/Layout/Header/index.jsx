@@ -145,7 +145,7 @@ const Header = () => {
 
         {/* Alt menyu: mobilda collapsed olarkən görünür */}
         <div
-          className={`lg:hidden dark:text-[#E1DCE6]  absolute w-[249px] overflow-hidden transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-[10px] rounded-b-[12px] mt-1 p-4 text-[#3D246A] font-medium montserrat
+          className={`lg:hidden dark:text-[#E1DCE6]  absolute w-[249px] overflow-hidden transition-all duration-500 ease-in-out bg-white/10 backdrop-blur-[10px] rounded-b-[12px]  p-4 text-[#3D246A] font-medium montserrat
           ${collapsed ? "max-h-48 opacity-100" : "max-h-0 opacity-0"}`}
           style={{ pointerEvents: collapsed ? "auto" : "none" }}>
           <Link
