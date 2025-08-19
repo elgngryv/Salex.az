@@ -33,8 +33,8 @@ const AboutSel = () => {
       {/* Şəkillər text box-un altında */}
       {/* Mobil */}
       <img
-        className="block md:hidden mt-[-430px] mx-auto"
-        src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1754899482/aboutImage_at9ysy.svg"
+        className="block md:hidden mt-[-430px] w-[260px] mx-auto"
+        src="https://res.cloudinary.com/duy7rcf4m/image/upload/v1755586923/ChatGPT_Image_Jul_16_2025_06_22_11_PM-Photoroom_1_gynfsg.png"
         alt="about"
       />
       {/* Desktop */}
