@@ -4,11 +4,47 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import RobotChat from "../../Widgets/RobotChat";
 import "./contact.css";
+import useAnnounceStore from "../../../Stores/AnnounceStore";
 
 const Contact = () => {
+  const { addAnnounce, loading } = useAnnounceStore();
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [queuedMessage, setQueuedMessage] = useState(null);
   const chatRef = useRef(null);
+
+  const [formData, setFormData] = useState({
+    ad: "",
+    soyad: "",
+    email: "",
+    mobil: "",
+    mesaj: "",
+  });
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  // form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (
+      !formData.ad ||
+      !formData.soyad ||
+      !formData.email ||
+      !formData.mobil ||
+      !formData.mesaj
+    ) {
+      alert("Zəhmət olmasa bütün xanaları doldurun!");
+      return;
+    }
+    await addAnnounce(formData);
+    alert("Mesajınız göndərildi ✅");
+    setFormData({ ad: "", soyad: "", email: "", mobil: "", mesaj: "" }); // form reset
+  };
 
   useEffect(() => {
     AOS.init({ duration: 1000, once: true });
@@ -173,7 +209,7 @@ const Contact = () => {
           </h2>
         </div>
       </div>
-      <div className="p-4 openSans">
+  <form className="p-4 openSans" onSubmit={handleSubmit}>
         <div className="md:flex md:gap-[12px]">
           <div>
             <div className="relative w-full md:w-[476.5px] mt-6">
@@ -181,54 +217,67 @@ const Contact = () => {
                 type="text"
                 id="ad"
                 placeholder="Ad"
-                className="peer w-full px-[20px] dark:placeholder:text-[#E1DCE6] py-4 text-[#3D246A] placeholder:text-[#3D246A] placeholder:font-light italic  font-normal text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                value={formData.ad}
+                onChange={handleChange}
+                className="peer w-full px-[20px] py-4 text-[#3D246A] placeholder:text-[#3D246A] italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
-            <div className="relative md:w-[476.5px] text-[#3D246A] md:mt-3   w-full mt-6 ">
+            <div className="relative md:w-[476.5px] md:mt-3 w-full mt-6">
               <input
                 type="text"
                 id="soyad"
-                placeholder="Soyad "
-                className=" w-full px-[20px] dark:placeholder:text-[#E1DCE6] py-4 placeholder:text-[#3D246A]  text-[#3D246A] dark:text-[#E1DCE6] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                placeholder="Soyad"
+                value={formData.soyad}
+                onChange={handleChange}
+                className="w-full px-[20px] py-4 text-[#3D246A] italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
-            <div className="relative md:w-[476.5px] text-[#3D246A]  md:mt-3  w-full mt-6">
+            <div className="relative md:w-[476.5px] md:mt-3 w-full mt-6">
               <input
                 type="email"
                 id="email"
-                placeholder="Email "
-                className="peer w-full px-[20px] dark:placeholder:text-[#E1DCE6] py-4 dark:text-[#E1DCE6] placeholder:text-[#3D246A] text-[#3D246A] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="peer w-full px-[20px] py-4 text-[#3D246A] italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
 
-            <div className="relative md:w-[476.5px]  md:mt-3 w-full mt-6">
+            <div className="relative md:w-[476.5px] md:mt-3 w-full mt-6">
               <input
                 type="tel"
                 id="mobil"
                 placeholder="Mobil Nömrə"
-                className="peer w-full px-[20px] dark:placeholder:text-[#E1DCE6] placeholder:text-[#3D246A] dark:text-[#E1DCE6] py-4 text-[#3D246A] placeholder:font-light  font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
+                value={formData.mobil}
+                onChange={handleChange}
+                className="peer w-full px-[20px] py-4 text-[#3D246A] italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none"
               />
             </div>
           </div>
 
           <div>
-            <div className="relative md:w-[659px]   w-full mt-6">
+            <div className="relative md:w-[659px] w-full mt-6">
               <textarea
                 id="mesaj"
-                placeholder="Mesaj "
+                placeholder="Mesaj"
                 rows={6}
-                className="peer w-full md:h-[250px] px-[20px] dark:placeholder:text-[#E1DCE6] py-2 placeholder:text-[#3D246A] dark:text-[#E1DCE6] text-[#3D246A] placeholder:font-light font-normal italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
+                value={formData.mesaj}
+                onChange={handleChange}
+                className="peer w-full md:h-[250px] px-[20px] py-2 text-[#3D246A] italic text-sm border border-white/20 bg-white/10 backdrop-blur-md shadow-md rounded-[20px] focus:outline-none resize-none"></textarea>
             </div>
           </div>
         </div>
         <div className="montserrat mt-4">
-          <button className="bg-[#3D246A] md:w-[110px] md:px-[24px]  dark:text-[#E1DCE6] md:py-3 md:text-base py-4 px-[140.5px] w-full rounded-[24px] text-white text-xl font-semibold">
-            Göndər
+          <button
+            type="submit"
+            disabled={loading}
+            className="bg-[#3D246A] md:w-[110px] md:px-[24px] dark:text-[#E1DCE6] md:py-3 md:text-base py-4 px-[140.5px] w-full rounded-[24px] text-white text-xl font-semibold disabled:opacity-50">
+            {loading ? "Göndərilir..." : "Göndər"}
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

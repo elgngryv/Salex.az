@@ -22,6 +22,7 @@ import UserMessage from "./Admin/UserMessage";
 import SelnazMessage from "./Admin/SelnazMessage";
 import Buttons from "./Admin/Buttons";
 import axios from "axios";
+import MessagesUser from "./Admin/MessagesUser";
 
 // Token ilə bağlı dəyişənlər
 const TOKEN_KEY = "token";
@@ -146,6 +147,7 @@ const AppContent = () => {
                   element={<SelnazMessage />}
                 />
                 <Route path="company/Buttons" element={<Buttons />} />
+                <Route path="MessagesUser" element={<MessagesUser />} />
               </Route>
             </Route>
           </Routes>

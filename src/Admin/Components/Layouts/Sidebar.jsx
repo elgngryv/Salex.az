@@ -29,6 +29,17 @@ export const Sidebar = () => {
           }>
           Paketlər
         </NavLink>
+            <NavLink
+          to="/admin/MessagesUser"
+          className={({ isActive }) =>
+            `py-3 px-5 rounded-md transition duration-200 ${
+              isActive
+                ? "bg-[#5B2E91] text-white"
+                : "hover:bg-[#5B2E91] hover:text-white"
+            }`
+          }>
+          Mesajlar
+        </NavLink>
         <NavLink
           to="/admin/company/datamanagement"
           className={({ isActive }) =>
@@ -51,6 +62,7 @@ export const Sidebar = () => {
           }>
           Şirkətlər
         </NavLink>
+     
         <NavLink
           to="/admin/company/dashboard"
           className={({ isActive }) =>
